@@ -1,0 +1,525 @@
+---
+title: Deepsea Metro
+layout: base.njk
+style: /css/cqpages/index.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "[Bedman, Xrd] \"We talk about 'survival of the fittest' a lot but all that really means is the skilled live and the unskilled die. Since you're clearly in that second group, maybe pick your fights a bit more carefully? Do you understand what I'm saying? It's never going to matter how much you 'want it' when you're up against someone who can kill you with a sneeze.\"",
+      "[Bedman, Xrd] \"Good. The story is finally moving forward. This planet's history is about to change dramatically--perhaps as much as it did on the day it was created. The Crusade and that silly resurrection will only be a tiny blip on the radar. All boundaries will be abandoned, all shortcomings mended, and all fiction remedied. Incompetence will be met with standards, cheaters will be oppressed by freedom, and the discontent will be trampled upon. The irrational and temporizing behavior that has destroyed our world with be consigned to history, and the World of Absolution will begin! The only remaining problem is That Man. He may not have appeared on stage, but he knows the cast, crew, and lines far too well. If he decides to interrupt our plans, it could undo the work we've done. Which is why I fervently hope the Conclave's plans continue unimpeded...at least for now. Whoops, almost time for me to go. My client doesn't like agents who can't deliver. ...A housecat only knows the world its master lets it know. Its freedom has been taken away. So should that cat be dissatisfied to know only a fraction of the world? A stray cat, however, may have to fight for survival every day of its life. An exhausting battle. ...But every possibility is open to the stray. The definition of happiness, of course, varies from person to person, but what this world lacks is awareness. Well then? Wouldn't YOU agree with that assessment?\"",
+      "protip; flies move up and down much faster than they do sideways, you can swat them pretty easily by clapping from the top instead of the sides, follow this site for more bug tips",
+      "hands and knees please stop hosting things on imgur",
+      "She'll smile, and sings a song. Sweet voice & Melty Blood.",
+      "Happiness issued plenty! It will soon turn out al-right!",
+      "Warm in the day, have a good time. Cool in the night, have a good time. That's what I'll keep on saying till I lose my mind. Feel like a bird in the sea breeze. Shine like the moon in the night sky. Can you believe that till the end of your life?",
+      "WELCOME TO THE NEXT LEVEL...",
+      "[Cleggs, Post ranked match] \"becAUSEEE IT COMBOS INTO THIS ??? AND YOU CAN JUST SET UP 2 BALLS FOR THE PRICE OF 25% OF THE ENEMYS HEALTHBAR ((ME)) (((MY HEALTHBAR))) ((((IM BEING ROBBED)))\"",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+
+<div class="mainflex">
+  <div class="mainleft">
+    <div class="mainpoem">
+      <img src="/images/cqstyle/index/poem.png" alt="Pale summer moonlight shimmers on the seafloor. An octopus, unaware that dawn will bring capture, Rests within a trap, dreaming fleeting dreams...">
+    </div>
+    <div class="mainabout">
+    <p><span class="tippy" data-tippy-content="RSS SOON!! NEXT UPDATE TRUST">tooltip test (hover me!)</span> HEY!! you're seeing part 1 of the site revamp atm, it's mostly me cleaning up my old code and moving to using a static site generator (11ty) so there mayy be some differences, the main things i need to sort out is adding back the sidebar links glowing when you're on the appropriate page, the music widget and ocart's styling, after that it's just writing a bunch,, and blogs i loathe blogs ouhhh<br><br>small things about the mobile scaling (i should set up the blog next if im gonna be talking like this lol) i've been optimising it to my phone specifically (558x1104 this thing is MASSIVE) so im not too sure how it works with other phones,, if you're checking out the site from my discord or whatever could you shoot me a message saying if it looks alright on your device? i'm testing on firefox currently...<br><br>I'LL FILL THIS OUT PROPERLY SOON!! it'll be a little introduction to my site and all that good stuff! so be ready for thatt!!<br>if you cant tell also i like splatoon lmao<br><br>TODOS<br>FINISH BLOG/DEVLOG STYLE (3rd)<br><br>change ocart styling (probably after you finish the main styles)<br>treat the blog styling like the blazblue radio segment? itd be cute to have my little scribbles i think<br>sort out the copying stuff code for the socials page, discord<br><br><br>and IF i get bored i'll make a little visual novel thingy in site (if i can ever figure some stuff out...)</p>
+    </div> <!-- THIS IS NOT MINE!!! code is from https://chicagosoftcore.net/test, i'll annotate what ive tweaked and how it works, go into your debugger and select the index page-->
+    <noscript>
+      <style>
+        #scrollgallery * { /*changes scroll behaviour if scripts are disabled*/
+            scroll-behavior: initial !important;
+        }
+      </style>
+    </noscript>
+    <style>
+      /*this is seperated from the main styling, all that's needed for the carousel to work!*/
+      :root { /*specifies variables*/
+        --button-height: 25%; /*it can work here, but not in the script, it's just a placeholder of 25 in there*/
+        --visible-button-count: 4;
+        --gallery-height: 100%;
+      } /*using ids for this part to play nicely with the script*/
+    
+      #scrollgallery { /*scrollgallery container*/
+        display: flex; /*sets it to a flex container, that's all though*/
+      }
+    
+      #scrollgallery * { /*everything inside scrollgallery, just removes the scrollbars that may appear*/
+        scroll-behavior: initial !important;
+        -ms-overflow-style: none;  /*IE and Edge (no scrollbar)*/
+        scrollbar-width: none;  /*Firefox (no scrollbar)*/
+      }
+    
+      #scrollgallery *::-webkit-scrollbar {
+        display: none; /*chrome's webkit (no scrollbar)*/
+      }
+      
+      #scrollgallery a { /*h2 styling*/
+        text-decoration: none;
+        color: var(--navlink);
+      }
+      
+      #scrollgallery a:hover { /*h2 styling, hover*/
+        color: var(--navlinkactive);
+      }
+    
+      #scrollgallery #gallery_navigation { /*flex item for navigation*/
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        height: 100%;
+        width: 20%; /*to stop flex overflowing*/
+        min-width: 20%; /*to stop flex scaling*/
+      }
+      
+      #slides {
+        height: 100%; /*100% of the containers height, fills the area to scroll cleanly*/
+      }
+      
+      #scrollgallery #gallery_buttons_wrapper { /*since im on percentages this'll fit anyway, but it's a nice precaution*/
+        height: 100%;
+        overflow: hidden;
+      }
+    
+      #scrollgallery #gallery_buttons { /*actual flex container for the buttons*/
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        height: 100%;
+        overflow: hidden;
+      }
+    
+      #scrollgallery #gallery_buttons a { /*buttons themselves*/
+        display: block;
+        height: var(--button-height); /*each button is as tall as the button-height variable*/
+        width: 100%;
+        text-decoration: none; /*stops the lines appearing beneath*/
+        color: var(--navlink); /*text colour*/
+        border-right: 0.1vh solid var(--highlight); /*each link in buttons gets a border, this is just styling*/
+        border-top: 0.1vh solid var(--highlight); /*each link gets a border-top...*/
+        box-shadow: 0px 0px 0.5vh var(--highlightshadow); /*regular box shadow*/
+      }
+      
+      #scrollgallery #gallery_buttons a:first-child {
+        border-top: none; /*...except for the first element*/
+      }
+      
+      #scrollgallery #gallery_buttons a:hover { /*on hover, this is just styling*/
+        color: var(--navlinkactive); /*text colour*/
+        box-shadow: 0px 0px 1.2vh var(--highlightshadow); /*amplified box shadow on hover*/
+      }
+    
+      #scrollgallery #gallery_buttons img {
+        height: var(--button-height); /*i'm unsure? height=100% doesn't work though, probably cause of my earlier styling, experiment a lil*/
+        width: 100%;
+      }
+    
+      #scrollgallery #view { /*flex item for the carousel itself*/
+        height: 100%;
+        width: 80%; /*77% of area, don't need to specify a minimun here*/
+        overflow: hidden;
+        position: relative; /*neccesary to keep scrolling stable and smooth*/
+        box-shadow: 0px 0px 0.5vh var(--highlightshadow); /*styling*/
+      }
+    
+      #scrollgallery #slides { /*slides element, unsure if neccesary*/
+        display: block;
+        width: 100%;
+      }
+    
+      #scrollgallery #slides .slide {
+        position: relative; /*keeps slides THEMSELVES smooth*/
+        display: block;
+        height:var(--gallery-height); /*height of gallery!*/
+        width: 100%;
+        background-size: cover; /*backgrounds individually set in elements!*/
+      }
+    
+      #scrollgallery #slides .slide .info {
+        position: absolute; /*keeps slides contents smooth*/
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      
+      @media (max-width: 1250px) { /*mobile styling, shouldn't be neccesary this is just so it looks nice for my situation.*/
+      
+        #scrollgallery #gallery_navigation { /*flex item for navigation*/
+          width: 23%; /*to stop flex overflowing*/
+          min-width: 23%; /*to stop flex scaling*/
+        }
+        
+        #scrollgallery #view {
+          width: 77%;
+        }
+      }
+    
+    </style>
+    <div id="scrollgallery" class="maincarousel"> 
+      <div id="gallery_navigation">
+        <div id="gallery_buttons_wrapper">
+          <div id="gallery_buttons">
+            <a href="#gallery_1">
+              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/aboutbg.png')">
+                About
+              </div>
+            </a>
+            <a href="#gallery_2">
+              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/ocsbg.png')">
+                OCs
+              </div>
+            </a>
+            <a href="#gallery_3">
+              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/blogbuttonbg.png')">
+                Blog
+              </div>
+            </a>
+            <a href="#gallery_4">
+              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/guestbookbg.png')">
+                GuestBook
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div id="view">
+        <div id="slides">
+          <div id="gallery_1" class="slide" style="background-image: url('/images/cqstyle/index/carousel/about.png')">
+            <div class="info">
+              <h2>
+                <a href="/about.html">\about</a>
+              </h2>
+              \so, who ARE you?
+            </div>
+          </div>
+          <div id="gallery_2" class="slide" style="background-image: url('/images/cqstyle/index/carousel/ocs.png')">
+            <div class="info">
+              <h2>
+                <a href="/ocs.html">\ocs</a>
+              </h2>
+              \learn about my ocs!
+            </div>
+          </div>
+          <div id="gallery_3" class="slide" style="background-image: url('/images/cqstyle/index/carousel/blog.png')">
+            <div class="info">
+              <h2>
+                <a href="/blog.html">\blog</a>
+              </h2>
+              \listen to my insane ramblings
+            </div>
+          </div>
+          <div id="gallery_4" class="slide" style="background-image: url('/images/cqstyle/index/carousel/guestbook.png')">
+            <div class="info">
+              <h2>
+                <a href="/guestbook.html">\guestbook</a>
+              </h2>
+              \sign my guestbook!
+            </div>
+          </div>
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <script> //clegggsadd: thankfully, already annotated really well! don't try put units in, it's working off of identifiers so it wont take any px nonsense or whatever
+            const scroll_length = 1000; // Length of the scroll animation, in ms
+            const timeout_length = 4000;  // Length of the timeout, in ms
+            const button_height = 25; // Height of a navigation button - cleggsadd: OK NOT ACTUALLY but it needs a number instead of a percentage, i guess?? still works
+            const visible_button_count = 4; // Amount of navigation buttons visible at once
+      
+            const view = document.getElementById("view"); // Save #view in a variable
+      
+            var gallery_buttons; // Empty variable to save array of the gallery buttons in
+            var current_slide_index = 0;  // Current slide index (starts at 0)
+            var button_top_index = 0; // Current navigation button that's displayed at the top (starts at 0)
+            var scroll_timeout; // Empty variable to save the automatic timeout function in
+      
+            $(document).ready(function () {// Load this code when the rest of the page is done loading
+                gallery_buttons = $("#gallery_buttons a"); // Save all buttons in #gallery_buttons in variable
+      
+                $(gallery_buttons).each(function (index) { // For every button, do this (index = index of the slide, passed down as a variable)
+                    var anchor = $(this).attr('href'); // Get href (the id of the slide) from link
+                    $(this).click(function (event) { // For every click on the button, do this
+                        event.preventDefault(); // Don't scroll to slide (scroll_to_slide does the work)
+                        current_slide_index = index; // Save current slide index
+                        scroll_to_slide(anchor); // Scroll to slide with anchor from the button
+                    });
+                });
+      
+                $('.navigation_arrow').on("click", function () { // For every click on a navigation arrow, do this
+                    if ($(this).attr("id") == "nav_up") { // If the navigation arrow is #nav_up, do this
+                        if (button_top_index > 0) { // If top visible button is not very first button
+                            button_top_index--; // Button above top visible button is now top visible button (button_top_index = button_top_index - 1)
+                            scroll_navigation(); // Scroll buttons so new top button is truly on top
+                        }
+                    }
+                    else if ($(this).attr("id") == "nav_down") { // Opposite of #nav_up
+                        if (button_top_index < gallery_buttons.length - visible_button_count) {
+                            button_top_index++;
+                            scroll_navigation();
+                        }
+                    }
+                });
+      
+                $('#scrollgallery').on("mouseenter", function () { // When mouse moves over gallery, do this
+                    unset_scroll_timeout(); // Unset timeout, pausing the automatic scroll
+                });
+      
+                $('#scrollgallery').on("mouseleave", function () { // When mouse moves out of gallery, do this
+                    set_scroll_timeout(); // Set timeout again, resuming automatic scroll
+                });
+      
+                set_scroll_timeout(); // Set timeout when page is loaded
+            });
+      
+            function scroll_to_slide(slide) { // Scroll to slide
+                /*
+                    This function animates the scroll,
+                    so scrolling to the slide is smooth instead of instantaneous.
+                */
+                $(view).stop().animate({
+                    scrollTop: Math.abs($('#slides').position().top) + $(slide).position().top
+                }, scroll_length);
+            }
+      
+            function set_scroll_timeout() { // Set the automatic scroll timeout
+                unset_scroll_timeout();
+                scroll_timeout = setTimeout(function () { /* Save a timeout function to the scroll_timeout variable.
+                                                            By saving it to a variable we can check if the timeout is active in another function. 
+                                                            The code below is what happens when the timeout runs out. */
+                        if (current_slide_index < gallery_buttons.length - 1) { // When the visible slide is not the last slide, do this
+                            current_slide_index++;
+                        }
+                        else { // When the visible slide is the last slide, move to first slide
+                            current_slide_index = 0;
+                        }
+                        scroll_to_slide(get_anchor(current_slide_index)); /* Scroll to slide.
+                                                                        We can get the slide anchor with just the slide index with the get_anchor function. */
+                        set_scroll_timeout(); // Set another timeout (since this timeout has ran out when the code gets here!)
+                    }, timeout_length);
+            }
+      
+            function unset_scroll_timeout() { // Remove the timeout, pausing the slideshow
+                if (typeof (scroll_timeout) != 'undefined') {
+                    clearTimeout(scroll_timeout);
+                }
+            }
+      
+            function get_anchor(index) { // Get button href, aka the slide the button should scroll to
+                return $(gallery_buttons[index]).attr('href');
+            }
+      
+            function scroll_navigation() { /* Change margin of all the buttons, giving the illusion the buttons are moving.
+                                          The animation speed is set with CSS. */
+                document.getElementById("gallery_buttons").style.marginTop = -25 * button_top_index; // Margin = height of buttons times which button is on top - cleggsadd: ONCE AGAINNNN 25 is just a placeholder, that lets it work, lol
+            }
+        
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="mainsidebar">
+      <div class="mainsidebarhead"><img src="/images/FRONTPAGE.gif" alt="My OC, Mako"><div class="nametitle"><p>Cleggs</p></div></div>
+      <div class="mainsidebarbody">
+        <i>"burnout..."</i>
+        <div>
+          <p class="sidebarinfo">
+            <img src="/images/octopixel.png">
+            <a href="https://time.is/London" id="time_is_link" rel="nofollow noopener noreferrer"><span id="London_z716"></span></a>
+            <script src="//widget.time.is/t.js"></script>
+            <script>
+              time_is_widget.init({London_z716:{}});
+            </script>
+            <img src="/images/octopixel.png" alt="">
+            <a href="https://www.imood.com/users/cleggs" target="_blank" rel="noopener noreferrer"><img src="https://moods.imood.com/display/uname-cleggs/fg-C4C8DA/trans-1/imood.gif" alt="The current mood of cleggs at www.imood.com" border="0" style="height:1em; max-width:100%;"></a>
+            <img src="/images/octopixel.png" alt="">
+          </p>
+        </div>
+        <p>hey!! im cleggs, this is a site ive been working on for a lil now...<br><br>you know i'm nearly actually done with the site itself lol, i've just gotta finish off a few more templates then i'm set! been thinking of making the site more 'in-character' for my ocs, but for now it's still wip so i can only dream...</p>
+        <div class="mainsidebarbuttons">
+          <a href="https://88x31.lol" target="_blank"><img src="https://88x31.lol/counter11.gif" alt="88x31 Counter"></a>
+          <a href="/images/deepseabutton.gif" download><img src="/images/deepseabutton.gif" alt="Deepsea Metro"></a>
+        </div>
+        <textarea readonly><a href="https://cleggs.neocities.org/" target="_blank"><img src="host the image yourself!" alt="Deepsea Metro"></a></textarea>
+        <a href="https://neocities.org/site/cleggs">neocities page!</a>
+      </div>
+    </div>
+  </div>
+  <div class="mainvr"></div>
+  <div class="mainright">
+    <div class="testimonials"> <!--this is from https://bungle.online/home! i've worked this slightly to reduce the choppiness but still check their stuff out-->
+      <div class="chattitle"><p>hostages</p></div>
+      <div class="testimonialsinner">
+        <div class="testimonialmarquee">
+          <div class="testimoniesbody">
+            <section>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/dyna.jpg" alt="Dynatoast"></div>
+                <div class="hostagewords">
+                  <p>Please dont take me.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/blue.jpg" alt="Blue"></div>
+                <div class="hostagewords">
+                  <p>Please don't hurt my family</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/kensa.jpg" alt="Kensa"></div>
+                <div class="hostagewords">
+                  <p>#FREEKENSA #FREEKENSA #FREEKENSA </p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/krono.jpg" alt="Krono"></div>
+                <div class="hostagewords">
+                  <p>give me bears</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/flow.jpg" alt="Flow"></div>
+                <div class="hostagewords">
+                  <p>I DONT WANNA DIE</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/poe.jpg" alt="Poe"></div>
+                <div class="hostagewords">
+                  <p>sobs and eats moss</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/pin.jpg" alt="Pin"></div>
+                <div class="hostagewords">
+                  <p>im sorry. i really didn't mean to do it.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/shak.jpg" alt="Shak"></div>
+                <div class="hostagewords">
+                  <p>They're taking me tomorrow.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/julian.jpg" alt="Julian"></div>
+                <div class="hostagewords">
+                  <p>WHERE AM I</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/solbadguy.jpg" alt="Sol badguy"></div>
+                <div class="hostagewords">
+                  <p>im sol bad guy</p>
+                </div>
+              </div>
+              <hr>
+            </section>
+            <section>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/dyna.jpg" alt="Dynatoast"></div>
+                <div class="hostagewords">
+                  <p>Please dont take me.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/blue.jpg" alt="Blue"></div>
+                <div class="hostagewords">
+                  <p>Please don't hurt my family</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/kensa.jpg" alt="Kensa"></div>
+                <div class="hostagewords">
+                  <p>#FREEKENSA #FREEKENSA #FREEKENSA </p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/krono.jpg" alt="Krono"></div>
+                <div class="hostagewords">
+                  <p>give me bears</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/flow.jpg" alt="Flow"></div>
+                <div class="hostagewords">
+                  <p>I DONT WANNA DIE</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/poe.jpg" alt="Poe"></div>
+                <div class="hostagewords">
+                  <p>sobs and eats moss</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/pin.jpg" alt="Pin"></div>
+                <div class="hostagewords">
+                  <p>im sorry. i really didn't mean to do it.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/shak.jpg" alt="Shak"></div>
+                <div class="hostagewords">
+                  <p>They're taking me tomorrow.</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/julian.jpg" alt="Julian"></div>
+                <div class="hostagewords">
+                  <p>WHERE AM I</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hostage">
+                <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/solbadguy.jpg" alt="Sol badguy"></div>
+                <div class="hostagewords">
+                  <p>im sol bad guy</p>
+                </div>
+              </div>
+              <hr>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="webrings">
+      webrings (theres none yet but id like to figure out how to join them...)
+      <br>
+      <br>/
+      <br>
+      <br>
+      <br>/
+      <br>
+      <br>maybe just start my own atp? i really cant figure these things out lol, im not against anyone reaching out
+    </div>
+  </div>
+</div>

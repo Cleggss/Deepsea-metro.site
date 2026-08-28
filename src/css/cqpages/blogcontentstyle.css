@@ -1,0 +1,161 @@
+.inner {
+  padding: 0;
+}
+
+#topblognavigation {
+  display: flex;
+  text-align: center;
+  height: 5vh;
+  gap: 0.1vh;
+}
+
+.topblognavbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /*with the other 3, equals out to a third*/
+  border-radius: 0.5vh;
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
+  background-color: var(--backgroundgreen);
+  border: 0.1vh solid var(--highlight);
+}
+
+#tonext {
+  /*add later! background-image like the carousel stuff on the index,,,*/
+}
+
+#toblogarchive {
+  background-color: var(--background);
+}
+
+#toprevious {
+  /*add later*/
+}
+
+#endquote {
+  float: right;
+  font-size: 2em;
+  font-family: spacecowboy;
+}
+
+.blogheader {
+  display: flex;
+  align-items: center;
+  min-height: 8vh;
+  width: 100%;
+  background: linear-gradient(90deg,rgba(11, 11, 11, 0.1) 65%, rgba(0, 0, 0, 0.35) 100%), linear-gradient(180deg,rgba(23, 69, 53, 0.85) 0%, rgba(17, 56, 67, 0.85) 100%);
+  background-blend-mode: darken;
+  background-color: var(--background);
+  padding: 0.25vh;
+  overflow: hidden;
+}
+
+.blogheader1 { /*spacer*/
+  min-width: 1%;
+  height: 100%;
+}
+
+.blogheader2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 4vh;
+  height: 100%;
+}
+
+.blogheader2kam {
+  height: 4vh;
+  width: 100%;
+  background-image: url('/images/kam.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  mix-blend-mode: exclusion;
+}
+
+.blogheader2darken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5vh;
+  width: 3.5vh;
+  background-color: var(--background);
+  border-radius: 0.5vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box; /*stops padding changing it i guess*/
+  padding: 0.3vh;
+}
+
+.blogheader2darken img {
+  width: 100%;
+  height: 100%;
+}
+
+.blogheader3 { /*spacer*/
+  min-width: 0.75%;
+  height: 100%;
+}
+
+.blogheader4 {
+  min-width: 7.75vh;
+  height: 7.75vh;
+  object-fit: fill;
+}
+
+.blogheader4 img{ /*'station' style img*/
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 0.08vh currentColor)
+        drop-shadow(0 0 0.8vh currentColor);
+}
+
+.blogheader5 { /*spacer*/
+  min-width: 0.75%;
+  height: 100%;
+}
+
+.blogheader6 { /*text*/
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 8vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+  
+.blogheader6quote {
+  width: 100%;
+  height: 1.75vh;
+  font-size: 1.75vh;
+  font-family: blitzbold;
+  line-height: 1; /*to stop it going over*/
+  white-space: nowrap;
+  font-style: italic;
+  z-index: 1;
+}
+
+.blogheader6title {
+  width: 100%;
+  height: 6.25vh;
+  font-size: 6vh;
+  font-family: blitzbold;
+  line-height: 1; /*to stop it going over*/
+  white-space: nowrap;
+}
+
+.blogcontent {
+  padding: 1vh;
+}
+
+@media (max-width: 1250px) { /*mobile*/
+
+  .blogheader6 {
+  font-size: 1.5vw;
+  }
+  
+  .blogcontent {
+    padding: 1vw;
+  }
+}

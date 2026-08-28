@@ -1,0 +1,50 @@
+---
+permalink: "/mystuff/{{ page.fileSlug }}/index.html"
+title: Deepsea Metro • My art
+layout: base.njk
+style: /css/cqpages/artstyle.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "The character you've chosen is brimming with countless possibility. Your input breathes life into the character and will lead you to victory. If you put on your best performance, the character will definitely answer back in kind.",
+      "they call him 007... 0 finished artworks. 0 socials posted to. 7 pieces he'll finish up later...",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+<h1 id="backheader"><a href="/mystuff/"><img id="backbutton" src="/images/cqstyle/ocs/back.png" alt="Back button"></a>My art</h1>
+<p>hey!!! this is where you get to see some of the stuff i make, theres not gonna be many drawings in comparison cause i dont actually enjoy drawing that much, but there's still going to be models and whatever random stuff i decided to do shown off here<br>maybe i get into blender in the future? idk lmao, you can always open images in new tabs!</p>
+<hr>
+<div class="artflex">
+  <div class="artcolumn">
+    <div class="artflexbox"><img src="/images/myart/comic.jpg" loading="lazy" alt="A short comic of an interaction between 2 characters"><p>friend helped me come up with this idea and it would not leave my head (I DONT DRAW HUMANOIDS)</p></div>
+  </div>
+  <div class="artcolumn">
+    <div class="artflexbox"><img src="/images/myart/calico.jpg" loading="lazy" alt="An image styled like splatoon promotional screenshots"><p>little splatoon promo styled screenshot i did with the model</p></div>
+    <div class="artflexbox"><img src="/images/myart/corimodel.jpg" loading="lazy" alt="A model of a character with a plain backdrop"><p>model of cori (sanitized splatoon oc) because nintendo are cowards</p></div>
+  </div>
+  <div class="artcolumn">
+    <div class="artflexbox"><img src="/images/deepseabutton.gif" style="image-rendering: pixelated;" loading="lazy" alt="Two characters looking at eachother, there is text above which reads; Deepsea Metro"><p>remake of my site's button! i'm super proud how this turned out actually</p></div>
+    <div class="artflexbox"><img src="/images/myart/icons2x.jpg" loading="lazy" alt="Splatoon-styled icons used elsewhere on the site"><p>splatoon styled icons i use around the site (ok not my best work the hat looks depressed LMAO)</p></div>
+    <div class="artflexbox"><img src="/images/myart/cleggsbit.jpg" loading="lazy" alt="A VTuber-styled logo of the word 'Cleggs'"><p>done as a bit to prove i could</p></div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#loreredirbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 24vh;
+    height: 4vh;
+    box-shadow: 0px 0px 1vh var(--highlightshadow);
+    background-color: var(--backgroundgreen);
+    border: 0.1vh solid var(--highlight);
+    border-radius: 0.5vh;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+}

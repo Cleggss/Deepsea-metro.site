@@ -1,0 +1,189 @@
+* { /*scrollbar colour*/
+  scrollbar-color: var(--highlight) var(--background);
+}
+
+body {
+  background-color: rgb(5, 24, 18); /*fallback*/
+  background: linear-gradient(180deg, rgba(0, 25, 25, 1), rgba(0, 12, 14, 1));
+  background-attachment: fixed;
+  margin: 0;
+  margin-top: 2.5vh;
+  font-size: 19px;
+  text-shadow: 0.1em 0.1em rgba(0, 113, 151, 0.5), 0 0 0.15em currentColor, -0.1em -0.1em rgba(255, 0, 255, 0.2); /*taken from other styling, tweaked to work well with px*/
+}
+  
+p { /*removes the dinky spacing on the <p> tag, just very handy*/
+  margin: 0;
+  padding: 0;
+}
+
+::selection { /*when you left click drag,, select things,, youknowww*/
+  color: var(--selectioncol);
+  background-color: var(--selectionbg);
+}
+
+h1 { /*header uses blitzbold font*/
+  font-family: blitzbold, helvetica;
+  text-align: center;
+  font-style: italic;
+  line-height: 0.8; /*space these better*/
+}
+
+h3 {
+  margin-top: 0.75em;
+  margin-bottom: 0.35em;
+  font-style: italic;
+  color: var(--navlink);
+  font-size: 1.25em; /*scales a bit nicer i think*/
+}
+
+i { /*this gets used in the depths*/
+  display: inline-block;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center;
+  font-family: deepsea, helvetica;
+  color: var(--darkentextactive);
+}
+
+i:hover {
+  color: var(--darkentext);
+}
+
+ul { /*unordered list*/
+  margin-bottom: 0.35em;
+  margin-top: 0.35em;
+  padding-left: 2em; /*was 40px before, didn't scale well*/
+}
+
+hr {
+  color: var(--highlight);
+  background-color: var(--highlight);
+  border-width: 0.1vh;
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  margin-top: 1.2vh;
+  margin-bottom: 1.2vh;
+  border-style: solid;
+}
+
+textarea { /*used enough and should have same styling in the different areas!*/
+  min-width: 65%;
+  height: 4em;
+  resize: none;
+  font-size: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  color: white;
+  max-width: 100%;
+}
+
+a {
+  font-family: nindot, helvetica;
+}
+
+a:link { /*styles links*/
+  color: var(--linkcol);
+}
+
+a:visited { /*styles visited links*/
+  color: var(--linkcol);
+}
+
+a:hover { /*styles links on hover*/
+  color: var(--linkcolhover);
+}
+
+a:active { /*styles links on click*/
+  color: var(--linkcolactive);
+}
+  
+.background::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none; /*mouse does nothing*/
+}
+
+#background1::before {
+  content: "";
+  background-image: url('/images/memstyle/octpattern.png');
+  background-size: 372px;
+  animation: scrollingleft 48s infinite linear;
+  pointer-events: none; /*mouse does nothing*/
+  z-index: -101;
+  opacity: 0.75;
+  background-repeat: repeat;
+}
+
+@keyframes scrollingleft { /*background animation (starts shifted slightly)*/
+  0% {
+    background-position: -100px -200px;
+  }
+  to {
+    background-position: -472px -200px; /*DOESN'T WORK!!! use pixels but also tweak the size of the images themselves, mask-position for the upper and lower bars, i.e the mem cakes page on the splatoonlore.ink site*/
+  } /* x-axis, y-axis end locations*/
+}
+
+#background2::before { /*coloured*/
+  content: "";
+  background-image: url('/images/memstyle/octpattern2.png');
+  background-size: 700px;
+  animation: scrollingleft2 106s infinite linear;
+  z-index: -100;
+  opacity: 0.25;
+  background-repeat: repeat;
+}
+
+@keyframes scrollingleft2 { /*background animation (starts shifted slightly)*/
+  0% {
+    background-position: -100px -120px;
+  }
+  to {
+    background-position: -800px -120px; /*DOESN'T WORK!!!*/
+  } /* x-axis, y-axis end locations*/
+}
+
+.center {
+  max-width: 100%;
+  width: 800px;
+  margin: auto;
+}
+
+.content {
+  background-color: var(--background);
+  color: var(--textcol); /*specifices the text colour*/
+  font-family: blitzmain, helvetica;
+  line-height: 1.35;
+  padding: 1vh;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow); /*the 'glow*/
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+@media (max-width: 1250px) { /*mobile, quicker scrolling to sell effect better*/
+  #background1::before {
+    animation: scrollingleft 48s infinite linear;
+  }
+  
+  #background2::before {
+    animation: scrollingleft2 102s infinite linear;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #background1::before {
+    animation: none;
+  }
+  
+  #background2::before {
+    animation: none;
+  }
+}

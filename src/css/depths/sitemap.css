@@ -1,0 +1,225 @@
+a {
+  font-family: nindot, helvetica;
+}
+
+a:link { /*styles links*/
+  color: var(--navlink);
+}
+
+a:visited { /*styles visited links*/
+  color: var(--navlink);
+}
+
+a:hover { /*styles links on hover*/
+  color: var(--navlinkhover);
+}
+
+a:active { /*styles links on click*/
+  color: var(--navlink);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.45em;
+  line-height: 1;
+}
+
+hr {
+  margin-top: 0.25em;
+  margin-bottom: 0.45em;
+}
+
+details[open] summary ~ * .sitemaplinktitle { /*once details opened, any sibling element after summary, sitemaplinktitle inside of that*/
+  animation: boxshow .2s ease-in-out;
+}
+
+details[open] summary ~ * .sitemaplinkdesc {
+  animation: boxshow .2s ease-in-out;
+}
+
+@keyframes boxshow {
+  0%    {opacity: 0.5;}
+  100%  {opacity: 1;}
+}
+
+.styleseparator {
+  padding-bottom: 1vh;
+}
+
+.stationA {
+  --stationcolour: var(--stationcolA)
+}
+
+.stationB {
+  --stationcolour: var(--stationcolB)
+}
+
+.stationC {
+  --stationcolour: var(--stationcolC)
+}
+
+.stationD {
+  --stationcolour: var(--stationcolD)
+}
+
+.stationE {
+  --stationcolour: var(--stationcolE)
+}
+
+.stationP {
+  --stationcolour: var(--stationcolP)
+}
+
+.stationDepth {
+  --stationcolour: var(--stationcolDepth)
+}
+
+.stationBlank {
+  --stationcolour: var(--stationcolBlank)
+}
+
+.sitemaplinkdisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: blitzbold, helvetica;
+  min-width: 80px;
+}
+
+.sitemaplinkdisplay::before {
+  content: "";
+  position: absolute;
+  height: 160px; /*doesn't get affected by overflow: hidden;? revisit*/
+  width: 10px;
+  background-image: linear-gradient(0deg, var(--stationcolour), var(--stationcolour), var(--stationcolour), var(--stationcolour), rgba(0,0,0,0)); /*replaces the stationcolor for each different line, this way i don't need to clone the code like 7 times lol*/
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.4vh var(--stationcolour)); /*just the one filter for this*/
+  z-index: 1;
+}
+
+.stationimg { /*station icons lifted from cqstyle*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.08vh var(--stationcolour))
+          drop-shadow(0 0 0.8vh var(--stationcolour));
+  z-index: 2;
+}
+
+.stationimg img { /*affects image seperately, doesn't lessen the filters*/
+  opacity: 0.9;
+}
+
+.sitemaplink:hover .stationimg img { /*on hover*/
+  opacity: 1;
+}
+
+.sitemaplink:hover .stationimg { /*on hover*/
+  filter: drop-shadow(0 0 0.1vh var(--stationcolour))
+          drop-shadow(0 0 1vh var(--stationcolour));
+}
+
+.styleseparator > section:last-of-type .sitemaplink:last-child .sitemaplinkdisplay::before { /*there's probably an easier way to select this, linkdisplay:before in the last container in the last section in content*/
+  background-image: linear-gradient(0deg, rgba(0,0,0,0), var(--stationcolour), var(--stationcolour), var(--stationcolour), rgba(0,0,0,0)); /*makes the gradient trail off into the end, instead of remaining solid*/
+}
+
+.styleseparator > section:first-of-type .sitemaplink:first-child  { /*first of the sitemaplinks in the section, much easier selection*/
+  border-top: 0.1vh solid;
+}
+
+.sitemaplink { /*border styling*/
+  position: relative;
+  border-top: none;
+  border-image: linear-gradient(90deg, rgba(0,0,0,0), var(--stationcolour), var(--stationcolour), var(--stationcolour), rgba(0,0,0,0)) 1;
+  border-bottom: 0.1vh solid;
+}
+
+.sitemaplinkcontainer {
+  display: flex;
+  height: 110px;
+  width: 100%;
+  font-family: blitzmain, helvetica;
+  text-decoration: none;
+  position: relative; /*makes other parts work! namely the notation*/
+}
+
+.sitemaplinknotation { /*bottom right element, little bit of flavour text*/
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  font-family: deepsea, blitzbold, helvetica;
+  font-size: 0.66em;
+  color: rgba(0, 172, 104, 1);
+  opacity: 0.35;
+  mix-blend-mode: saturation;
+  white-space: nowrap;
+  line-height: 1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sitemaplink:hover .sitemaplinknotation { /*on hover*/
+  opacity: 0.7;
+}
+
+.sitemaplinktitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: blitzbold, helvetica;
+  font-style: italic;
+  text-align: center;
+  width: 80%;
+}
+
+.sitemaplinkdesc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+summary {
+  display: flex;
+}
+
+.sitemaplinkdropdown { /*element you click for dropdown, this is purely styling though*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: blitzbold, helvetica;
+  text-align: center;
+  background-image: linear-gradient(90deg, var(--background), rgba(0,0,0,0)); /*fadeout looks better with the new borders*/
+  border-image: linear-gradient(0deg, rgba(0,0,0,0), var(--stationcolour), rgba(0,0,0,0)) 1;
+  border-left: 0.1vh solid;
+  width: 48px;
+  min-width: 48px;
+  user-select: none;
+}
+
+.sitemaplinkdropdown img {
+  width: 90%;
+  opacity: 0.3;
+  transform: rotate(-90deg);
+}
+
+details[open] summary .sitemaplinkdropdown img {
+  transform: rotate(0deg);
+}
+
+.sitemaplinkcontainer:hover ~ .sitemaplinkdropdown img { /*on hover*/
+  opacity: 0.4;
+}
+
+.sitemaplinkdropdown:hover img { /*on hover*/
+  opacity: 0.75;
+}
+
+.sitemaplinkpadding { /*to be used when there's no dropdown, maintains the spacing*/
+  width: 48px;
+  min-width: 48px;
+}

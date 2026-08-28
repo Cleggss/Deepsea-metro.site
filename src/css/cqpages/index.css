@@ -1,0 +1,398 @@
+.mainflex {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.mainleft {
+  display: grid;
+  grid-template-areas: /*names all the grid areas, pretty in inspect*/
+  "poem sidebar"
+  "main sidebar"
+  "upto sidebar";
+  grid-template-columns: 67fr 33fr; /*how much space columns/rows take up, sidebar is 20% of the content element in this case*/
+  grid-template-rows: 20fr 43fr 37fr; /*fr instead of %, only uses available space*/
+  grid-gap: 1vh;
+  width: 77%;
+  height: 100%;
+}
+
+.mainpoem {
+  display: flex;
+  align-items: center;
+  justify-content: center; /*align to center etc*/
+  overflow: hidden;
+}
+
+.mainpoem img {
+  height: auto;
+  width: 100%;
+  margin: auto;
+  object-fit: contain;
+  max-height: 100%; /*stops it overflowing and messing up the entire layout*/
+}
+
+.mainabout {
+  box-sizing: border-box;
+  grid-row: 2;
+  grid-column: 1;
+  height: 100%;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  padding: 1vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.testimonialmarquee {
+  animation: 12s linear infinite scroll;
+}
+
+.testimonialmarquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.testimoniesbody {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.testimoniesbody hr { /*hr for the hostages section*/
+  width: 95%;
+  border-style: dotted;
+  margin-top: 0.85vh;
+  margin-bottom: 0.85vh;
+}
+
+.maincarousel {
+  box-sizing: border-box;
+  grid-row: 3;
+  grid-column: 1;
+  display: flex;
+  height: 100%;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.carouselbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--backgroundgreen);
+  box-shadow: 0px 0px 1.6vh var(--highlightshadow);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 100%;
+  width: 100%;
+  font-family: deepsea;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.carouselbutton:hover {
+  box-shadow: 0px 0px 1.8vh var(--highlightshadowhover);
+}
+
+.info {
+  background-color: var(--background);
+  font-family: nindot, helvetica;
+  border-top: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+}
+
+.info h2 {
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 2em;
+}
+
+.mainvr { /*converts to a hr for mobile scaling, this the stuff of genuine beauty bro*/
+  min-width: 0.2vh;
+  width: 0.2vh;
+  height: 100%;
+  color: var(--highlight);
+  background-color: var(--highlight);
+  border-width: 0;
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  margin-left: 0.85vh;
+  margin-right: 0.85vh;
+}
+
+.mainright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vh;
+  width: 23%;
+  height: 100%;
+}
+
+.mainsidebar {
+  grid-row: 1/4;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.mainsidebarhead {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center; /*no specified height means that it only shows as much as it needs to, the image in this case*/
+}
+
+.mainsidebarhead img {
+  object-fit: contain;
+  width: 100%;
+}
+
+.mainsidebarbody {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%; /*as much as it can take up*/
+  padding: 0.5vh;
+  box-sizing: border-box;
+}
+
+.nametitle { /*title for name area*/
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 0.5vh;
+  width: 100%;
+  line-height: 1;
+  font-size: 3vh;
+  font-family: blitzbold, helvetica;
+  color: var(--coritextcol);
+  background-color: var(--background);
+  border-bottom: 0.1vh dashed var(--textcol);
+  overflow: hidden;
+  background-image: url('/images/kam.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-blend-mode: screen;
+}
+
+.nametitle p {
+  padding-bottom: 0.2em;
+}
+
+.sidebarinfo a {
+  text-decoration: none;
+  color: var(--darkentext);
+}
+
+.sidebarinfo a:visited {
+  color: var(--darkentext);
+}
+
+.sidebarinfo a:hover {
+  color: var(--darkentexthover);
+}
+
+.sidebarinfo a:active {
+  color: var(--darkentextactive);
+}
+
+.sidebarinfo img { /*just gonna be used for the octo pixels i think*/
+  height: 0.9em;
+}
+
+.mainsidebarbuttons { /*minimised version of lowerlinks*/
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0.3vh;
+  margin-bottom: 0.3vh; /*keeps it tidy*/
+}
+
+.mainsidebarbuttons img { /*lowerlinks code again, for the 88x31 buttons*/
+  image-rendering: pixelated;
+  width: 88px;
+  height: auto; /*for scaling*/
+  max-width: 100%;
+}
+
+.testimonials { /*container for testimonials*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 60%;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.testimonialsinner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hostage { /*for 1 person, flex container for it*/
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 auto;
+  align-items: center;
+  width: 92%;
+  margin: auto;
+  flex-direction: row;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  padding: 0.5vh;
+  overflow: hidden;
+}
+
+.hostage section { /*if in section, center*/
+  justify-content: center;
+}
+
+.hostageprofileimg { /*for the person's profile*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-right: 0.5vh;
+  min-width: 4vh;
+  width: 4vh;
+  border-radius: 0.75vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+  aspect-ratio: auto 1 / 1;
+}
+
+.hostageprofileimg img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hostagewords { /*centers the text in the words element*/
+  width: 100%;
+  text-align: center;
+}
+
+.webrings { /*webrings box*/
+  width: 100%;
+  height: 40%;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 0.5vh;
+}
+
+@media (max-width: 1250px) { /*mobile styling*/
+
+  .mainflex {
+    flex-direction: column; /*this is my best idea ever dude holy shit*/
+  }
+  
+  .mainleft {
+    grid-gap: 1vw;
+    grid-template-rows: 20fr 46fr 34fr; /*tweaked the row slightly, bottom fits in mildly better*/
+    width: 100%;
+    height: 76%;
+  }
+  
+  .mainabout {
+    padding: 1vw;
+  }
+  
+  .mainvr {
+    margin-top: 0.85vw;
+    margin-bottom: 0.85vw;
+    min-height: 0.2vw;
+    height: 0.2vw;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .mainsidebarbody {
+    padding: 1vw;
+  }
+  
+  .mainright {
+    gap: 1vw;
+    width: 100%;
+    height: 23%;
+    flex-direction: row;
+  }
+  
+  .testimonials {
+    height: 100%;
+    width: 50%;
+  }
+  
+  .hostage {
+    padding: 0.5vw;
+    border-radius: 1vw;
+  }
+  
+  .webrings {
+    height: 100%;
+    width: 50%;
+  }
+  
+  .nametitle {
+    font-size: 4vw;
+  }
+  
+  .hostageprofileimg {
+    margin-right: 0.5vw;
+    min-width: 4vw;
+    width: 4vw;
+    border-radius: 1vw;
+  }
+  
+  .webrings {
+    padding: 0.5vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialmarquee { /*stops marquee with prefer reduced motion*/
+    animation: none; 
+  }
+}

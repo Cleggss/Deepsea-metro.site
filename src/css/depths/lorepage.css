@@ -1,0 +1,286 @@
+:root {
+  --kamabotextcol: rgba(79, 145, 167, 1); /*ONLY USED IN LORE! kamabo text colour*/
+  --armytextcol: rgba(147, 0, 18, 1); /*ONLY USED IN LORE! army text colour*/
+}
+
+details {
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+}
+
+details p { /*extra spacing for when expanded*/
+  margin-top: 0.35em;
+  margin-left: 0.7em;
+  font-size: 0.8em;
+}
+
+details p span {
+  color: var(--darkentext);
+}
+
+summary {
+  color: var(--highlight);
+}
+
+summary:hover {
+  color: var(--highlightshadowhover);
+}
+
+summary:active {
+  color: var(--darkentextactive);
+}
+
+details[open] summary ~ * {
+  animation: textshow .3s ease-in-out;
+}
+
+@keyframes textshow {
+  0%    {opacity: 0.5; transform: scale(0.99);}
+  100%  {opacity: 1; transform: scale(1);}
+}
+
+/*texts*/
+
+.titletext {
+  color: var(--navlink);
+}
+
+.titletext:link {
+  color: var(--navlink);
+}
+
+.titletext:visited {
+  color: var(--navlink);
+}
+
+.titletext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.titletext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+.kamabotext {
+  color: var(--kamabotextcol);
+}
+
+.kamabotext:link {
+  color: var(--kamabotextcol);
+}
+
+.kamabotext:visited {
+  color: var(--kamabotextcol);
+}
+
+.kamabotext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.kamabotext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+.armytext {
+  color: var(--armytextcol);
+}
+
+.armytext:link {
+  color: var(--armytextcol);
+}
+
+.armytext:visited {
+  color: var(--armytextcol);
+}
+
+.armytext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.armytext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+/*end*/
+
+.navarea {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--backgroundgreen);
+  color: var(--textcol); /*specifices the text colour*/
+  font-family: blitzmain, helvetica;
+  padding: 1vh;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow); /*the 'glow*/
+  overflow: hidden;
+  height: 300px;
+  margin-bottom: 35px;
+  backdrop-filter: blur(5px);
+}
+
+.navarea h1 {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.navarea p {
+  font-size: 0.75em;
+  line-height: 1.2;
+  font-style: italic;
+  color: var(--darkentext);
+}
+
+.navareatop { /*text*/
+  height: 160px;
+}
+
+.navareamap {
+  height: 140px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr; /*1/3*/
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /*1/14*/
+}
+
+.stationHighlight {
+  --stationcolour: var(--highlight)
+}
+
+.stationDepth {
+  --stationcolour: var(--stationcolDepth)
+}
+
+.stationPreSaniCori {
+  --stationcolour: var(--presanicoritextcol)
+}
+
+.stationCorikamabo {
+  --stationcolour: var(--stationcolCorikamabo)
+}
+
+.stationMeeting {
+  --stationcolour: var(--stationcolMeeting)
+}
+
+.stationCori {
+  --stationcolour: var(--coritextcol)
+}
+
+.stationLumine {
+  --stationcolour: var(--luminetextcol)
+}
+
+.navareastation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-height: 1fr;
+  max-width: 1fr;
+}
+
+.navareamap section { /*prevents the section from falling to 1 grid space*/
+  display: contents;
+}
+
+.navareastation::before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 75px;
+  background-image: linear-gradient(270deg, var(--stationcolour), var(--stationcolour), var(--stationcolour), var(--stationcolour), rgba(0,0,0,0)); /*replaces the stationcolor for each different line, this way i don't need to clone the code like 7 times lol*/
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.4vh var(--stationcolour)); /*just the one filter for this*/
+}
+
+section.stationline > section:last-child .navareastation:last-of-type::before { /*last of the last station in a stationline section, yaaay*/
+  background-image: linear-gradient(270deg, rgba(0,0,0,0), var(--stationcolour), var(--stationcolour), var(--stationcolour), rgba(0,0,0,0)); /*makes the gradient trail off into the end, instead of remaining solid*/
+}
+
+.stationimg { /*station icons lifted from cqstyle*/
+  display: flex;
+  position: relative; /*to make z-index work*/
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.08vh var(--stationcolour))
+          drop-shadow(0 0 0.8vh var(--stationcolour));
+  z-index: 1;
+}
+
+.stationimg img { /*affects image seperately, doesn't lessen the filters*/
+  opacity: 0.6;
+}
+
+.navareastation a:hover .stationimg img { /*on hover*/
+  opacity: 1;
+}
+
+.navareastation a:hover .stationimg { /*on hover*/
+  filter: drop-shadow(0 0 0.1vh var(--stationcolour))
+          drop-shadow(0 0 1vh var(--stationcolour));
+}
+
+#mainarea h1 {
+  margin-bottom: 0;
+}
+
+#mainnav { /*page nav in main area*/
+  padding: 0.5vh;
+  width: 100%;
+  margin-bottom: 0.35vh;
+  margin-top: 0.35vh;
+  border-radius: 0.5vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow); /*the 'glow*/
+  background-color: var(--background);
+  font-family: nindot, helvetica;
+  overflow: hidden;
+  text-align: center;
+}
+
+#mainnav h3 {
+  margin-top: 0;
+  font-family: nindot, helvetica;
+  color: var(--highlight);
+}
+
+.right {
+  float: right;
+  display: flex; /*to center images, stop weird bar at bottom*/
+  width: 20%;
+  margin-left: 0.5vh;
+  margin-bottom: 0.2vh;
+  border-radius: 0.5vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.right img {
+  object-fit: fill;
+  width: 100%;
+}
+
+.left {
+  float: left;
+  display: flex; /*to center images, stop weird bar at bottom*/
+  width: 20%;
+  margin-right: 0.5vh;
+  margin-bottom: 0.2vh;
+  border-radius: 0.5vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.left img {
+  object-fit: fill;
+  width: 100%;
+}

@@ -1,0 +1,38 @@
+---
+title: Deepsea Metro • My stuff
+layout: base.njk
+style: /css/cqpages/mystuff.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "The character you've chosen is brimming with countless possibility. Your input breathes life into the character and will lead you to victory. If you put on your best performance, the character will definitely answer back in kind.",
+      "they call him 007... 0 finished artworks. 0 socials posted to. 7 pieces he'll finish up later...",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+<h1>My stuff</h1>
+<div class="menuflex">
+    <div class="btnouter"><a href="/mystuff/myart/" class="btnwrapper"><span class="mystuffbtn"><p>My Art</p></span></a></div>
+    <div class="btnouter"><a href="/box/pokemon/" class="btnwrapper"><span class="mystuffbtn"><p>Pokémon</p></span></a></div>
+    <div class="btnouter"><a href="/mystuff/foryou/" class="btnwrapper"><span class="mystuffbtn"><p>For you!</p></span></a><p>you can also find my buttons in <a href="/links/">links</a>!</p></div>
+</div>

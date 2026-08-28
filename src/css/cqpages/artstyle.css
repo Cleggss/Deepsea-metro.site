@@ -1,0 +1,112 @@
+.artflex {
+    display: flex;
+    width: 100%;
+}
+
+.artcolumn {
+    flex: 33%;
+    padding: 0.35vh;
+}
+
+.artflexbox {
+    margin-top: 0.5vh;
+    border-radius: 0.5vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0px 0px 2vh var(--highlightshadow);
+    background-color: var(--background); /*for transparent images*/
+    overflow: hidden;
+}
+
+.artflexbox p {
+    text-align: center;
+    margin: 0.25vh auto;
+    font-family: nindot, helvetica;
+    font-size: 1.5vh;
+}
+
+.artcolumn img {
+    vertical-align: middle;
+    border-bottom: 0.1vh solid var(--highlight);
+    width: 100%;
+    box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+    user-select: none;
+}
+
+.artannotatefield { /*styling the annotation field, place below img*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 2.5vh;
+    background-color: var(--backgroundgreen);
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.artannotatefield img {
+    opacity: 0.9;
+    border-bottom: none;
+    height: 100%;
+    width: 100%;
+    box-shadow: none;
+}
+    
+.artannotatefield img:hover {
+    opacity: 1;
+}
+
+.ocimg { /*dashed right border*/
+    display: flex;
+    width: 2.5vh;
+    min-width: 2.5vh;
+    height: 2.5vh;
+    border-right: 0.1vh dashed var(--highlight);
+    overflow: hidden;
+    box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+    user-select: none;
+    pointer-events: none;
+}
+    
+.ocimgright { /*taken from station img, use when the rightmost icon*/
+    display: flex;
+    width: 2.5vh;
+    min-width: 2.5vh;
+    height: 2.5vh;
+    border-right: 0.1vh solid var(--highlight);
+    overflow: hidden;
+    box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+    user-select: none;
+    pointer-events: none;
+}
+
+.octext { /*takes up 100% and shifts for min-width!*/
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#backheader { /*back button, copied from ocs page, since this should only really be a gallery view for myart now*/
+  margin-bottom: 0.4em;
+}
+
+#backheader a {
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+#backbutton {
+  opacity: 0.4;
+  width: 0.8em;
+}
+
+#backbutton:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 1250px) { /*mobile, scales it to 100% width*/
+    .artflexbox p {
+    font-size: 1.5vw; /*this works well enough!!*/
+    }
+}

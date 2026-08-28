@@ -1,0 +1,254 @@
+.links {
+    display: grid;
+    grid-template-areas: /*names all the grid areas, pretty in inspect*/
+    "link1 link2 link3"
+    "lower1 lower2 lower3";
+    grid-template-columns: 33fr 33fr 33fr; /*how much space columns/rows take up, sidebar is 20% of the content element in this case*/
+    grid-template-rows: 47fr 53fr;
+    grid-gap: 0.5vh;
+    height: 68vh;
+    font-size: 0.9em;
+  }
+  
+  .linkbox {
+    grid-row: 1;
+    border-radius: 1vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0px 0px 2vh var(--highlightshadow);
+    background-color: var(--background);
+    overflow: hidden;
+  }
+
+  .linkbox a { /*the actual element, though, it'll always be assigned to an a? not sure why im styling it lol*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: var(--navlink);
+  }
+
+  .linksinner {
+    width: 100%;
+    height: 100%;
+    padding: 0.5vh;
+    padding-left: 1.75vh;
+    padding-right: 1.75vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .linkbox img {
+    opacity: 0.9;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .linkbox hr {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+  
+  .linkboxbutton { /*taken from navbar styling*/
+    font-size: 1.6vh;
+    margin: 0.8vh auto;
+    margin-bottom: 0.2vh;
+    margin-top: 0.2vh;
+    width: 95%;
+    height: 2.3vh;
+    box-shadow: 0px 0px 1vh var(--highlightshadow);
+    background-color: var(--backgroundgreen);
+    border: 0.1vh solid var(--highlight);
+    border-radius: 0.5vh;
+    overflow: hidden;
+    box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+  }
+  
+  .linkbox a:hover { /*on hover*/
+    color: var(--navlinkactive);
+  }
+  
+  .linkboxbutton a:hover > .stationimg img {
+    opacity: 1;
+  }
+  
+  .linkboxbutton:hover {
+    box-shadow: 0px 0px 1.2vh var(--highlightshadowhover);
+  }
+
+  .lowerlinks {
+    display: flex;
+    flex-direction: column;
+    grid-row: 2;
+    grid-column: 1/4;
+    border-radius: 1vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0px 0px 2vh var(--highlightshadow);
+    background-color: var(--background);
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .linkboxcolumncontainer {
+    display: flex;
+    gap: 0.35vh;
+  }
+  
+  .linkboxcolumn {
+    flex: 50%;
+  }
+  
+  #mybuttonarea {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1vh;
+  }
+  
+  .mybuttonsflex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 0.3vh;
+    margin-bottom: 0.3vh;
+  }
+  
+  #mybuttonarea a { /*undoing some of the linbox styling...*/
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+  
+  #mybuttonarea img {
+    width: auto;
+    height: auto;
+    image-rendering: pixelated;
+    opacity: 1;
+  }
+  
+  #mybuttonarea img:hover { /*cloned from lowerlinks*/
+    filter: drop-shadow(0 0 1vh var(--highlightshadow));
+  }
+  
+  #octpixelcontainer {
+    font-size: 0.75em;
+    color: var(--luminetextcol);
+  }
+  
+  #octpixelcontainer img {
+    height: 0.9em;
+    width: auto;
+  }
+  
+  #seperatesection { /*this is kinda just for me behind the scenes lol, hello!!*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3px;
+  }
+  
+  .lowerlinksbuttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3px;
+  }
+  
+  .lowerlinksbuttons a { /*keeps the buttons nice and pixelated */
+    width: 88px;
+    height: 31px;
+    image-rendering: pixelated;
+    aspect-ratio: auto 88 / 31;
+    display: block;
+  }
+  
+  .lowerlinksblinkies { /*same but for blinkies*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3px;
+  }
+  
+  .lowerlinksblinkies a { /*keeps the blinkies nice and pixelated */
+    width: 150px;
+    height: 20px;
+    image-rendering: pixelated;
+    aspect-ratio: auto 150 / 20;
+    display: block;
+  }
+  
+  .lowerlinks hr { /*headers in lowerlinks section*/
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+   
+  .lowerlinks h1 { /*headers in lowelinks section*/
+    margin-top: 0.35vh;
+    margin-bottom: 0.85vh;
+  }
+  
+  .lowerlinks p { /*paragraph elements in lowerlinks section*/
+    margin-top: 1vh;
+    margin-bottom: 0.75vh;
+    font-size: 0.9em;
+  }
+  
+  .lowerlinksbuttons img:hover {
+    filter: drop-shadow(0 0 1vh var(--highlightshadow)); /*wraps around non-rectangular buttons*/
+  }
+  
+  .nobutton { /*shamelessly remade from lazer-bunny...*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 31px;
+    border-top: 2px solid var(--highlightshadow);
+    border-left: 2px solid var(--highlightshadow);
+    background: var(--backgroundgreen);
+    border-bottom: 2px solid var(--background);
+    border-right: 2px solid var(--background);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1;
+    overflow-wrap: break-all;
+    text-decoration: none;
+    overflow: hidden;
+  }
+  
+  .nobutton:hover {
+    box-shadow: 0px 0px 1vh var(--highlightshadow); /*highlight on hover!*/
+  }
+  
+  @media (max-width: 1250px) { /*mobile, scales it to 100% width*/
+    
+    .linksinner {
+      padding: 1vw;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      font-size: calc(1.7vw + 5px);
+    }
+    
+    .linkboxcolumncontainer { /*this is the literal most smart mobile scaling ive ever done dude like genuinely try this out for yourself im so good at css dude*/
+      display: block;
+      gap: 0;
+    }
+    
+    .lowerlinks hr {
+      margin-top: 1vw;
+      margin-bottom: 1vw;
+    }
+   
+    .lowerlinks h1 {
+      margin-top: 1vw;
+      margin-bottom: 1.25vw;
+    }
+  
+    .lowerlinks p {
+      margin-top: 1vw;
+      margin-bottom: 0.75vw;
+      font-size: 2vw;
+    } /*lotta the same lol, this section needs the most scaling to look alright*/
+    
+  }

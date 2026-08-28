@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{{ themecolour }}">
+    <meta property="og:site_name" content="Deepsea Metro">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ embedimage }}">
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/x-icon" href="/images/{{ loreyn }}favicon.ico"> 
+    <link href="/css/variables.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/depthsstyle.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ style }}{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/tooltips/tippy-stylesheet.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <div class="background" id="background1"></div>
+    <div class="background" id="background2"></div>
+    <div class="center">
+      {{ content | safe }}
+    </div>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="/tooltips/tippy-deco.js"></script>
+  </body>
+</html>

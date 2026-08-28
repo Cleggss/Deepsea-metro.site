@@ -1,0 +1,60 @@
+---
+title: Deepsea Metro • Devlog
+layout: base.njk
+style: /css/cqpages/blogdevlogstyle.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "[Dr Ivo Robotnik, STH] \"My sin is about to be murdering you. Get away from me. Do you see what I've become? Do you see what I've created? I've turned the sky into a fuchsia Windows background! I killed the Deku Tree back there! I am the Egg Cracker!\"",
+      "Stone flies as I walk, \"Soulless\" they spit out. Who can solve for sorrow?",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+<h1>Devlog</h1>
+<p>Where I'll be posting various things im working on! be prepared for long absences as I get bored pretty easily doing the same thing over and over again...</p>
+<hr>
+<div class="blogs">
+  <div class="blogcontainervideo">
+    <div class="blogheader">
+      <div class="blogheader1"></div>
+      <div class="blogheader2">
+        <div class="blogheader2kam"></div>
+        <div class="blogheader2darken"><img src='/images/cqstyle/blogandevlog/hazy.png' loading="lazy" alt=""></div>
+      </div>
+      <div class="blogheader3"></div>
+      <div class="blogheader4" style="color: var(--stationcolORD);"><img src='/images/cqstyle/blogandevlog/orddevlog.png' loading="lazy" alt="ORD"></div>
+      <div class="blogheader5"></div>
+      <div class="blogheader6">
+        <div class="blogheader6quote">"i mean, it's TECHNICALLY the second one"</div>
+        <div class="blogheader6title">Progress update</div>
+      </div>
+    </div>
+    <div class="blogcontentvideo">
+      <div class="blogcontentprevideo">
+        <aside class="blogdatevideo">10/06/2026</aside>
+        <div class="blogtextprevideo">latest update! it's improved since but i should atleast push this to the site lol</div>
+      </div>
+      <div class="blogvideo"><iframe width="90%" height="100%" src="https://www.youtube.com/embed/xjFWFWXfjXU"></iframe></div>
+    </div>
+  </div>
+</div>

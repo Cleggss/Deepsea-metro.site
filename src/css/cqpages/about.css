@@ -1,0 +1,287 @@
+.aboutflex {
+    display: grid;
+    grid-template-areas:
+    "topleft sidebar" 
+    "main sidebar" 
+    "bottomleft sidebar";
+    grid-template-columns: 67fr 33fr;
+    grid-template-rows: 7fr 85fr 8fr;
+    grid-gap: 1vh;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .topscrollcontainer {
+    grid-row: 1;
+    grid-column: 1;
+    border-left: 0.1vh solid var(--highlight);
+    border-right: 0.1vh solid var(--highlight);
+    margin: 0.25em;
+    overflow: hidden;
+  }
+  
+  .topscrollmarquee { /*class applied to the actual marquee element*/
+    animation: 15s ease-in-out infinite robokyscroll;
+    display: flex;
+    justify-content: flex-end; /*end of the container*/
+    white-space: nowrap;
+    height: 100%;
+    width: 100%; /*max of the width of the area, messy solution*/
+  }
+  
+  @keyframes robokyscroll {
+    0% {
+      transform: translatex(50%);
+    }
+    to {
+      transform: translatex(-150%); /*plenty spare room, he'll dissapear for a bit too*/
+    }
+  }
+  
+  .topscrollmarquee img { /*forgot to apply this cause of a typo forever lol*/
+    height: 100%;
+    width: auto;
+    flex-shrink: 0;
+    user-select: none;
+  }
+  
+  .bottomscrollcontainer { /*background styling of the marquee*/
+    grid-row: 3/4;
+    grid-column: 1;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    border-left: 0.1vh solid var(--highlight);
+    border-right: 0.1vh solid var(--highlight);
+    box-shadow: 0 0 2vh var(--highlightshadow);
+    margin: 0.25em;
+    overflow: hidden;
+  }
+  
+  .bottomscrollmarquee { /*the actual marquee scroll*/
+    animation: 23s linear infinite scrolltoleft;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    height: 100%;
+    width: max-content; /*registers 50% as the middle of the maximun amount of content*/
+  }
+  
+  .bottomscrollmarquee img { /*images inside, sets their heights to 90% and prevents them from shrinking*/
+    height: 90%;
+    width: auto;
+    flex-shrink: 0;
+    margin-right: 0.25em; /*use this over gap for a flawless scroll!*/
+    user-select: none;
+  }
+  
+  .bottomscrollmarquee:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scrolltoleft {
+    0% {
+      transform: translatex(0);
+    }
+    to {
+      transform: translatex(-50%);
+    }
+  }
+  
+  .aboutcontent {
+    grid-row: 2;
+    grid-column: 1;
+    height: 100%;
+    border-radius: 3.5vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0 0 2vh var(--highlightshadow);
+    background-color: var(--background);
+    height: 100%; /*needs this to work with the wrapper*/
+    padding: 1vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .aboutcontent img { /*just for the image next to the h1, img class doesnt work*/
+    width: 1.3em;
+    margin-bottom: -1.5vh;
+    user-select: none;
+  }
+  
+  .aboutcontent h1 { /*spaces it better, since it'll likely wrap on mobile*/
+    line-height: 100%;
+  }
+  
+  .aboutcontent h3 { /*questions styling, just for this page too*/
+    font-family: blitzbold, helvetica;
+    margin-top: 1em;
+  }
+  
+  #questions p {
+    margin-left: 0.7em;
+  }
+  
+  .cleggsaside { /*goobie*/
+    float: right;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    width: 28%;
+    margin-top: -0.4vh; /*takes up less area, but is a bigger image*/
+    margin-right: -0.7vh; /*especially handy for mobile!*/
+  }
+  
+  .cleggsaside img {
+    width: 100%;
+    margin-bottom: auto; /*cancels out*/
+    user-select: none;
+  }
+
+  .aboutsidebar {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/4;
+    grid-column: 2;
+    border-radius: 3.5vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0 0 2vh var(--highlightshadow);
+    background-color: var(--background);
+    height: 100%; /*needs this to work with the wrapper*/
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .aboutsidebarinner { /*to work with the chattitle element*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1vh;
+  }
+  
+  .sidebarflex { /*character... grid containers, align them in rows*/
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(9vh, (100% - 2rem) / 3), 1fr)); /*min 3 columns*/
+    justify-content: center;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    gap: 0.1vh;
+  }
+  
+  .sidebarchar { /*character boxes for flex in sidebar*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5vh;
+    box-shadow: 0 0 0.5vh var(--highlightshadow);
+    background-color: var(--background);
+    border: 0.1vh solid var(--highlight);
+    aspect-ratio: 1 / 1; 
+    overflow: hidden;
+  }
+  
+  .sidebarchar img {
+    width: 100%;
+    opacity: 0.95; /*for hover*/
+  }
+  
+  .sidebarchar:hover {
+    box-shadow: 0 0 1vh var(--highlightshadow);
+  }
+  
+  .sidebarchar:hover img {
+    opacity: 1; /*ok this is just really cute lmao*/
+  }
+  
+  .bannerflex { /*franchise flex containers, align them in rows*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    gap: 0.1vh;
+  }
+  
+  .sidebarbanner { /*game boxes for flex in sidebar*/
+    display: flex;
+    align-items: center;
+    padding-left: 1vh;
+    justify-content: left;
+    border-radius: 0.5vh;
+    box-shadow: 0 0 0.5vh var(--highlightshadow);
+    background-color: var(--background);
+    border: 0.1vh solid var(--highlight);
+    height: 9vh;
+    width: 100%; /*1/3 of available space, forces 3 games a row*/
+    aspect-ratio: 425 / 107; /*this is a very strange ratio ngl*/
+    overflow: hidden;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    opacity: 0.95; /*shhhhh it shouldnt affect the borders too but you cant notice*/
+  }
+  
+  .sidebarbanner img { /*image*/
+    opacity: 0.95;
+    width: 45%;
+    filter: drop-shadow(black 0 0 0.2em);
+  }
+  
+  .sidebarbanner:hover { /*container on hover*/
+    opacity: 1;
+    box-shadow: 0 0 1vh var(--highlightshadow);
+  }
+  
+  .sidebarbanner:hover img { /*image on hover*/
+    opacity: 1;
+  }
+  
+  @media (max-width: 1250px) { /*mobile styling*/
+    .aboutflex {
+      grid-gap: 1vw;
+    }
+    
+    .aboutcontent {
+      padding: 1vw;
+      border-radius: 2vh; /*vh is fine here honestly*/
+    }
+    
+    .cleggsaside { /*goobie*/
+      padding-left: 1vw;
+      padding-bottom: 1vw;
+      margin-top: -0.4vw;
+      margin-right: -0.7vw;
+    }
+    
+    .aboutsidebar {
+      border-radius: 2vh; /*ditto as content*/
+    }
+
+    .aboutsidebarinner {
+      padding: 1vw;
+    }
+    
+    .sidebarflex {
+      padding-top: 1.5vw;
+      padding-bottom: 1.5vw;
+      grid-template-columns: repeat(3, 1fr); /*locks chars to 3 rows*/
+    }
+    
+    .sidebarbanner {
+      height: 9vw;
+      padding-left: 0;
+      justify-content: center;
+    }
+    
+    .sidebarbanner img { /*image*/
+      width: 95%;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .topscrollmarquee {
+      animation: none; 
+    }
+        
+    .bottomscrollmarquee {
+      animation: none;
+    }
+  }

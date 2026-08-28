@@ -1,0 +1,176 @@
+/*keep this on EVERY page*/
+:root {
+  --highlight: rgb(121, 197, 178, 1); /*minty highlights, borders etc*/
+  --highlightshadow: rgba(96, 157, 142, 0.92); /*border shadows*/
+  --highlightshadowhover: rgba(96, 157, 142, 1); /*border shadows on hover*/
+
+  --bluealthighlight: #aaced6; /*game buttons' highlight*/
+  --pinkaltshadow: rgba(180, 121, 197, 0.92); /*alternative highlight shadow, for game buttons*/
+  --pinkaltshadowhover: rgba(180, 121, 197, 1); /*alternative highlight shadow on hover*/
+  
+  --background: rgba(13, 13, 13, 0.45); /*darkening bg*/
+  --backgroundgreen: rgba(5, 77, 52, 0.45); /*greenish tint*/
+  
+  --selectioncol: rgba(196, 200, 218, 1); /*text in selection*/
+  --selectionbg: rgba(22, 111, 126, 1); /*selection background*/
+  
+  --textcol: rgba(200, 218, 196, 1); /*text colour*/
+  
+  --navlink: rgba(155, 212, 173, 1); /*secondary text colour (navbar links)*/
+  --navlinkactive: rgba(226, 210, 197, 1); /*teritary text colour (clicked navbar links)*/
+  
+  --marquee: rgba(209, 141, 56, 1); /*marquee text*/
+  --marqueeshadow: rgba(137, 87, 14, 1); /*shadow for marquee text*/
+  
+  --linkcol: rgba(255, 12, 109, 1); /*link colour*/
+  --linkcolhover: rgba(255, 108, 187, 1); /*link colour (on hover)*/
+  --linkcolactive: rgba(153, 64, 112, 1); /*link colour (on click)*/
+  
+  --darkentext: rgba(81, 132, 129, 1); /*darkened text (quotes)*/
+  --darkentexthover: rgba(133, 168, 166, 1); /*darkened text (time text hovering)*/
+  --darkentextactive: rgba(64, 105, 103, 1); /*darkened text (time text click)*/
+  
+  --coritextcol: rgba(117, 217, 159, 1); /*cori dialogue colour*/
+  --luminetextcol: rgba(255, 105, 110, 1); /*lumine dialogue colour*/
+  --presanicoritextcol: rgba(158, 86, 0, 1); /*presanicori dialogue colour*/
+  --makotextcol: rgba(105, 158, 225, 1); /*mako dialogue colour*/
+
+  --stationborder: rgba(50,50,50,0.5); /*used for station borders*/
+  --stationcolA: #ffda4b; /*station A colour, picked from game*/
+  --stationcolB: #49d4e1; /*station B colour, picked from game*/
+  --stationcolC: #32f39a; /*station C colour, picked from game*/
+  --stationcolD: #6e09dc; /*station D colour, picked from game*/
+  --stationcolE: #c7cdbc; /*station E colour, picked from game*/
+
+  --stationcolH: #2239e4; /*station H colour, picked from game for blogs*/
+  --stationcolORD: #ffe3cd; /*station ORD colour, for devlogs*/
+
+  --stationcolP: #a4ea73; /*station 'P' colour, for pokemon box*/
+  --stationcolDepth: #518481; /*station 'Depth' colour, for the rest, have a seperate for lore?*/
+  --stationcolBlank: #242424; /*station colour for outside stuff*/
+  --stationcolCorikamabo: #256555; /*inbetween for presani and cori, used in lore*/
+  --stationcolMeeting: #846e8b; /*used in lore, lum & cori*/
+}
+
+/*font imports*/
+@font-face {
+  font-family: nindot; /* set name */
+  src: url('/fonts/nintendoP_DotGothic12-M.otf'); /* url of the font */
+}
+
+@font-face {
+  font-family: blitzbold; /* set name */
+  src: url('/fonts/BlitzBold.otf'); /* url of the font */
+}
+
+@font-face {
+  font-family: blitzMain; /* set name */
+  src: url('/fonts/BlitzMain.otf'); /* url of the font */
+}
+
+@font-face {
+  font-family: deepsea; /* set name */
+  src: url('/fonts/Deepsea_Stencil.otf'); /* url of the font */
+}
+
+@font-face {
+  font-family: splhalfmoon; /* set name */
+  src: url('/fonts/SplatoonHalfmoonFix.ttf'); /* url of the font */
+}
+
+@font-face {
+  font-family: rodinpro; /* set name */
+  src: url('/fonts/Rodin_Pro_B.ttf'); /* url of the font */
+}
+
+@font-face {
+  font-family: spacecowboy; /* set name */
+  src: url('/fonts/Cheltenham_Condensed_Bold_Italic.ttf'); /* url of the font */
+}
+
+* { /*it's just easier this way.*/
+  box-sizing: border-box;
+  scrollbar-width: thin;
+}
+
+/*oc text colours*/
+
+.coritext {
+  color: var(--coritextcol);
+}
+
+.coritext:link {
+  color: var(--coritextcol);
+}
+
+.coritext:visited {
+  color: var(--coritextcol);
+}
+
+.coritext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.coritext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+.luminetext {
+  color: var(--luminetextcol);
+}
+
+.luminetext:link {
+  color: var(--luminetextcol);
+}
+
+.luminetext:visited {
+  color: var(--luminetextcol);
+}
+
+.luminetext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.luminetext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+.presanicoritext {
+  color: var(--presanicoritextcol);
+}
+
+.presanicoritext:link {
+  color: var(--presanicoritextcol);
+}
+
+.presanicoritext:visited {
+  color: var(--presanicoritextcol);
+}
+
+.presanicoritext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.presanicoritext:visited:hover {
+  color: var(--navlinkactive);
+}
+
+.makotext {
+  color: var(--makotextcol);
+}
+
+.makotext:link {
+  color: var(--makotextcol);
+}
+
+.makotext:visited {
+  color: var(--makotextcol);
+}
+
+.makotext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.makotext:visited:hover {
+  color: var(--navlinkactive);
+}

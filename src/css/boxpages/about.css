@@ -1,0 +1,130 @@
+.textcontainer { /*container item, mostly background styling*/
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 5vh;
+  background-image: linear-gradient(230deg, var(--boxcontaineredge), var(--boxcontainerinner), var(--boxcontainerinner), var(--boxcontainerinner), var(--boxcontaineredge)), repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(29, 37, 27, 0.1) 2px, rgba(29, 37, 27, 0.12) 4px);
+  box-shadow: inset 0 0 2vh var(--boxlines), 0 0 1vh var(--boxlines);
+  backdrop-filter: blur(5px);
+  padding: 2vh;
+  color: var(--boxtextcol)
+}
+
+.containerleft { /*left side of container, where images go*/
+  width: 36%;
+}
+
+.containerleft img {
+  width: 70%;
+  max-height: 100%;
+  object-fit: contain;
+  float: right;
+  user-select: none;
+}
+
+.containervr {
+  min-width: 0.2vh;
+  max-width: 0.2vh;
+  height: 100%;
+  background-image: linear-gradient(0deg, rgba(210, 245, 185, 0), var(--boxlines));;
+  border-width: 0;
+  box-shadow: 0px 0px 2vh var(--boxlines);
+  margin-left: 0.85vh;
+  margin-right: 0.85vh;
+}
+
+.containerright {
+  width: 64%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.containerrightspacer {
+  width: 75%;
+}
+
+.mobileaside {
+  display: none; /*only displays on mobile styling*/
+  width: 30%;
+  float: left;
+  padding-right: 1vh;
+  padding-bottom: 1vh;
+  margin-top: -0.4vh;
+}
+
+.mobileaside img {
+  width: 100%;
+  margin-bottom: auto;
+  user-select: none;
+}
+
+.aboutgenderimg { /*it's a div to ensure it takes up the same space regardless, looks a lot neater*/
+  display: inline-block;
+  width: 1em;
+  text-align: center; /*this works to center the symbol.. somehow?*/
+}
+
+.aboutgenderimg img {
+  height: 1em;
+  margin-bottom: -0.1em;
+  pointer-events: none;
+}
+
+.galleryflex {
+  display: flex;
+  width: 100%;
+}
+
+.gallerycolumn {
+  flex: 33%;
+  padding: 0.35vh;
+}
+
+.galleryitem {
+  margin-top: 0.5vh;
+}
+
+.galleryitem p {
+  border-top: 0.2vh var(--boxbuttonaccent) solid;
+  margin-top: 0;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.65em;
+  color: var(--boxalttextcol);
+  box-shadow: 0 0 0.2vh var(--boxlines);
+  background-image: linear-gradient(230deg, var(--boxaccentedge) 0%, var(--boxaccent) 50%, var(--boxaccentedge) 100%);
+  border-radius: 0 0 1vh 1vh;
+}
+
+.gallerycolumn img {
+  vertical-align: middle;
+  width: 100%;
+  user-select: none;
+}
+
+@media (max-width: 1250px) { /*mobile*/
+  .textcontainer {
+    border-radius: 5vh;
+  }
+
+  .containerrightspacer {
+    width: 100%;
+  }
+
+  .containerleft { /*entire left section vanishes*/
+    display: none;
+  }
+
+  .containervr {
+    display: none;
+  }
+
+  .containerright { /*text content fills the entire container*/
+    width: 100%;
+  }
+
+  .mobileaside { /*new image element shows as an aside instead of an entire section to the side*/
+    display: block;
+  }
+}

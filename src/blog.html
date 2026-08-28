@@ -1,0 +1,62 @@
+---
+title: Deepsea Metro • Blog
+layout: base.njk
+style: /css/cqpages/blogdevlogstyle.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "[Sin Kiske, Xrd] \"Yeah, it's really good! When I was traveling with the old man, he'd always say \"just drink regular water,\" and wouldn't let me drink it much. But if something good happened, he'd give me some as a treat! Oh, here's a little trick. If you add just a little salt, it goes from good to downright godly!\"",
+      "this one goes out to all my long haired folk you know when you're eating food or whatever and a single strand of hair gets caught in your mouth? Yeah that.",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+
+<h1>Blog</h1>
+<p>i'll prepare a blog once i'm finished setting up the site, or sooner if it takes like forever probably, you get this exclusive never to be seen again flavour text for the time being though! if you do want to see it kind of in action check the devlog page, i have the video widget set up there for your convenience...</p>
+<p>styling is still unfinished for a bit of this.. i'll have to re-figure out blogs with 11ty and actually write something lol</p>
+<hr>
+<div class="blogs">
+  <div class="blogcontainer">
+    <div class="blogheader">
+      <div class="blogheader1"></div>
+      <div class="blogheader2">
+        <div class="blogheader2kam"></div>
+        <div class="blogheader2darken"><img src='/images/cqstyle/blogandevlog/hazy.png' loading="lazy" alt=""></div>
+      </div>
+      <div class="blogheader3"></div>
+      <div class="blogheader4" style="color: var(--stationcolH);"><img src='/images/cqstyle/blogandevlog/h01.png' loading="lazy" alt="H01"></div>
+      <div class="blogheader5"></div>
+      <div class="blogheader6">
+        <div class="blogheader6quote">"neocities and strawpages oh me oh my"</div>
+        <div class="blogheader6title">Making sites</div>
+      </div>
+    </div>
+    <div class="blogcontentpreview">
+      <div class="blogcontenttext">blog styling is complete! now i just need to write about something for an extended period of time GELP<br>when i decide to start writing make a new page except make sure to add a redirect to the blog index that ill only need to make after a few blogs, can just make it link back here in the meantime<br>OH and make sure you uhhhh not much else actually i totally forgot what i was gonna write hre but i still need to fill the area, have i talked about spaltoon yet you should check on me if you know me and i havent ong<br>you can scroll the title if it overflows,,,<br>icon style for the top is complete too im just waiting until i actually write a blog to do that LOL</div>
+      <div class="blogcontentother">
+        <div class="blogdate">07/06/2026</div>
+        <div class="blogbutton"><a href="/blogs/blog1/"><img src='/images/cqstyle/blogandevlog/goto.png' loading="lazy" alt="GO!"></a></div>
+      </div>
+    </div>
+  </div>
+</div>

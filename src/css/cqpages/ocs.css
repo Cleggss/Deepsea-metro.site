@@ -1,0 +1,145 @@
+.ocsgallery {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  
+  .occontainer {
+    box-sizing: border-box;
+    border-radius: 1vh;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0px 0px 1.2vh var(--highlightshadow);
+    background-color: var(--background);
+    overflow: hidden;
+    width: 30vh; /*just short of 25% width, this is nice i think*/
+    max-width: 49%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /*for text, it's all a link anyway*/
+  }
+  
+  .occontainer:hover { /*on hover, this is just styling*/
+    box-shadow: 0px 0px 1.5vh var(--highlightshadowhover); /*amplified box shadow on hover*/
+  }
+  
+  .occontainer:hover > .ocimg img { /*on hover, this is just styling*/
+    opacity: 1;
+  }
+                
+  .occontainer p {
+    color: var(--textcol);
+    font-family: blitzmain, helvetica;
+    margin-top: 0.15em;
+    margin-bottom: 0.25em;
+    white-space: nowrap;
+     font-style: italic;
+  }
+  
+  .occontainer h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.7em;
+    color: var(--navlink); /*fallback*/
+    line-height: 100%;
+    white-space: nowrap;
+  }
+  
+  .occontainer:hover h2 { /*fallback if colour isnt specified, i suppose*/
+    color: var(--navlinkactive);
+  }
+  
+  #corih2 {
+    color: var(--coritextcol);
+  }
+  
+  .occontainer:hover #corih2 {
+    color: var(--navlinkactive);
+  }
+  
+  #lumineh2 {
+    color: var(--luminetextcol);
+  }
+  
+  .occontainer:hover #lumineh2 {
+    color: var(--navlinkactive);
+  }
+  
+  #presanicorih2 {
+    color: var(--presanicoritextcol);
+  }
+  
+  .occontainer:hover #presanicorih2 {
+    color: var(--navlinkactive);
+  }
+  
+  #makoh2 {
+    color: var(--makotextcol);
+  }
+  
+  .occontainer:hover #makoh2 {
+    color: var(--navlinkactive);
+  }
+  
+  .ocimg {
+    position: relative;
+  }
+  
+  .ocimg img {
+    object-fit: contain;
+    width: 100%;
+    border-bottom: 0.1vh solid var(--highlight);
+    box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+    opacity: 0.95;
+  }
+  
+  .icon {
+    inset: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .icon img {
+    height: 20%;
+    width: auto;
+    border-right: 0.1vh solid var(--highlight);
+    border-bottom: 0.1vh solid var(--highlight);
+    border-radius: 0 0 1vh 0;
+    box-sizing: content-box;
+    background-color: var(--background);
+  }
+  
+  .ocgradient {
+    min-height: 2vh;
+    width: 100%;
+    font-size: 2vh;
+    box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+    border-top: 0.1vh solid var(--highlight);
+  }
+  
+  @media (max-width: 1250px) { /*mobile*/
+  
+    .ocsgallery {
+      gap: 1vw;
+      padding-top: 1vw;
+      padding-bottom: 1vw;
+    }
+     
+    .occontainer {
+      border-radius: 2vw
+    }
+    
+    .occontainer h2 {
+      font-size: 1.3em;
+    }
+    
+    .icon img {
+      border-radius: 0 0 2vw 0;
+    }
+  }

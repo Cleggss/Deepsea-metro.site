@@ -1,0 +1,51 @@
+---
+title: Deepsea Metro • Blog...
+layout: base.njk
+style: /css/cqpages/blogcontentstyle.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "text sample 1",
+      "text sample 2",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+blogquote: neocities and strawpages oh me oh my
+blogtitle: Making sites
+blogline: H
+blognumber: H01
+---
+{% include 'bloghead.njk' %}
+<div class="blogcontent">
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris molestie metus a nulla pellentesque, in sagittis nisl convallis. Nunc et efficitur metus. Morbi id elit leo. Sed vulputate, dolor non molestie interdum, magna erat maximus lacus, non sollicitudin odio odio a nulla. Nulla nec arcu neque. Aenean fermentum rhoncus placerat. Nullam purus leo, maximus in nisl eget, molestie tristique eros. Nullam at sem justo. Morbi ultricies ipsum sed egestas suscipit. Vestibulum in elementum neque, vel suscipit ex. Nullam accumsan, nunc ut hendrerit interdum, erat velit ultrices justo, at pharetra leo nunc hendrerit nibh. Aliquam scelerisque erat vitae tincidunt lacinia. Mauris justo massa, suscipit eget volutpat ac, fermentum ac augue. In at iaculis dui.
+
+Aenean feugiat nulla in massa aliquet, vel dictum est blandit. Curabitur pulvinar, elit sit amet lacinia malesuada, nunc quam placerat justo, id ultrices neque eros at dui. Pellentesque ac fringilla mauris. Vestibulum dignissim massa eu lectus pulvinar, id rutrum lacus imperdiet. Nullam sit amet semper orci. Maecenas accumsan, tellus quis luctus rutrum, augue nibh malesuada dolor, ut blandit lorem sem a tortor. Nulla faucibus ullamcorper mauris. Fusce tincidunt elit at odio pellentesque consectetur. Nam vestibulum ultrices tincidunt. Aliquam ultrices nisi metus, quis ornare neque finibus vitae. Cras volutpat rutrum libero ut finibus. In in mattis velit. Sed varius ipsum eget nunc luctus congue. Donec ac congue risus, id fringilla sem.
+<br><br>
+Sed laoreet est in quam aliquam congue. Vivamus vel semper ipsum. Aliquam gravida est eget elementum molestie. Nullam dapibus pretium sem. Aenean a cursus ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare felis ac mauris euismod, et tempor arcu placerat. Suspendisse et gravida enim. Vivamus eget ligula eu enim congue consequat.
+
+Suspendisse maximus sodales felis. Etiam tempus leo quam, nec elementum diam ornare sed. Donec consequat molestie eros, at sodales elit rhoncus eget. Morbi sem libero, dictum id tellus sit amet, interdum imperdiet libero. Nam quis purus in tellus tristique venenatis non sed risus. Proin ut sollicitudin magna. Praesent tristique metus turpis, a maximus sem eleifend id. Suspendisse id lorem sed risus sodales euismod. Mauris vitae viverra risus. Mauris euismod metus lorem, nec iaculis lectus mattis rutrum. Morbi ante ipsum, fermentum sed tempor eu, condimentum ut ipsum.
+<br><br>
+Praesent sagittis consequat ligula a consectetur. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sit amet mi feugiat, malesuada urna a, commodo sem. Morbi non condimentum purus. Mauris finibus placerat risus et dignissim. Nam vulputate, odio quis lobortis pretium, urna urna rhoncus purus, sit amet feugiat lorem mauris sed quam. Nullam porttitor mattis erat. Aliquam erat volutpat. Integer consectetur eleifend neque, quis vulputate augue tincidunt eget. Vivamus tincidunt semper tempus. Vivamus turpis tellus, lobortis id nunc eu, laoreet pharetra odio. Aliquam consequat elementum lacus vitae ultrices. Cras a risus nec risus efficitur efficitur. Proin sollicitudin cursus consequat. Nam leo lacus, malesuada ut nibh vitae, convallis finibus arcu. Integer vestibulum tellus at congue porta. </p>
+  <br>
+  <br>
+  <a href="/blog/" id="endquote">SEE YOU SPACE COWBOY...</a>
+</div>

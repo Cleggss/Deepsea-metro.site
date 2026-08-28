@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="{{ themecolour }}">
+    <meta property="og:site_name" content="Deepsea Metro">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ embedimage }}">
+    <title>{{ title }}</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="/css/variables.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/cqstyle.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{ style }}{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/tooltips/tippy-stylesheet.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <script src="/js/musicplayer.js{{ nocache }}"></script>
+    <script>{{ randomscript | safe }}</script>
+  </head>
+  <body>
+    <div class="crt-filter"></div>
+    <div class="center">
+      <div class="content">
+        <div class="heading">
+          <div class="headflexspacer"></div>
+          <div class="headflex2"><img src='/images/cqstyle/nametitle.png' alt="Deepsea Metro"></div>
+          <div class="headflex3">
+            <div class=headflex3marquee>
+              <marquee scrollamount="12" id="headflex3marqueetext">NOW LOADING...<noscript>//LOADING ABORTED:: NO JAVASCRIPT</noscript></marquee>
+            </div>
+          </div>
+          <div class="headflex4">
+            <div class="flex4info"><button onclick="musictoggle()">Play<br>-----<br>Pause</button></div>
+            <audio id ="audio" src="https://files.catbox.moe/syubx9.mp3"></audio>
+            <div class="flex4img"></div>
+            <div class="flex4wave"></div>
+          </div>
+          <div class="headflexspacer"></div>
+        </div>
+        <div class="sidebar">
+          <div class="navbar">
+            <div class="chattitle"><div class="bgdarken"><p>navbar</p></div></div>
+            <div class="navigation">
+              <div class="navcontent">
+                <section class="navbarA">
+                  <a href="/" class="homebutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationA.png' alt="Central station"></div>
+                    <div class="linktext">home</div>
+                  </a>
+                </section>
+                <section class="navbarB">
+                  <div class="subtitle">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationmarkB.png' alt="B"></div>
+                    <div class="linktext">MAIN</div>
+                  </div>
+                  <a href="/about/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationBabout.png' alt=""></div>
+                    <div class="linktext">about</div>
+                  </a>
+                  <a href="/blog/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationBblog.png' alt=""></div>
+                    <div class="linktext">blog</div>
+                  </a>
+                  <a href="/socials/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationBsocials.png' alt=""></div>
+                    <div class="linktext">socials</div>
+                  </a>
+                </section>
+                <section class="navbarC">
+                  <div class="subtitle">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationmarkC.png' alt="C"></div>
+                    <div class="linktext">OCS</div>
+                  </div>
+                  <a href="/ocs/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationCocs.png' alt=""></div>
+                    <div class="linktext">ocs</div>
+                  </a>
+                  <a href="/ocart/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationCocart.png' alt=""></div>
+                    <div class="linktext">oc art</div>
+                  </a>
+                  <a href="/lore/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationClore.png' alt=""></div>
+                    <div class="linktext">lore</div>
+                  </a>
+                </section>
+                <section class="navbarD">
+                  <div class="subtitle">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationmarkD.png' alt="D"></div>
+                    <div class="linktext">CREATIONS</div>
+                  </div>
+                  <a href="/devlog/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationDdevlog.png' alt=""></div>
+                    <div class="linktext">dev<wbr>log</div>
+                  </a>
+                  <a href="/mystuff/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationDmystuff.png' alt=""></div>
+                    <div class="linktext">my stuff</div>
+                  </a>
+                </section>
+                <section class="navbarE">
+                  <div class="subtitle">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationmarkE.png' alt="E"></div>
+                    <div class="linktext">EXTRAS</div>
+                  </div>
+                  <a href="/links/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationElinks.png' alt=""></div>
+                    <div class="linktext">links</div>
+                  </a>
+                  <a href="/guestbook/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationEguestbook.png' alt=""></div>
+                    <div class="linktext">guest<wbr>book</div>
+                  </a>
+                  <a href="/sitemap/" class="linkbutton">
+                    <div class="stationimg"><img src='/images/cqstyle/stations/stationEsitemap.png' alt=""></div>
+                    <div class="linktext">site<wbr>map</div>
+                  </a>
+                </section>
+              </div>
+            </div>
+            <div class="chatbox">
+              <div class="chattitle" id="chatheader"><div class="titlespacer"></div><p>♪chatroom♪</p><a href="https://www5.cbox.ws/box/?boxid=963315&boxtag=zd1hEu" onclick="window.open(this.href,'popup','width=350,height=350,scrollbars=yes,resizable=yes,toolbar=no'); return false;" class="titlespacer">▶</a></div>
+              <div class="chat"><iframe src="https://www5.cbox.ws/box/?boxid=963315&boxtag=zd1hEu" width="100%" height="100%" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe></div>
+            </div>
+          </div>
+        </div>
+        <div class="inner">
+          {{ content | safe }}
+        </div>
+      </div>
+    </div>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="/tooltips/tippy-deco.js"></script>
+  </body>
+</html>

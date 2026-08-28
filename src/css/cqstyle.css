@@ -1,0 +1,630 @@
+* { /*scrollbar colour*/
+  scrollbar-color: var(--highlight) var(--background);
+}
+
+body {
+  background-color: rgb(5, 24, 18); /*fallback*/
+  background-image: url('/images/cqstyle/sanibgblur.png'); /*image to be used with scrolling background*/
+  animation: scrollingBg 160s infinite linear; /*scroll speed, how fast itll translate back to where it started in seconds*/
+  overflow: hidden; /*scrollbar dissapears*/
+  font-family: nindot, helvetica; 
+  text-shadow: 0.14vh 0.14vh rgba(0, 113, 151, 0.5), 0 0 0.2vh currentColor, -0.14vh -0.14vh rgba(255, 0, 255, 0.2); /*slight text shadow merged with blue, slight blur, fake abberation, vh to be universal across sizes*/
+  margin: 0; /*this took me so long to notice dude*/
+  color: var(--textcol); /*main text colour*/ 
+}
+
+@keyframes scrollingBg { /*background animation*/
+  0% {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1024px;
+  } /*set to [width,height] of the image in the background*/
+}
+
+p { /*removes the dinky spacing on the <p> tag, just very handy*/
+  margin: 0;
+  padding: 0;
+}
+
+::selection { /*when you left click drag,, select things,, youknowww*/
+  color: var(--selectioncol);
+  background-color: var(--selectionbg);
+}
+
+h1 { /*header uses blitzbold font*/
+  font-family: blitzbold, helvetica;
+  margin-top: 0;
+  font-size: 1.85em;
+  font-style: italic;
+  line-height: 0.8; /*space these better*/
+}
+
+h3 {
+  margin-top: 0.75em;
+  margin-bottom: 0.35em;
+  font-style: italic;
+  color: var(--navlink);
+  font-size: 1.25em; /*scales a bit nicer i think*/
+}
+
+i { /*this is only ever really gonna be used on the index, but its nice to have*/
+  margin-top: 0;
+  margin-bottom: 0.35em;
+  font-size: 1.25em;
+  color: var(--darkentext);
+}
+
+ul { /*unordered list*/
+  margin-bottom: 0.35em;
+  margin-top: 0.35em;
+  padding-left: 2em; /*was 40px before, didn't scale well*/
+}
+
+hr {
+  color: var(--highlight);
+  background-color: var(--highlight);
+  border-width: 0.1vh;
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  margin-top: 1.2vh;
+  margin-bottom: 1.2vh;
+  border-style: solid;
+}
+
+textarea { /*used enough and should have same styling in the different areas!*/
+  min-width: 65%;
+  height: 4em;
+  resize: none;
+  font-size: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  color: white;
+  max-width: 100%;
+}
+
+a { /*link styling is so convolluted...*/
+  font-family: nindot, helvetica;
+}
+
+a:link { /*styles links*/
+  color: var(--linkcol);
+}
+
+a:visited { /*styles visited links*/
+  color: var(--linkcol);
+}
+
+a:link:hover { /*styles links on hover*/
+  color: var(--linkcolhover);
+}
+
+a:link:active { /*styles links on click*/
+  color: var(--linkcolactive);
+}
+
+a:visited:hover { /*styles visited links on hover*/
+  color: var(--linkcolhover);
+}
+
+a:visited:active { /*styles visited links on click*/
+  color: var(--linkcolactive);
+}
+
+.crt-filter::before { /*crt filter*/
+  content: "";
+  position: fixed;
+  inset: 0; /*taken in part from deloughry, but added a scrolling effect*/
+  background: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.2) 1px, rgba(0, 0, 0, 0.25) 2px );
+  animation: scanlinescroll 0.65s infinite linear;
+  pointer-events: none; /*mouse does nothing*/
+  z-index: 100;
+  opacity: 0.85;
+}
+
+@keyframes scanlinescroll { /*scanline animation*/
+  0% {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 2px;
+  } /*linear gradient scroll amount*/
+}
+
+.center { /*centers everything on the page*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*needs to have a defined height*/
+}
+
+.content { /*the actual BOX, */
+  display: grid;
+  grid-template-areas: /*names all the grid areas, pretty in inspect*/
+  "heading heading"
+  "sidebar content";
+  grid-template-columns: 20% 80%; /*how much space columns/rows take up, sidebar is 20% of the content element in this case*/
+  grid-template-rows: 10% 90%;
+  width: 77%; /*stops it looking bad on non-16:9 res, while still keeping it boxed in that*/
+  height: 88%; /*gets stopped by the height on 16:9*/
+  background-color: rgba(66, 76, 72, 0.3); /*good to start with, neutral colour for the base bg*/
+  border-radius: 5vh; /*everything beneath details the border and styling*/
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow); /*the 'glow*/
+  background-image: conic-gradient(from 89deg at 50% 104%, rgba(121, 197, 194, 0.5) 0%, rgba(171, 171, 147, 0.5) 50%, rgba(121, 197, 194, 0.5) 60%, rgba(121, 197, 194, 0.5) 70%, rgba(134, 170, 190, 0.5) 80%, rgba(134, 170, 190, 0.5) 93%, rgba(227, 193, 224, 0.5) 98%); /*gradient in css!*/
+  background-size: 100% 100%;
+  overflow: hidden; /* stops things poking out on curved corners*/
+  background-blend-mode: overlay;
+}
+
+.content img { /*idk if i even need this now lol*/
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.heading { /*heading section*/
+  grid-row: 1;
+  grid-column: 1 / 3;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,rgba(11, 11, 11, 0.1) 65%, rgba(0, 0, 0, 0.35) 100%), linear-gradient(180deg,rgba(23, 69, 53, 0.85) 0%, rgba(17, 56, 67, 0.85) 100%);
+  background-blend-mode: overlay;
+  overflow: hidden;
+}
+
+.headflexspacer { /*spacer*/
+  width: 1.5%;
+}
+
+.headflex2 { /*title*/
+  display: flex;
+  align-items: center;
+  width: 31%;
+  height: 100%;
+}
+
+.headflex2 img {
+  width: 100%;
+  height: auto;
+}
+
+.headflex3 { /*marquee background styling*/
+  width: 48%;
+  background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0)); /*'lengthens' gradient, longer area is black*/
+  margin: 1vh; /*stops it rubbing against the rest*/
+  overflow: hidden;
+}
+
+.headflex3marquee { /*the marquee itself*/
+  display: flex; /*literally just to align the marquee to the middle*/
+  justify-content: center;
+  align-items: center;
+  color: var(--marquee);
+  text-shadow: var(--marqueeshadow) 0 0 0.2em;
+  font-family: nindot;
+  font-size: 3vh;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.headflex4 { /*top right menu doodad things*/
+  margin: auto;
+  display: flex;
+  width: 20%;
+  height: 88%;
+  opacity: 0.8; /*keep it slightly opaque, looks a bit better at the moment but i should change this laterr,,,*/
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  background-color: var(--background);
+  border-radius: 1vh;
+  overflow: hidden;
+}
+
+.flex4info { /*just styling for button + positioning*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  overflow: hidden;
+}
+
+.flex4info button { /*audio player button*/
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: nindot;
+  font-size: 1vw;
+  line-height: 0.8;
+  color: black;
+  background-color: var(--backgroundgreen);
+  border: none;
+  overflow: hidden;
+}
+
+.flex4info button:hover { /*change text to white on hover*/
+  color: white;
+}
+
+.flex4info button:active { /*change text to grey on click*/
+  color: grey;
+}
+
+.flex4img { /*dedf1sh image, might change later*/
+  width: 25%;
+  height: 100%;
+  background-image: url('/images/cqstyle/banddedf1sh.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-left: 0.1vh solid var(--highlight);
+  border-right: 0.1vh solid var(--highlight); /*all the borders needed*/
+  overflow: hidden;
+}
+
+.flex4wave { /*funky lil wave gif*/
+  width: 50%;
+  background-image: url('/images/cqstyle/wave.gif');
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+
+.sidebar { /*the sidebar (mostly just to align)*/
+  grid-row: 2 / 3;
+  grid-column: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 0.75vh;
+  overflow: hidden;
+  color: var(--highlight);
+  background-color: rgba(30, 42, 42, 0.3); /*darkens slightly*/
+}
+
+.sidebar::before { /*sidebar background*/
+  content: ""; /*in a before element so it doesnt colour mix the rest of the child elements*/
+  background-image: url('/images/cqstyle/sidebargraf.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: contain; /*keeps it pivoted to the bottom left of the box, good for scaling*/
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  mix-blend-mode: saturation; /*mix blend to not just account for background*/
+  pointer-events: none;
+}
+
+.navbar { /*navbar background styling*/
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  border-radius: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 100%;
+  font-size: 1.6vh;
+  overflow: hidden;
+}
+
+.navigation { /*navigation pane*/
+  border: 0.1vh solid var(--highlight);
+  border-top: none; /*stops border doubling*/
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  width: 95%;
+  height: 60%;
+  border-radius: 0 0 2vh 2vh;
+}
+
+.navigation a { /*styling links inside of navbox*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: var(--navlink);
+}
+
+.navigation a:hover { /*on hover*/
+  color: var(--navlinkactive);
+}
+
+.navcontent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navcontent section { /*moves the sections above the :after filter*/
+  z-index: 1;
+}
+
+.navbarA .stationimg {
+  color: var(--stationcolA)
+}
+
+.navbarB .stationimg {
+  color: var(--stationcolB)
+}
+
+.navbarC .stationimg {
+  color: var(--stationcolC)
+}
+
+.navbarD .stationimg {
+  color: var(--stationcolD)
+}
+
+.navbarE .stationimg {
+  color: var(--stationcolE)
+}
+
+.subtitlefirst {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0.5vh auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 2.3vh;
+  width: 90%;
+  border-radius: 0.5vh;
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  border: 0.1vh solid var(--highlight);
+  overflow: hidden;
+  box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+}
+
+.subtitle { /*styling the titles that go between the buttons and act as categories*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 0.5vh auto;
+  margin-top: 0.75vh;
+  margin-bottom: 0;
+  height: 2.3vh;
+  width: 90%;
+  border-radius: 0.5vh;
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  border: 0.1vh solid var(--highlight);
+  overflow: hidden;
+  box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+}
+
+.subtitle img{
+  opacity: 1;
+}
+
+.homebutton { /*needs border-top...*/
+  margin: 0 auto;
+  width: 90%;
+  height: 2.3vh;
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--backgroundgreen);
+  border: 0.1vh solid var(--highlight);
+  border-radius: 0.5vh;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.homebutton:hover {
+  box-shadow: 0px 0px 1.2vh var(--highlightshadowhover);
+}
+
+.linkbutton { /*styling the button itself*/
+  margin: 0 auto;
+  width: 90%;
+  height: 2.3vh;
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--backgroundgreen);
+  border: 0.1vh solid var(--highlight);
+  border-top: none;
+  border-radius: 0.5vh;
+  overflow: hidden;
+  box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+}
+
+.linkbutton:hover {
+  box-shadow: 0px 0px 1.2vh var(--highlightshadowhover);
+}
+
+.stationimg { /*station icons inside of .linkbutton*/
+  display: flex; /*centering! its that easy*/
+  align-items: center;
+  justify-content: center;
+  width: 2.3vh;
+  min-width: 2.3vh;
+  height: 100%;
+  border-right: 0.1vh solid var(--highlight);
+  box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 0 0.08vh currentColor)
+          drop-shadow(0 0 0.8vh currentColor);
+}
+
+.stationimg img { /*affects image seperately, doesn't lessen the filters*/
+  opacity: 0.9;
+}
+
+.navigation a:hover > .stationimg img { /*on hover*/
+  opacity: 1;
+}
+
+.navigation a:hover > .stationimg { /*on hover*/
+  filter: drop-shadow(0 0 0.1vh currentColor)
+          drop-shadow(0 0 1vh currentColor);
+}
+
+.linktext { /*takes up 100% minus the image space*/
+  width: calc(100% - 2.5vh);
+  z-index: 2; /*puts it over the blur effects on teh stationimg*/
+}
+
+.chatbox { /*is a chatbox! just the background though, handled through an iframe*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: none; /*stops border doubling*/
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  border-radius: 2vh 2vh 0 0;
+  width: 95%;
+  height: 40%;
+  overflow: hidden;
+}
+
+.bgdarken { /*this is gonna be used once for the element behind the navbar title*/
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+}
+
+.chattitle {
+  text-align: center;
+  min-height: 2vh;
+  height: 2vh;
+  width: 100%;
+  font-family: nindot, helvetica;
+  color: var(--highlight);
+  font-size: 2vh;
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  background-color: var(--background);
+  border-bottom: 0.1vh solid var(--highlight);
+  line-height: 1;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+#chatheader { /*for the extra link at the side to open the chatbox*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.titlespacer { /*ditto*/
+  width: 2vh;
+  font-size: 0.6em;
+}
+
+.chattitle a {
+  color: var(--darkentext);
+  text-decoration: none;
+  z-index: 2;
+  display: flex; /*centers the > next to chatbox*/
+  justify-content: center;
+  align-items: center;
+}
+
+.chattitle a:hover {
+  color: var(--darkentexthover);
+}
+
+.chattitle a:active {
+  color: var(--darkentextactive);
+}
+
+.chat { /*actual chat element sizing itself*/
+  position: relative;
+  height: 100%; /*fills the rest not taken by the title*/
+  width: 100%; /*theres probably a way easier way to fill above but uhhh LMAO*/
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  filter: drop-shadow(0.14vh 0.14vh rgba(0, 113, 151, 0.5))
+          drop-shadow(-0.14vh -0.14vh rgba(255, 0, 255, 0.2)); /*places a stipped down filter onto the chatbox, keeps the vibe! i think...*/
+}
+
+.inner { /*'content'region, this is just styling the background so far*/
+  grid-row: 2 / 3;
+  grid-column: 2;
+  background-color: rgba(12, 12, 12, 0.4); /*yummy glass effect*/
+  background-image: url('/images/cqstyle/sanidistortion.png'), linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)), url('/images/kam.png');
+  background-position: right bottom, left top, left top; /*specify for distort, then for gradient, then kamabo*/
+  background-size: cover, cover, 8%; /* doesn't let it clip at the top, always stays pivoted. 8% for kamabo logo*/
+  background-repeat: no-repeat;
+  background-blend-mode: color-dodge, darken, screen; /*ditto for position, specifies seperately*/
+  box-shadow: inset 0 0 0.5vh 0.1vh rgba(0,0,0,0.1); /*slight inner shadow*/
+  font-family: blitzmain, helvetica;
+  font-size: calc(1.2vh + 6px); /*not as drastic scaling, stays similar, but can still zoom*/
+  line-height: 1.3;
+  padding: 1vh;
+  overflow: auto;
+}
+
+.inner img { /*reverts from the navbar fitting, a bit more convenient*/
+  height: auto;
+  width: auto;
+}
+
+@media (max-width: 1250px) { /*mobile, scales it to 100% width*/
+  
+  .content {
+    width: 100%; /*literally the most bandaid solution ever but it works suprisingly*/
+    border-radius: 3vh; /*cuts off way less*/
+  }
+  
+  .sidebar {
+    padding: 1vw;
+  }
+  
+  .navbar {
+    font-size: 1.2vh; /*smaller font, fits better vertically*/
+    border-radius: 3vw;
+  }
+  
+  .navigation { /*extra styling for better mobile legibility*/
+    width: 98%;
+    border-radius: 0 0 3vw 3vw;
+  }
+  
+  .chatbox {
+    width: 98%;
+    border-radius: 3vw 3vw 0 0;
+  }
+  
+  hr {
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    border-width: 0.1vw;
+  }
+  
+  .inner {
+    padding: 1vw; /*this works!*/
+    background-size: cover, cover, auto 8%; /*changes it to be 8% vertically instead of horizontally, better on taller screens*/
+    font-size: calc(1.8vw + 6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { /*ok i threw this for so long cause i tried to target body as a tag and not just the element dont add the dot beforehand bro*/
+    animation: none; 
+  }
+      
+  .crt-filter::before {
+    animation: none;
+  }
+}
+
+/*woahhh updating this cause the styling is actually.. really good on mobile now haha go me!! this site scales well on basically everything except if you have a tall screen on basic styling and vice versa, the styling tweaks itself at 1250px of vertical space.*/

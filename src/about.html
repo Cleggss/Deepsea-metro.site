@@ -1,0 +1,166 @@
+---
+title: Deepsea Metro • About
+layout: base.njk
+style: /css/cqpages/about.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "[Elphelt Valentine, Strive] \"Write your name here and then we can start our life together! I don't care if it's small but I'd like a nice home in the suburbs...and four kids! Would you want a dog? Or a cat? I like dogs. But cats are okay too! Dogs are just so friendly and happy and we can snuggle up with a dog in bed and say 'I love you, dear--' O-Oh my gosh, I-I can't--!\"",
+      "The town inside me, and everyone's voice. Only I'm not there, just watching from afar. I can't go home because i'm afraid something will change. Me without me, I'm the one to blame.",
+      "It took me ten years to find the answer to something, I forgot about it in two seconds.  I don't have anything that's really important to me, That's why everything is beautiful.",
+      "you know that feeling when you're like REALLLLY hungry but don't know what you want to eat and you just end up not having anything? yeah that's basically me as a person.",
+      "[Travis touchdown, NMH] \"I know a lot of gamers out there who don't have much patience. 'Least that's what Bishop the dude at the video store said. So I'm at the register and then I realize, I got no money! I was seriously broke! Why? 'cause I met this smoking hot chick last night at the deathmatch bar and MAN did she smell GOOD! So, being the gentleman I am, I bought her a drink. Anyhoo, I decided to get a job. The gig; assassinate 'The Drifter'! So I went where I was supposed to and waited for the guy to show up. And there he was; this cat, well-dressed, cool. Couldn't tell if he was the shit, or just plain old shit. Yeah, so he's stylin', fast, aggressive, and packin' heat. Bada-bing. Or at least it was supposed to be. 'Til she showed up. Her name; Sylvia Christel, an agent with this whatchyamacallit association. \"Congratulations; you are certified as the 11th best hitman. How about getting rid of the 10 killers above you, and aim for the top?\" I wanna be number one. How's that? Short and simple enough for ya? It's gonna be a long, hard road. But who knows? Could kick ass. Could be dangerous. Could totally suck. Whadaya say, bro? Join me. Let's see how far we can take this. And for you there, holding the Wii Remote right now, just press the A button. Let the bloodshed begin!\"",
+      "he mad because day by day nothing changes but when you look back everything is different",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+
+<div class="aboutflex">
+  <div class="topscrollcontainer">
+    <div class="topscrollmarquee"><img src="/images/roboky-pedal.gif" alt="Robo-Ky on a pedal bike with a propeller"></div>
+  </div>
+  <div class="aboutcontent">
+    <aside class="cleggsaside"><img src="/images/cqstyle/about/cleggs.png" alt="Dark arle from the puyo franchise"></aside>
+    <h1>HEY!!! im Cleggs!<img src="/images/cqstyle/about/makoleek.png" alt="Mako holding 2 leeks"></h1>
+    <p>you clicked on the about page soooo...<br>I've never been someone to talk about myself, though I've never really been sure of who I want 'myself' to actually be, so i'm a <span class="tippy" data-tippy-content="(5'4)">teeny</span> bit of a mess at the moment, if you can excuse that...</p>
+    <h3>fun facts!</h3>
+    <ul>
+      <li>I'm british, (half english, half scottish) which gives me an even FUNNIER accent that voice assistants can't recognise. Thanks, Alexa.</li>
+      <li>I'm ginger, my hair be looking like copper wires</li>
+      <li>My favourite pokemon is <a href="https://bulbapedia.bulbagarden.net/wiki/Weavile_(Pok%C3%A9mon)" target="_blank" rel="noopener noreferrer">Weavile!</a></li>
+      <li>My favourite fighting game archetype are grapplers!</li>
+      <li>My favourite animal is the <a href="https://en.wikipedia.org/wiki/Oceanic_whitetip_shark" target="_blank" rel="noopener noreferrer">Oceanic whitetip shark!</a> which my OC <a href="/ocs/mako/" class="makotext">Mako</a> is based off</li>
+      <li>I've got central heterochromia with 3 segments;<br><font color="#D2B48C">Tan</font> to <font color="#93CCEA">Cornflower</font> to <font color="#FAD6A5">Tuscan</font>, going towards the pupil</li>
+      <li>I have Audhd, evidently ;-;</li>
+    </ul>
+    <hr>
+    <p>Heres some questions I get asked a bunch!</p>
+    <section id="questions">
+      <h3>"So.. why 'Cleggs'"</h3>
+      <p>made it up one day and the names stuck with me like literal years, the earliest time ive seen myself using it was 14th november 2016 actually, so my online presence is nearly 10?? im not prepared for this even when im typing it out HELLO<br>people have called me 'cleggy' and various other nicknames before, i think its cute!! so i've never thought to change my presence</p>
+      <h3>"How did you make this site?"</h3>
+      <p>neocities built in editor and a dream, I made a mockup in <s>photoshop</s> and took the assets from there, and recreated it all in css! it's actually suprisingly similar and there's a lot of transferrable stuff, blending modes are a bit trickier though, you're free to take inspo from the site lol idm at all matter of fact you're ENCOURAGED, MAKE THINGS!!! DO COOL THINGS!!! RAAH</p>
+      <p>though keep things accessible!! don't have bright flashing colours middle of your page, add alt text to your site, optimise for mobile (even if it's just max-width: 100%;!)</p>
+      <br>
+      <p>most importantly thought right click blockers are stupid... you're on the free web</p>
+      <h3>"Where did it all go wrong?"</h3>
+      <p>One of my first games was puyo puyo as I was still using a gamecube a bit into the Wii U's lifespan... Then I got a copy of splatoon and I think that focused combination of pure autism fried my brain, and now you're left with who I am today.</p>
+      <h3>"What would I recognise you from?"</h3>
+      <p>I've been in a few places, most people either recognise me from my mods or they saw something about my ocs on various social media, which is always nice to hear about t(^^t)</p>
+      <h3>"What do you even do?"</h3>
+      <p>I've got this terrible habit where I pick up something and then just abandon it completely after I get bored of it... so uhh just assume a little bit of everything, my main interests right now are modding and webdev (this site!), always love writing for my ocs though (other people's ocs aswell!)</p>
+      <h3>"What is your favourite game?"</h3>
+      <p>Journey, I played it for agess and it's really changed how I think about communication if that makes sense? communicating to people by pressing the one button and there'd be an understanding regardless of language, "Come here!" or, "Behind you!" and you just have to figure it out, I also enjoy the fact everyone is super friendly in the game, go play it if you haven't yet, it goes on discount often</p>
+      <h3>"What are you."</h3>
+      <p>:shrug:</p>
+    </section>
+  </div>
+  <div class="bottomscrollcontainer">
+    <div class="bottomscrollmarquee">
+      <img src="/images/cqstyle/links/stamps/axl-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/DI-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/bedman-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/journey-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/dreaming-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/ds-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/pokemonblack-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/weavile-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/furret-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/3-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/penis-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/evilklug-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/wiiu-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/booyah-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/burnout-stamp.jpg" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/kickass-stamp.avif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/heaventdoesntwantme-stamp.jpg" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/stars-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/internet-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/stardust-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/glitterglue-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/piccolo-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/botwfrog-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/pluto-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/aliens-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/venturemain-stamp.gif" loading="lazy" alt="">
+      <!-- repeat twice, for the flawless scroll! -->
+      <img src="/images/cqstyle/links/stamps/axl-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/DI-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/bedman-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/journey-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/dreaming-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/ds-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/pokemonblack-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/weavile-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/furret-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/3-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/penis-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/evilklug-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/wiiu-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/booyah-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/burnout-stamp.jpg" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/kickass-stamp.avif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/heaventdoesntwantme-stamp.jpg" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/stars-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/internet-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/stardust-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/glitterglue-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/piccolo-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/botwfrog-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/pluto-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/aliens-stamp.gif" loading="lazy" alt="">
+      <img src="/images/cqstyle/links/stamps/venturemain-stamp.gif" loading="lazy" alt="">
+    </div>
+  </div>
+  <div class="aboutsidebar">
+    <div class="chattitle">my favourites!!</div>
+    <div class="aboutsidebarinner">
+      <p>these are some of my favourite characetrs,,,, my scrimblos,,,, my gooblies,,,,</p>
+      <div class="sidebarflex">
+        <span class="tippy" data-tippy-content="Draco Centauros • Puyo Puyo"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/draco.jpg" loading="lazy" alt="Draco Centauros from Puyo Puyo"></div></span>
+        <span class="tippy" data-tippy-content="Nahobino • Shin Megami Tensei"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/nahobino.jpg" loading="lazy" alt="The Nahobino from Shin Megami Tensei"></div></span>
+        <span class="tippy" data-tippy-content="Bedman • GUILTY GEAR"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/bedman.jpg" loading="lazy" alt="Bedman from Guilty Gear"></div></span>
+        <span class="tippy" data-tippy-content="Ragna • BlazBlue"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/raggy.jpg" loading="lazy" alt="Ragna from BlazBlue"></div></span>
+        <span class="tippy" data-tippy-content="Ramlethal Valentine • GUILTY GEAR"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/ram.jpg" loading="lazy" alt="Ramlethal Valentine from Guilty Gear"></div></span>
+        <span class="tippy" data-tippy-content="Gordeau • Under Night In-Birth"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/gordeau.jpg" loading="lazy" alt="Gordeau from Under Night In-Birth"></div></span>
+        <span class="tippy" data-tippy-content="Meta Knight • Kirby"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/metaknight.jpg" loading="lazy" alt="Meta Knight from Kirby"></div></span>
+        <span class="tippy" data-tippy-content="Robo-Ky • GUILTY GEAR"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/roboky.jpg" loading="lazy" alt="Robo-Ky from Guilty Gear"></div></span>
+        <span class="tippy" data-tippy-content="Travis Touchdown • No More Heroes"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/travis.jpg" loading="lazy" alt="Travis Touchdown from No More Heroes"></div></span>
+        <span class="tippy" data-tippy-content="N • Pokémon"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/n.jpg" loading="lazy" alt="N from Pokémon"></div></span>
+        <span class="tippy" data-tippy-content="Ed • Cowboy Bebop"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/edward.jpg" loading="lazy" alt="Ed from Cowboy Bebop"></div></span>
+        <span class="tippy" data-tippy-content="Venture • Overwatch"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/venture.jpg" loading="lazy" alt="Venture from Overwatch"></div></span>
+        <span class="tippy" data-tippy-content="Arle Nadja • Puyo Puyo"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/arle.jpg" loading="lazy" alt="Arle Nadja from Puyo Puyo"></div></span>
+        <span class="tippy" data-tippy-content="Wayfarer • Journey"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/traveller.jpg" loading="lazy" alt="The wayfarer from Journey"></div></span>
+        <span class="tippy" data-tippy-content="Sakura + Akira • Rival schools"><div class="sidebarchar"><img src="/images/cqstyle/about/charas/sakura+akira.jpg" loading="lazy" alt="Sakura and Akira from Rival schools"></div></span>
+      </div>
+      <hr>
+      <p>franchises I like! clicking any of these will lead you to the wiki for it, i've tried to avoid the fandom wikis where I can...</p>
+      <div class="bannerflex">
+        <a href="https://puyonexus.com/wiki/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/puyopuyo.jpg')"><img src="/images/cqstyle/about/charas/logos/puyopuyologo.png" loading="lazy"  alt="Puyo Puyo"></a>
+        <a href="https://guiltygear.wiki.gg/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/guiltygear.jpg')"><img src="/images/cqstyle/about/charas/logos/guiltygearlogo.png" loading="lazy" alt="Guilty Gear"></a>
+        <a href="https://splatoonwiki.org/wiki/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/splatoon.jpg')"><img src="/images/cqstyle/about/charas/logos/splatoonlogo.png" loading="lazy" alt="Splatoon"></a>
+        <a href="https://bulbapedia.bulbagarden.net/wiki/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/pokemon.jpg')"><img src="/images/cqstyle/about/charas/logos/pokemonlogo.png" loading="lazy" alt="Pokémon"></a>
+        <a href="https://megatenwiki.com/wiki/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/smt.jpg')"><img src="/images/cqstyle/about/charas/logos/smtlogo.png" loading="lazy" alt="Shin Megami Tensei"></a>
+        <a href="https://blazblue.wiki/" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/blazblue.jpg')"><img src="/images/cqstyle/about/charas/logos/blazbluelogo.png" loading="lazy" alt="BlazBlue"></a>
+        <a href="https://typemoon.fandom.com/wiki/Melty_Blood_(Series)" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/meltyblood.jpg')"><img src="/images/cqstyle/about/charas/logos/meltybloodlogo.png" loading="lazy" alt="Melty Blood"></a>
+        <a href="https://sonic.fandom.com/wiki/Sonic_Wiki_Zone" target="_blank" rel="noopener noreferrer" class="sidebarbanner" style="background-image: url('/images/cqstyle/about/charas/banners/sonic.png')"><img src="/images/cqstyle/about/charas/logos/soniclogo.png" loading="lazy" alt="Sonic the hedgehog"></a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+---
+title: Deepsea Metro • Guestbook
+layout: base.njk
+style: /css/cqpages/guestbook.css
+themecolour: #75D99F
+embedimage: /images/embedimage.png
+description: Pale summer moonlight shimmers on the seafloor...
+randomscript:
+  const textSelect= [
+      "Pushing the sun back to the east does not change it. The world behind the eyelids.. remains miserable. But if for the past was necessary to find you, I will accept anything, for there is nothing, I want more than now.",
+      "[Marisa, SF6] \"No, that's not it. Of course, I'm upset that I lost, but you know what? Getting to do battle with someone as strong as you was such a thrill!\" [Manon] \"...... 'Strong'...Usually I hate when people call me that. I feel a pain in my chest every time I hear it. And yet...The way she said it so bluntly and plainly...It didn't bother me in the slightest.\" [Marisa] \"Next time we fight, the victory will be mine. In fact...how about a rematch right now?\" [Manon] \"Oh my. I'm quite confident I'll win the next time as well...After all...I'm strong, I'll have you know.\"",
+      "text sample 3",
+      "text sample 4",
+      "text sample 5",
+      "text sample 6",
+      "text sample 7",
+      "text sample 8",
+      "text sample 9",
+    ];
+    
+    function getRandomText() {
+        const randomIndex = Math.floor(Math.random() * textSelect.length);
+        return textSelect[randomIndex];
+    }
+
+    function loadText() {
+      const myDiv = document.getElementById('headflex3marqueetext');
+      myDiv.innerHTML= getRandomText();
+    }
+
+    window.onload = loadText;
+---
+
+<iframe src="https://cleggs.atabook.org/" width="100%" height="100%" frameborder="0"></iframe>

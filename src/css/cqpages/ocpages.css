@@ -1,0 +1,234 @@
+#ocheader { /* back button at top */
+  margin-bottom: 0.4em;
+}
+
+#ocheader a {
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+#backbutton {
+  opacity: 0.4;
+  width: 0.8em;
+}
+
+#backbutton:hover {
+  opacity: 0.6;
+}
+
+.aboutflexarea {
+  display: flex;
+}
+
+.aboutflexarea h1 {
+  margin-top: 0.4em;
+  margin-bottom: 0;
+}
+
+.mainaboutsection {
+  width: 80%;
+}
+
+.sideaboutsection {
+  width: 20%;
+  color: var(--darkentexthover);
+}
+
+.characterbio {
+  float: left;
+  padding-right: 1vh;
+  padding-bottom: 0.5vh;
+  max-width: 26%; /*stops it taking up too much of the room,*/
+}
+
+.characterbio img {
+  width: 100%;
+}
+
+.characterbio table {
+  font-size: 1.4vh;
+  width: 100%;
+  border-collapse: collapse;
+  border-style: hidden;
+  box-sizing: border-box;
+  table-layout: fixed;
+}
+
+.characterbio td {
+  border: 0.2vh solid var(--highlight);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.characterbio td:first-of-type {
+  width: 25%;
+}
+
+.bio img {
+  width: 1em;
+}
+
+.bio a {
+  font-family: blitzmain;
+}
+
+.biovr {
+  min-width: 0.2vh;
+  width: 0.2vh;
+  color: var(--highlight);
+  background-color: var(--highlight);
+  border-width: 0;
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  margin-left: 0.85vh;
+  margin-right: 0.85vh;
+}
+
+.shadowbehindtag {
+  display: flex;
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.8);
+  padding: 0.25vh;
+  margin-top: 0.2vh;
+}
+
+.guidelinesetc {
+  display: flex;
+  height: 35vh;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  overflow: hidden;
+  font-size: calc(1em - 2px);
+  text-align: center;
+}
+
+.guidelinescolumn {
+  flex: 33%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.85vh;
+}
+
+.guidelinescolumn h3 a {
+  font-family: blitzbold, helvetica;
+}
+
+.refsheetarea {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  background-color: var(--background);
+  margin-bottom: 1vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  overflow: hidden;
+}
+
+.refsheetarea h1 {
+  position: absolute;
+  top: 1vh;
+  left: 1vh;
+  filter: drop-shadow(black 0 0 0.2em);
+}
+
+.refsheetarea img {
+  object-fit: contain;
+  height: 46vh;
+}
+
+.refbuttonarea {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.refbuttonarea a {
+  text-decoration: none;
+  color: var(--navlink);
+}
+
+.refbuttonarea a:hover {
+  color: var(--navlinkactive);
+}
+
+.refbutton {
+  width: 33%;
+  border-radius: 0.5vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0px 0px 1.2vh var(--highlightshadow);
+  background-color: var(--backgroundgreen);
+  text-align: center;
+  font-family: blitzbold, helvetica;
+  font-size: 1.35em;
+}
+
+.refbutton:hover {
+  box-shadow: 0px 0px 2vh var(--highlightshadowhover);
+}
+
+.extraocnotes {
+  color: var(--darkentext);
+  font-size: 0.75em;
+}
+
+@media (max-width: 1250px) { /*mobile*/
+  
+  .aboutflexarea {
+    flex-direction: column;
+  }
+  
+  .mainaboutsection {
+    width: 100%;
+  }
+  
+  .characterbio {
+    max-width: 30%;
+  }
+  
+  .characterbio table {
+    font-size: 2.3vw;
+  }
+  
+  .characterbio td:first-of-type {
+    width: 35%;
+  }
+
+  .biovr {
+    margin-top: 0.85vw;
+    margin-bottom: 0.85vw;
+    min-height: 0.2vw;
+    height: 0.2vw;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 100%;
+    width: 100%;
+  }
+  
+  .shadowbehindtag {
+    padding: 0.25vw;
+    margin-top: 0.2vw;
+  }
+  
+  .sideaboutsection {
+    width: 100%;
+  }
+  
+  .sideaboutsection {
+    font-size: 0.8em;
+  }
+  
+  .refsheetarea img {
+    height: auto;
+    width: 100%;
+  }
+
+  .guidelinescolumn {
+    padding: 1vw;
+  }
+}
