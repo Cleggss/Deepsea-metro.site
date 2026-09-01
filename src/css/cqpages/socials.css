@@ -1,142 +1,156 @@
 .socialsflex {
-    display: flex;
-  }
+  display: flex;
+}
+
+.socialscolumn {
+  width: 50%;
+  padding: 0.35vh;
+}
+
+.socialscontainer {
+  display: grid;
+  grid-template-areas:
+    "heading heading" 
+    "sidebar content";
+  grid-template-columns: 25fr 75fr;
+  grid-template-rows: 20fr 80fr;
+  box-sizing: border-box;
+  align-items: center;
+  height: 20vh; /*spacing!*/
+  width: 100%;
+  border: 0.75vh ridge #aeaeae;
+  box-shadow: 0px 0px 2vh rgba(11, 11, 11, 0.25);
+  background-image: url("/images/MRNpattern.png");
+  background-size: 15%;
+  background-blend-mode: darken;
+  background-color: rgba(100, 100, 50, 0.1);
+  margin: 0 auto;
+  overflow: hidden;
+  margin-bottom: 0.70vh;
+}
+
+.socialsheader {
+  display: flex;
+  grid-row: 1;
+  grid-column: 1 / 3;
+  border-bottom: 0.75vh ridge #aeaeae;
+  align-items: center; 
+  background-color: rgba(50, 100, 100, 0.5);
+  font-family: nindot;
+  font-size: 3vh;
+  line-height: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.socialssidebar {
+  display: flex;
+  grid-row: 2 / 3;
+  grid-column: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgba(50, 75, 100, 0.5);
+  height: 100%;
+  width: 100%;
+  border-right: 0.35vh dashed rgba(174, 174, 174, 0.9);
+  text-align: center;
+}
+
+.idbutton { /*dinky little button*/
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.idbutton img {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated; /*only on widescreen!*/
+  user-select: none;
+  pointer-events: none;
+}
+
+.idbutton a { /*i dont know why css is like this but i gotta do it twice*/
+  display: inline-block;
+  align-content: center;
+  width: 100%;
+}
+
+.socialsusername { /*keeping it here so i dont forget it exists, font size change on lowres*/
+  line-height: 100%;
+}
+
+.socialsbutton {
+  width: 100%;
+  height: 35%;
+  min-height: 35%; /*flexbox, no flexing!*/
+  background-color: rgba(11, 11, 11, 0.2);
+  text-align: center;
+  border-top: 0.1vh solid var(--bluealthighlight);
+  box-shadow: 0px 0px 2vh var(--pinkaltshadow);
+}
+
+.socialsbutton a { /*styling link's text*/
+  display: inline-block;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-family: blitzmain;
+  color: var(--navlink);
+  text-decoration: none;
+  user-select: none;
+}
+
+.socialsbutton a:hover { /*text colour on hover*/
+  color: var(--navlinkactive);
+}
+
+.socialsbutton a:active { /*text colour on click*/
+  color: var(--navlinkactive);
+}
+
+#discbutton:hover { /*fits in with the rest*/
+  cursor: pointer;
+}
+
+#discbutton:active { /*mock click effect, so it's more clear it was copied*/
+  color: var( --selectioncol);
+}
+
+.socialsinner {
+  grid-row: 2 / 3;
+  grid-column: 2;
+  width:  100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0.5vh;
+}
+
+@media (max-width: 1250px) {
   
-  .socialscolumn {
-    width: 50%;
-    padding: 0.35vh;
-  }
-  
-  .socialscontainer {
-    display: grid;
-    grid-template-areas:
-      "heading heading" 
-      "sidebar content";
-    grid-template-columns: 25fr 75fr;
+  .socialscontainer { /*keeps everything spaced nicely, sidebar is readable and clickable*/
+    grid-template-columns: 35fr 65fr;
     grid-template-rows: 20fr 80fr;
-    box-sizing: border-box;
-    align-items: center;
-    height: 20vh; /*spacing!*/
-    width: 100%;
-    border: 0.75vh ridge #aeaeae;
-    box-shadow: 0px 0px 2vh rgba(11, 11, 11, 0.25);
-    background-image: url("/images/MRNpattern.png");
-    background-size: 15%;
-    background-blend-mode: darken;
-    background-color: rgba(100, 100, 50, 0.1);
-    margin: 0 auto;
-    overflow: hidden;
-    margin-bottom: 0.70vh;
+    border: 0.75vw ridge #aeaeae;
   }
   
   .socialsheader {
-    display: flex;
-    grid-row: 1;
-    grid-column: 1 / 3;
-    border-bottom: 0.75vh ridge #aeaeae;
-    align-items: center; 
-    background-color: rgba(50, 100, 100, 0.5);
-    font-family: nindot;
-    font-size: 3vh;
-    line-height: 100%;
-    height: 100%;
-    width: 100%;
-  }
-  
-  .socialssidebar {
-    display: flex;
-    grid-row: 2 / 3;
-    grid-column: 1;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    background-color: rgba(50, 75, 100, 0.5);
-    height: 100%;
-    width: 100%;
-    border-right: 0.35vh dashed rgba(174, 174, 174, 0.9);
-    text-align: center;
-  }
-  
-  .idbutton { /*dinky little button*/
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+    border-bottom: 0.75vw ridge #aeaeae;
   }
   
   .idbutton img {
-    width: 100%;
-    height: auto;
-    image-rendering: pixelated; /*only on widescreen!*/
-    user-select: none;
-    pointer-events: none;
+    image-rendering: smooth; /*only on lowres!*/
   }
   
-  .idbutton a { /*i dont know why css is like this but i gotta do it twice*/
-    display: inline-block;
-    align-content: center;
-    width: 100%;
-  }
-  
-  .socialsusername { /*keeping it here so i dont forget it exists, font size change on lowres*/
-    line-height: 100%;
-  }
-  
-  .socialsbutton {
-    width: 100%;
-    height: 35%;
-    min-height: 35%; /*flexbox, no flexing!*/
-    background-color: rgba(11, 11, 11, 0.2);
-    text-align: center;
-    border-top: 0.1vh solid var(--bluealthighlight);
-    box-shadow: 0px 0px 2vh var(--pinkaltshadow);
-  }
-  
-  .socialsbutton a { /*styling link's text*/
-    display: inline-block;
-    align-content: center;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    font-family: blitzmain;
-    color: var(--navlink);
-  }
-  
-  .socialsbutton a:hover { /*text colour on hover*/
-    color: var(--navlinkactive);
+  .socialsusername { /*height concerns, keeps the button clickable on low wide res*/
+    font-size: 0.65em;
   }
   
   .socialsinner {
-    grid-row: 2 / 3;
-    grid-column: 2;
-    width:  100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 0.5vh;
+    padding: 0.5vw;
   }
-  
-  @media (max-width: 1250px) {
-    
-    .socialscontainer { /*keeps everything spaced nicely, sidebar is readable and clickable*/
-      grid-template-columns: 35fr 65fr;
-      grid-template-rows: 20fr 80fr;
-      border: 0.75vw ridge #aeaeae;
-    }
-    
-    .socialsheader {
-      border-bottom: 0.75vw ridge #aeaeae;
-    }
-    
-    .idbutton img {
-      image-rendering: smooth; /*only on lowres!*/
-    }
-    
-    .socialsusername { /*height concerns, keeps the button clickable on low wide res*/
-      font-size: 0.65em;
-    }
-    
-    .socialsinner {
-      padding: 0.5vw;
-    }
-  }
+}

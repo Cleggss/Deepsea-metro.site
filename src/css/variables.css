@@ -35,7 +35,6 @@
   --presanicoritextcol: rgba(158, 86, 0, 1); /*presanicori dialogue colour*/
   --makotextcol: rgba(105, 158, 225, 1); /*mako dialogue colour*/
 
-  --stationborder: rgba(50,50,50,0.5); /*used for station borders*/
   --stationcolA: #ffda4b; /*station A colour, picked from game*/
   --stationcolB: #49d4e1; /*station B colour, picked from game*/
   --stationcolC: #32f39a; /*station C colour, picked from game*/
