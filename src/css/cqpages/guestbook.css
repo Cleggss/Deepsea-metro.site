@@ -1,4 +1,21 @@
 .inner {
     padding: 0;
     overflow: hidden;
+    position: relative;
+}
+
+.overbutton { /*popout/iframe fallback*/
+    position: absolute;
+    top: 0.5vh;
+    left: 0.5vh;
+}
+
+.overbutton img {
+    display: block;
+    opacity: 0.2;
+    image-rendering: pixelated;
+}
+
+.overbutton:hover img {
+    opacity: 0.6;
 }

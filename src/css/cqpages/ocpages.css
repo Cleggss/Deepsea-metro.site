@@ -2,22 +2,45 @@
   margin-bottom: 0.4em;
 }
 
-#ocheader a {
+#ocheader a { /*first element - back button*/
   display: inline-block;
   margin-right: 0.3em;
 }
 
-#backbutton {
-  opacity: 0.4;
-  width: 0.8em;
+#ocheader .tippy { /*lore linkbutton, only thing using tippy class so stops interfering with non-lore linked pages*/
+  float: right;
+  margin-right: 0;
 }
 
-#backbutton:hover {
+#ocheader .tippy #topbutton { /*button inside the linkbutton*/
+  width: 0.9em;
+}
+
+#topbutton {
+  opacity: 0.4;
+  width: 0.8em;
+  display: block;
+}
+
+#topbutton:hover {
   opacity: 0.6;
 }
 
 .aboutflexarea {
   display: flex;
+}
+
+.aboutflexarea p:first-of-type {
+  margin-top: 0;
+}
+
+.aboutflexarea p:last-of-type { /*last line!*/
+  margin-bottom: 0;
+}
+
+.aboutflexarea p { /*better spacing!*/
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .aboutflexarea h1 {
@@ -78,7 +101,7 @@
   color: var(--highlight);
   background-color: var(--highlight);
   border-width: 0;
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
   margin-left: 0.85vh;
   margin-right: 0.85vh;
 }
@@ -87,7 +110,7 @@
   display: flex;
   align-items: center;
   background-color: rgba(13, 13, 13, 0.8);
-  padding: 0.25vh;
+  padding: 0.2vh;
   margin-top: 0.2vh;
 }
 
@@ -96,7 +119,7 @@
   height: 35vh;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
   background-color: var(--background);
   overflow: hidden;
   font-size: calc(1em - 2px);
@@ -120,7 +143,7 @@
   flex-direction: column;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
   background-color: var(--background);
   margin-bottom: 1vh;
   padding-top: 0.5vh;
@@ -161,7 +184,7 @@
   width: 33%;
   border-radius: 0.5vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 1.2vh var(--highlightshadow);
+  box-shadow: 0px 0px 0.7vh var(--highlightshadow);
   background-color: var(--backgroundgreen);
   text-align: center;
   font-family: blitzbold, helvetica;
@@ -169,7 +192,7 @@
 }
 
 .refbutton:hover {
-  box-shadow: 0px 0px 2vh var(--highlightshadowhover);
+  box-shadow: 0px 0px 1.2vh var(--highlightshadowhover);
 }
 
 .extraocnotes {
@@ -211,7 +234,7 @@
   }
   
   .shadowbehindtag {
-    padding: 0.25vw;
+    padding: 0.2vw;
     margin-top: 0.2vw;
   }
   
@@ -222,13 +245,32 @@
   .sideaboutsection {
     font-size: 0.8em;
   }
+
+  .refsheetarea { /*looks better without top padding on mobile*/
+    padding-top: 0;
+  }
+  
+  .refbutton {
+    width: 45%;
+    font-size: 1.1em; /*so the text fits in the buttons*/
+  }
   
   .refsheetarea img {
     height: auto;
     width: 100%;
   }
 
+  .guidelinesetc { /*converts the entire thing to be a scrollable layout*/
+    display: block;
+    overflow-y: scroll;
+  }
+
   .guidelinescolumn {
     padding: 1vw;
+    padding-bottom: 4vh;
+  }
+
+  .guidelinescolumn:last-of-type { /*removes extra padding on bottom*/
+    padding-bottom: 1vw;
   }
 }

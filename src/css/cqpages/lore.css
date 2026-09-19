@@ -11,11 +11,21 @@
     margin: 0 auto;
     width: 24vh;
     height: 4vh;
-    box-shadow: 0px 0px 1vh var(--highlightshadow);
+    box-shadow: 0px 0px 1vh var(--highlightshadow), inset 0 0 0.5vh var(--highlightshadow);
     background-color: var(--backgroundgreen);
     border: 0.1vh solid var(--highlight);
     border-radius: 0.5vh;
     overflow: hidden;
     text-align: center;
     text-decoration: none;
+    color: var(--darkentext);
+}
+
+#loreredirbutton:hover {
+    box-shadow: 0px 0px 1.4vh var(--highlightshadow), inset 0 0 0.7vh var(--highlightshadow);
+    color: var(--darkentexthover);
+}
+
+#loreredirbutton:active {
+    color: var(--darkentextactive);
 }

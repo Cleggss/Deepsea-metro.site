@@ -11,7 +11,7 @@ randomscript:
       "\"Otanomi mousu, otanomi mousu, sotsuji nagara, meifu wa izuko? Gedou ga waraeba, tani ga naku. Shogyou ni rachi naki sata areba, madou no shimatsu wo ukeoi itasu. Onore wa birou no sanpinzamurai. Shidou shinibana muyou no shozon.\"",
       "\"Sengi! Seibai! Okami no sei! Adauchi zehi nashi abi nite nohouzu! Nanitozo yoshinani Enmadono, nanitozo yoshinani Enmadono...\"",
       "\"Polyamorous Tony, I want his wife, DEAD. I want his wife, DEAD. I want his wife, DEAD. I want his husband, DEAD. I want his wife, DEAD.\"",
-      "text sample 5",
+      "[Rogue, X-Men] \"My daddy always said, \"Two's company and three's an eavsedropper.\"\"",
       "text sample 6",
       "text sample 7",
       "text sample 8",
@@ -28,9 +28,10 @@ randomscript:
       myDiv.innerHTML= getRandomText();
     }
 
-    window.onload = loadText; 
+    window.onload = loadText;
+sectionnum: 2
+linknum: 3
 ---
-
 <script> // shortest script ever candidate, just for copying my discord username and.. nothing else
   function copydis() {
     navigator.clipboard.writeText("@cleggs.");
@@ -46,7 +47,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">@cleggs</div>
         <div class="idbutton"><a href="https://neocities.org/site/cleggs" target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/neocities.png" alt="Neocities"></a></div>
-        <div class="socialsbutton"><a href="https://neocities.org/site/cleggs" target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://neocities.org/site/cleggs" class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         where im hosting the site!!! you might have found me through this anyways lol<br>youll probably see tons of updates as im making this site entirely within the neocities editor,, which isnt very smart but i already committed to this
@@ -57,10 +58,10 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">@cleggs.</div>
         <div class="idbutton"><a id="discbutton" onclick="copydis()"><img src="/images/cqstyle/links/idbuttons/discord.png" alt="Discord"></a></div>
-        <div class="socialsbutton"><a id="discbutton" onclick="copydis()">Copy</a></div>
+        <a id="discbutton" onclick="copydis()" class="socialsbutton">Copy</a>
       </div>
       <div class="socialsinner">
-        discord!! mostly just as a way to contact me, theres no server<br>Clicking the buttons copies my username! even if it might not look like it...
+        discord!! mostly just as a way to contact me, theres no server<br>Clicking the buttons copies my username! even if it might not look like it...<br>don't just send me a frq!! my dms are open!! gwaaaah
       </div>
     </div>
     <div class="socialscontainer">
@@ -68,7 +69,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">@cleggs.</div>
         <div class="idbutton"><a href="https://www.youtube.com/@cleggs." target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/youtube.png" alt="Youtube"></a></div>
-        <div class="socialsbutton"><a href="https://www.youtube.com/@cleggs." target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://www.youtube.com/@cleggs."  class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         youtube channel!! various shitposts and nothing productive<br>i upload basically NEVER but feel free to stalk the channel for when i do
@@ -79,7 +80,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">cleggss</div>
         <div class="idbutton"><a href="https://github.com/Cleggss/Deepsea-metro.site/" target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/github.png" alt="Github"></a></div>
-        <div class="socialsbutton"><a href="https://github.com/Cleggss/Deepsea-metro.site" target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://github.com/Cleggss/Deepsea-metro.site" class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         This is the github repo for my site!!<br>Pretty self explanatory... I use 11ty as a static site generator (though i'm underusing it massively atm)
@@ -92,7 +93,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">@cleggs</div>
         <div class="idbutton"><a href="https://gamebanana.com/members/5515965" target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/gamebanana.png" alt="Gamebanana"></a></div>
-        <div class="socialsbutton"><a href="https://gamebanana.com/members/5515965" target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://gamebanana.com/members/5515965" class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         where i'll be posting all my mods!! majority will be fancy guilty gear recolours though, you might get a splatoon in there NEVER because im lazy,, mod release tomorrow tho trust
@@ -103,7 +104,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">cleggs</div>
         <div class="idbutton"><a href="https://cleggs.straw.page/" target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/strawpage.png" alt="Strawpage"></a></div>
-        <div class="socialsbutton"><a href="https://cleggs.straw.page/" target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://cleggs.straw.page/" class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         strawpage i had before i decided on making a neocities, home of outdated oc info but also a bunch of gimmicks ive been sent,,, send me somethin if u want!!
@@ -114,7 +115,7 @@ randomscript:
       <div class="socialssidebar">
         <div class="socialsusername">@cleggs</div>
         <div class="idbutton"><a href="https://vgen.co/cleggs/" target="_blank" rel="noopener noreferrer"><img src="/images/cqstyle/links/idbuttons/vgen.png" alt="Vgen"></a></div>
-        <div class="socialsbutton"><a href="https://vgen.co/cleggs/" target="_blank" rel="noopener noreferrer">Continue</a></div>
+        <a href="https://vgen.co/cleggs/" class="socialsbutton" target="_blank" rel="noopener noreferrer">Continue</a>
       </div>
       <div class="socialsinner">
         i only rly use this to commission other people, i mean u get to see the art i commissioned if you're interested in that i guess? no need to be so nosey... might open mod commissions someday tho

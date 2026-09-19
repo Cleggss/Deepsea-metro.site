@@ -15,6 +15,30 @@
   scrollbar-color: var(--boxbackground) var(--boxcontainerinner);
 }
 
+footer {
+  font-family: rodinpro, helvetica;
+}
+
+footer a { /*for the link*/
+  color: var(--boxbuttonaccent);
+}
+
+footer a:visited {
+  color: var(--boxbuttonaccent);
+}
+
+footer a:hover {
+  color: var(--boxbuttonaccentbrighter);
+}
+
+footer a:visited:hover {
+  color: var(--boxbuttonaccentbrighter);
+}
+
+footer a:active {
+  color: var(--boxalttextcol);
+}
+
 body {
   margin:0;
   padding: 0;
@@ -114,7 +138,6 @@ hr {
   background-attachment: fixed;
   width: 100vw;
   height: 100vh;
-  z-index: 100;
 }
 
 .containerbox {
@@ -157,8 +180,8 @@ hr {
 
 .topbuttoninner {
   text-align: center;
-  border-top: 0.1vh #ffffff solid;
-  border-right: 0.1vh #ffffff solid;
+  border-top: 0.1vh #fff solid;
+  border-right: 0.1vh #fff solid;
   background: linear-gradient(180deg,rgba(207, 200, 187, 1) 0%, rgba(255, 255, 255, 1) 100%);
   width: 100%; /*with 3 other flex items, practically 1/3*/
   height: 100%;

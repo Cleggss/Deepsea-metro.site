@@ -39,11 +39,15 @@
   height: 100%;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1.5vh var(--highlightshadow);
   background-color: var(--background);
   padding: 1vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.mainabout h1:first-of-type {
+  font-size: 1.5em; /*first h1 in about is smaller, fits down to 720p*/
 }
 
 .testimonialmarquee {
@@ -84,7 +88,7 @@
   height: 100%;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1.5vh var(--highlightshadow);
   background-color: var(--background);
   overflow: hidden;
 }
@@ -94,27 +98,29 @@
   justify-content: center;
   align-items: center;
   background-color: var(--backgroundgreen);
-  box-shadow: 0px 0px 1.6vh var(--highlightshadow);
+  box-shadow: 0 0 1vh var(--highlightshadow), inset 0 0 0.5vh var(--highlightshadow);
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: cover;
   background-blend-mode: multiply;
   height: 100%;
   width: 100%;
-  font-family: deepsea;
-  opacity: 0.85;
+  font-family: deepsea, helvetica;
+  overflow: hidden;
   text-align: center;
+  position: relative; 
+  z-index: 1; /*so the glows go over the top*/
 }
 
 .carouselbutton:hover {
-  box-shadow: 0px 0px 1.8vh var(--highlightshadowhover);
+  box-shadow: 0 0 1.4vh var(--highlightshadowhover), inset 0 0 0.7vh var(--highlightshadowhover);
 }
 
 .info {
   background-color: var(--background);
   font-family: nindot, helvetica;
   border-top: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 1vh var(--highlightshadow);
 }
 
 .info h2 {
@@ -130,7 +136,7 @@
   color: var(--highlight);
   background-color: var(--highlight);
   border-width: 0;
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1vh var(--highlightshadow);
   margin-left: 0.85vh;
   margin-right: 0.85vh;
 }
@@ -152,7 +158,7 @@
   flex-direction: column;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1.5vh var(--highlightshadow);
   background-color: var(--background);
   align-items: flex-start;
   overflow-x: hidden;
@@ -194,16 +200,13 @@
   color: var(--coritextcol);
   background-color: var(--background);
   border-bottom: 0.1vh dashed var(--textcol);
+  padding-bottom: 0.2em; /*just works being placed into this element instead*/
   overflow: hidden;
   background-image: url('/images/kam.png');
   background-position: left;
   background-repeat: no-repeat;
   background-size: auto 100%;
   background-blend-mode: screen;
-}
-
-.nametitle p {
-  padding-bottom: 0.2em;
 }
 
 .sidebarinfo a {
@@ -225,6 +228,65 @@
 
 .sidebarinfo img { /*just gonna be used for the octo pixels i think*/
   height: 0.9em;
+}
+
+.statusbox {
+  display: flex;
+  flex-direction: column;
+  margin-left: -0.5vh;
+  margin-right: -0.5vh;
+  height: 18vh;
+  border-top: 0.1vh solid var(--highlight);
+  border-bottom: 0.1vh solid var(--highlight);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
+  font-family: nindot;
+  overflow: hidden;
+}
+
+.statusboxinner {
+  padding: 0.7vh;
+  background-color: var(--backgroundgreen);
+  box-shadow: inset 0 0 0.3vh var(--highlightshadow);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.statuspost {
+  text-align: left;
+  box-sizing: border-box;
+  border-radius: 1vh;
+  border: 0.1vh solid var(--highlight);
+  box-shadow: 0 0 0.5vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
+  background-color: var(--background);
+  padding: 0.5vh;
+  overflow: hidden;
+  margin-bottom: 0.7vh;
+}
+
+.statuspost:last-of-type { /*last statuspost, doesn't interfere with scroll*/
+  margin-bottom: 0;
+}
+
+.statuspost p {
+  font-size: 0.9em;
+  color: var(--navlink);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.statuspost > div { /*datetext*/
+  color: var(--darkentext);
+  font-size: 0.66em;
+  white-space: nowrap;
+}
+
+.statuspost > div div { /*nametext*/
+  display: inline;
+  margin-right: 0.3em;
+  font-family: blitzbold, helvetica;
+  font-size: 1.4em;
 }
 
 .mainsidebarbuttons { /*minimised version of lowerlinks*/
@@ -251,7 +313,7 @@
   height: 60%;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1.5vh var(--highlightshadow);
   background-color: var(--background);
   overflow: hidden;
 }
@@ -265,14 +327,13 @@
 .hostage { /*for 1 person, flex container for it*/
   display: flex;
   box-sizing: border-box;
-  margin: 0 auto;
   align-items: center;
   width: 92%;
   margin: auto;
   flex-direction: row;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
   background-color: var(--background);
   padding: 0.5vh;
   overflow: hidden;
@@ -292,7 +353,7 @@
   width: 4vh;
   border-radius: 0.75vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
   background-color: var(--background);
   overflow: hidden;
   aspect-ratio: auto 1 / 1;
@@ -313,7 +374,7 @@
   height: 40%;
   border-radius: 1vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1.5vh var(--highlightshadow);
   background-color: var(--background);
   overflow-x: hidden;
   overflow-y: auto;

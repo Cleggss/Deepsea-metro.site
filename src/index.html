@@ -29,15 +29,36 @@ randomscript:
     }
 
     window.onload = loadText;
+sectionnum: 1
+linknum: 1
 ---
-
 <div class="mainflex">
   <div class="mainleft">
     <div class="mainpoem">
       <img src="/images/cqstyle/index/poem.png" alt="Pale summer moonlight shimmers on the seafloor. An octopus, unaware that dawn will bring capture, Rests within a trap, dreaming fleeting dreams...">
     </div>
     <div class="mainabout">
-    <p><span class="tippy" data-tippy-content="RSS SOON!! NEXT UPDATE TRUST">tooltip test (hover me!)</span> HEY!! you're seeing part 1 of the site revamp atm, it's mostly me cleaning up my old code and moving to using a static site generator (11ty) so there mayy be some differences, the main things i need to sort out is adding back the sidebar links glowing when you're on the appropriate page, the music widget and ocart's styling, after that it's just writing a bunch,, and blogs i loathe blogs ouhhh<br><br>small things about the mobile scaling (i should set up the blog next if im gonna be talking like this lol) i've been optimising it to my phone specifically (558x1104 this thing is MASSIVE) so im not too sure how it works with other phones,, if you're checking out the site from my discord or whatever could you shoot me a message saying if it looks alright on your device? i'm testing on firefox currently...<br><br>I'LL FILL THIS OUT PROPERLY SOON!! it'll be a little introduction to my site and all that good stuff! so be ready for thatt!!<br>if you cant tell also i like splatoon lmao<br><br>TODOS<br>FINISH BLOG/DEVLOG STYLE (3rd)<br><br>change ocart styling (probably after you finish the main styles)<br>treat the blog styling like the blazblue radio segment? itd be cute to have my little scribbles i think<br>sort out the copying stuff code for the socials page, discord<br><br><br>and IF i get bored i'll make a little visual novel thingy in site (if i can ever figure some stuff out...)</p>
+      <h1>Welcome to the Deepsea Metro.</h1>
+      <p>
+        PART 2 OF THE SITE REWORK!! ive finally finished the base styling as of writing this, (i've split it across yet another update also so i'm afraid you'll have to wait for the lore a bit longer!), IF i could ask you all to allow autoplay on the site itd rlly help, the only sfx played on the site is for navigating and with an optional musicplayer pop-out, i'll never play uncomfortably loud noises or any of that, you can also disable the sfx if you want with a handy button in the top right...
+      </p>
+      <p>
+        I should probably think of an index besides my frontpage too, but i should probably think of a better solution that gives the site some extra mood,,, link it to the metro itself and everything im not sure
+      </p>
+      <p>
+        I'LL FILL THIS OUT PROPERLY SOON!! it'll be a little introduction to my site and all that good stuff! so be ready for thatt!!
+        <br>
+        if you cant tell also i like splatoon lmao
+      </p>
+      <p>
+        TODOS
+        <br>
+        FINISH BLOG/DEVLOG STYLE (3rd)
+        <br>
+        treat the blog styling like the blazblue radio segment? itd be cute to have my little scribbles i think
+        <br><br>
+        and IF i get bored i'll make a little visual novel thingy in site (if i can ever figure some stuff out...)
+      </p>
     </div> <!-- THIS IS NOT MINE!!! code is from https://chicagosoftcore.net/test, i'll annotate what ive tweaked and how it works, go into your debugger and select the index page-->
     <noscript>
       <style>
@@ -93,7 +114,6 @@ randomscript:
       
       #scrollgallery #gallery_buttons_wrapper { /*since im on percentages this'll fit anyway, but it's a nice precaution*/
         height: 100%;
-        overflow: hidden;
       }
     
       #scrollgallery #gallery_buttons { /*actual flex container for the buttons*/
@@ -101,7 +121,6 @@ randomscript:
         flex-direction: column;
         flex-wrap: nowrap;
         height: 100%;
-        overflow: hidden;
       }
     
       #scrollgallery #gallery_buttons a { /*buttons themselves*/
@@ -168,7 +187,6 @@ randomscript:
           width: 77%;
         }
       }
-    
     </style>
     <div id="scrollgallery" class="maincarousel"> 
       <div id="gallery_navigation">
@@ -185,8 +203,8 @@ randomscript:
               </div>
             </a>
             <a href="#gallery_3">
-              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/blogbuttonbg.png')">
-                Blog
+              <div class="carouselbutton" style="background-image: url('/images/cqstyle/index/carousel/sitemapbuttonbg.png')">
+                Sitemap
               </div>
             </a>
             <a href="#gallery_4">
@@ -202,7 +220,7 @@ randomscript:
           <div id="gallery_1" class="slide" style="background-image: url('/images/cqstyle/index/carousel/about.png')">
             <div class="info">
               <h2>
-                <a href="/about.html">\about</a>
+                <a href="/about/">\about</a>
               </h2>
               \so, who ARE you?
             </div>
@@ -210,41 +228,49 @@ randomscript:
           <div id="gallery_2" class="slide" style="background-image: url('/images/cqstyle/index/carousel/ocs.png')">
             <div class="info">
               <h2>
-                <a href="/ocs.html">\ocs</a>
+                <a href="/ocs/">\ocs</a>
               </h2>
               \learn about my ocs!
             </div>
           </div>
-          <div id="gallery_3" class="slide" style="background-image: url('/images/cqstyle/index/carousel/blog.png')">
+          <div id="gallery_3" class="slide" style="background-image: url('/images/cqstyle/index/carousel/sitemap.png')">
             <div class="info">
               <h2>
-                <a href="/blog.html">\blog</a>
+                <a href="/sitemap/">\sitemap</a>
               </h2>
-              \listen to my insane ramblings
+              \explore the metro!
             </div>
           </div>
           <div id="gallery_4" class="slide" style="background-image: url('/images/cqstyle/index/carousel/guestbook.png')">
             <div class="info">
               <h2>
-                <a href="/guestbook.html">\guestbook</a>
+                <a href="/guestbook/">\guestbook</a>
               </h2>
               \sign my guestbook!
             </div>
           </div>
-          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <!--moved it to head but you need to have jquery!!-->
           <script> //clegggsadd: thankfully, already annotated really well! don't try put units in, it's working off of identifiers so it wont take any px nonsense or whatever
-            const scroll_length = 1000; // Length of the scroll animation, in ms
+
+          const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+            if (mediaQuery.matches) { // CLEGGSADD: this is for accessibility, scroll is instant in this case, scroll_length changed from const to var
+              var scroll_length = 0; // accessibility scroll length, makes the switch instant
+            } else {
+              var scroll_length = 1000; // Length of the scroll animation, in ms
+            };
+
             const timeout_length = 4000;  // Length of the timeout, in ms
             const button_height = 25; // Height of a navigation button - cleggsadd: OK NOT ACTUALLY but it needs a number instead of a percentage, i guess?? still works
             const visible_button_count = 4; // Amount of navigation buttons visible at once
       
             const view = document.getElementById("view"); // Save #view in a variable
-      
+
             var gallery_buttons; // Empty variable to save array of the gallery buttons in
             var current_slide_index = 0;  // Current slide index (starts at 0)
             var button_top_index = 0; // Current navigation button that's displayed at the top (starts at 0)
             var scroll_timeout; // Empty variable to save the automatic timeout function in
-      
+
             $(document).ready(function () {// Load this code when the rest of the page is done loading
                 gallery_buttons = $("#gallery_buttons a"); // Save all buttons in #gallery_buttons in variable
       
@@ -324,17 +350,17 @@ randomscript:
                                           The animation speed is set with CSS. */
                 document.getElementById("gallery_buttons").style.marginTop = -25 * button_top_index; // Margin = height of buttons times which button is on top - cleggsadd: ONCE AGAINNNN 25 is just a placeholder, that lets it work, lol
             }
-        
+
           </script>
         </div>
       </div>
     </div>
     <div class="mainsidebar">
-      <div class="mainsidebarhead"><img src="/images/FRONTPAGE.gif" alt="My OC, Mako"><div class="nametitle"><p>Cleggs</p></div></div>
+      <div class="mainsidebarhead"><img src="/images/FRONTPAGE.gif" alt="My OC, Mako"><div class="nametitle">Cleggs</div></div>
       <div class="mainsidebarbody">
-        <i>"burnout..."</i>
+        <i>"bleghhh"</i>
         <div>
-          <p class="sidebarinfo">
+          <div class="sidebarinfo">
             <img src="/images/octopixel.png" alt="">
             <a href="https://time.is/London" id="time_is_link" rel="nofollow noopener noreferrer"><span id="London_z716"></span></a>
             <script src="//widget.time.is/t.js"></script>
@@ -344,22 +370,31 @@ randomscript:
             <img src="/images/octopixel.png" alt="">
             <a href="https://www.imood.com/users/cleggs" target="_blank" rel="noopener noreferrer"><img src="https://moods.imood.com/display/uname-cleggs/fg-C4C8DA/trans-1/imood.gif" alt="The current mood of cleggs at www.imood.com" border="0" style="height:1em; max-width:100%;"></a>
             <img src="/images/octopixel.png" alt="">
-          </p>
+          </div>
         </div>
-        <p>hey!! im cleggs, this is a site ive been working on for a lil now...<br><br>you know i'm nearly actually done with the site itself lol, i've just gotta finish off a few more templates then i'm set! been thinking of making the site more 'in-character' for my ocs, but for now it's still wip so i can only dream...</p>
+        <p>
+          hey!! im cleggs, this is a site ive been working on for a lil now...
+        </p>
+        <div class="statusbox">
+          <div class="chattitle">status</div>
+          <div class="statusboxinner">
+            {% for status in collections.status reversed %}
+              <div class="statuspost"><div><div class="coritext">{{ status.data.chartitle }}</div>{{ status.date | niceDate }}</div> {{ status.templateContent | raw }}</div>
+            {% endfor %}
+          </div>
+        </div>
         <div class="mainsidebarbuttons">
-          <a href="https://88x31.lol" target="_blank"><img src="https://88x31.lol/counter11.gif" alt="88x31 Counter"></a>
-          <a href="/images/deepseabutton.gif" download><img src="/images/deepseabutton.gif" alt="Deepsea Metro"></a>
+        <a href="https://88x31.lol" target="_blank"><img src="https://88x31.lol/counter11.gif" alt="88x31 Counter"></a>
+        <a href="/images/deepseabutton.gif" download><img src="/images/deepseabutton.gif" alt="Deepsea Metro"></a>
         </div>
         <textarea readonly><a href="https://cleggs.neocities.org/" target="_blank"><img src="host the image yourself!" alt="Deepsea Metro"></a></textarea>
-        <a href="https://neocities.org/site/cleggs">neocities page!</a>
       </div>
     </div>
   </div>
   <div class="mainvr"></div>
   <div class="mainright">
     <div class="testimonials"> <!--this is from https://bungle.online/home! i've worked this slightly to reduce the choppiness but still check their stuff out-->
-      <div class="chattitle"><p>hostages</p></div>
+      <div class="chattitle">hostages</div>
       <div class="testimonialsinner">
         <div class="testimonialmarquee">
           <div class="testimoniesbody">
@@ -367,70 +402,70 @@ randomscript:
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/dyna.jpg" alt="Dynatoast"></div>
                 <div class="hostagewords">
-                  <p>Please dont take me.</p>
+                  Please dont take me.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/blue.jpg" alt="Blue"></div>
                 <div class="hostagewords">
-                  <p>Please don't hurt my family</p>
+                  Please don't hurt my family
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/kensa.jpg" alt="Kensa"></div>
                 <div class="hostagewords">
-                  <p>#FREEKENSA #FREEKENSA #FREEKENSA </p>
+                  #FREEKENSA #FREEKENSA #FREEKENSA 
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/krono.jpg" alt="Krono"></div>
                 <div class="hostagewords">
-                  <p>give me bears</p>
+                  give me bears
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/flow.jpg" alt="Flow"></div>
                 <div class="hostagewords">
-                  <p>I DONT WANNA DIE</p>
+                  I DONT WANNA DIE
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/poe.jpg" alt="Poe"></div>
                 <div class="hostagewords">
-                  <p>sobs and eats moss</p>
+                  sobs and eats moss
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/pin.jpg" alt="Pin"></div>
                 <div class="hostagewords">
-                  <p>im sorry. i really didn't mean to do it.</p>
+                  im sorry. i really didn't mean to do it.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/shak.jpg" alt="Shak"></div>
                 <div class="hostagewords">
-                  <p>They're taking me tomorrow.</p>
+                  They're taking me tomorrow.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/julian.jpg" alt="Julian"></div>
                 <div class="hostagewords">
-                  <p>WHERE AM I</p>
+                  WHERE AM I
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/solbadguy.jpg" alt="Sol badguy"></div>
                 <div class="hostagewords">
-                  <p>im sol bad guy</p>
+                  im sol bad guy
                 </div>
               </div>
               <hr>
@@ -439,70 +474,70 @@ randomscript:
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/dyna.jpg" alt="Dynatoast"></div>
                 <div class="hostagewords">
-                  <p>Please dont take me.</p>
+                  Please dont take me.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/blue.jpg" alt="Blue"></div>
                 <div class="hostagewords">
-                  <p>Please don't hurt my family</p>
+                  Please don't hurt my family
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/kensa.jpg" alt="Kensa"></div>
                 <div class="hostagewords">
-                  <p>#FREEKENSA #FREEKENSA #FREEKENSA </p>
+                  #FREEKENSA #FREEKENSA #FREEKENSA 
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/krono.jpg" alt="Krono"></div>
                 <div class="hostagewords">
-                  <p>give me bears</p>
+                  give me bears
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/flow.jpg" alt="Flow"></div>
                 <div class="hostagewords">
-                  <p>I DONT WANNA DIE</p>
+                  I DONT WANNA DIE
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/poe.jpg" alt="Poe"></div>
                 <div class="hostagewords">
-                  <p>sobs and eats moss</p>
+                  sobs and eats moss
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/pin.jpg" alt="Pin"></div>
                 <div class="hostagewords">
-                  <p>im sorry. i really didn't mean to do it.</p>
+                  im sorry. i really didn't mean to do it.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/shak.jpg" alt="Shak"></div>
                 <div class="hostagewords">
-                  <p>They're taking me tomorrow.</p>
+                  They're taking me tomorrow.
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/julian.jpg" alt="Julian"></div>
                 <div class="hostagewords">
-                  <p>WHERE AM I</p>
+                  WHERE AM I
                 </div>
               </div>
               <hr>
               <div class="hostage">
                 <div class="hostageprofileimg"><img src="/images/cqstyle/index/hostages/solbadguy.jpg" alt="Sol badguy"></div>
                 <div class="hostagewords">
-                  <p>im sol bad guy</p>
+                  im sol bad guy
                 </div>
               </div>
               <hr>

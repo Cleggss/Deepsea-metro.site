@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#75D99F">
+    <meta property="og:site_name" content="Deepsea Metro">
+    <meta property="og:title" content="CQ-80 Stereo system">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="HEYYY!! Don't link here!!">
+    <meta property="og:image" content="/images/cqstyle/ocs/coriembed.png">
+    <title>CQ-80 Stereo system</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="/css/variables.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/musicplayer.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/tooltips/tippy-stylesheet.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <audio id="hoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/56nbgl.wav" type="audio/mpeg" /></audio>
+    <audio id="clicksfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/0j6dok.wav" type="audio/mpeg" /></audio>
+    <noscript><div class="noscriptwarning"><p>HEY! the musicplayer won't work without javascript!<br><small>You'll need to enable it to continue...</small></p></div></noscript>
+    <div class="maingrid">
+      <div class="topbar">CQ-80 STEREO SYSTEM</div>
+      <div class="mainarea">
+        <div class="cover"></div>
+        <div class="controlsarea">
+          <div class="songinfo">
+            <div class="xofy">XX/XX</div>
+            <div class="songtitle songname">title</div>
+            <div class="songtitle songartist">artist</div>
+          </div>
+          <div class="controls">
+            <div class="controlsbuttons">
+              <div class="controlbutton prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+              <div class="controlbutton playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+              <div class="controlbutton next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+            </div>
+            <div class="slider_container">
+              <div class="current-time">00:00</div>
+              <input type="range" min="1" max="100" value="0" class="seek_slider slider" onchange="seekTo()">
+              <div class="total-duration">00:00</div>
+            </div>
+            <div class="slider_container">
+              <i class="fa fa-volume-down"></i>
+              <input type="range" min="1" max="100" value="99" class="volume_slider slider" onchange="setVolume()">
+              <i class="fa fa-volume-up"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">You gaze seaward with azure hope.<a href="https://github.com/sayantanm19/js-music-player" target="_blank" rel="noopener noreferrer">src</a></div>
+    </div>
+  <script src="/js/sayanmusicplayer.js{{ nocache }}"></script>
+  <script src="/js/playersfx.js{{ nocache }}"></script>
+  <script src="/js/toggle.js{{ nocache }}"></script>
+  </body>
+</html>

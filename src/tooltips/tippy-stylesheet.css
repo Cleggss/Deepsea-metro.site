@@ -13,7 +13,7 @@
   color: var(--textcol);
   border-radius: 0.5vh;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0 0 0.5vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
   font-family: nindot, helvetica;
   font-size: 0.95em;
   white-space: normal;
@@ -97,7 +97,6 @@
   text-decoration-line: underline;
   text-decoration-style: dashed;
   text-decoration-color: var(--navlinkactive);
-  display: inline-block;
 }
 
 @media (max-width: 1250px) { /*scales the text slightly smaller on mobile*/

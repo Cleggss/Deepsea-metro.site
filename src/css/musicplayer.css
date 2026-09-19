@@ -1,0 +1,239 @@
+* { /*scrollbar colour*/
+  scrollbar-color: var(--marqueeshadow) var(--background);
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(160deg, rgba(0, 25, 25, 1) 0%, rgba(0, 12, 14, 1) 35%, rgba(0, 6, 7, 1) 100%); /*goes darker sooner, looks like you're underwater!*/
+    font-family: nindot, helvetica;
+    text-shadow: 1px 1px rgba(0, 113, 151, 0.5), 0 0 2px currentColor, -1px -1px rgba(255, 0, 255, 0.2); /*slight text shadow merged with blue, slight blur, fake abberation, vh to be universal across sizes*/
+    background-image: url("/images/metrotrain.gif");
+    background-size: cover;
+}
+
+.noscriptwarning { /*enabled with <noscript> element*/
+    position: fixed; /*always in front, only visible when js is disabled*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    font-family: blitzmain, helvetica;
+    font-size: 1.5em;
+    color: var(--textcol);
+}
+
+.maingrid {
+    display: grid;
+    grid-template-areas: /*restricts to only 100vh max*/
+    "topbar"
+    "main"
+    "footer";
+    grid-template-rows: 34px 100fr 15px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.topbar {
+    background-image: url("/images/sdodrsprites.gif"); /*sit at the top right*/
+    image-rendering: pixelated; /*applies to the background too!*/
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    border-bottom: 0.1vh solid var(--highlight);
+    box-shadow: 0 0 9px var(--highlightshadow), inset 0 0 5px var(--highlightshadow);
+    color: var(--highlight);
+    background-color: var(--backgroundgreen);
+    font-size: 33px;
+    white-space: nowrap;
+}
+
+.mainarea {
+    display: flex;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+.songinfo {
+    overflow: hidden;
+}
+
+.cover {
+    display: flex;
+    align-items: center;
+    aspect-ratio: 1/1; /*keeps the cover square*/
+    margin: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0.1vh solid var(--highlight);
+    box-shadow: 0 0 9px var(--highlightshadow), inset 0 0 5px var(--highlightshadow);
+    max-width: 50%;
+}
+
+.controlsarea {
+    display: grid;
+    grid-template-areas: /*restricts to only 100vh max*/
+    "info"
+    "controls";
+    grid-template-rows: 71px 100fr;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: var(--textcol);
+}
+
+.controlsbuttons {
+    color: var(--darkentext);
+    width: 50%;
+    display: flex; /*better spacing on the buttons*/
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.controlbutton {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.controlbutton:hover {
+    color: var(--highlight);
+    filter: drop-shadow(0 0 1vh var(--highlightshadow));
+}
+
+.controlbutton img {
+    height: 24px;
+    width: auto;
+}
+
+.xofy {
+    margin-bottom: 5px;
+    color: var(--navlink);
+}
+
+.songtitle { /*takes up less space, both were pretty much the same anyway*/
+    white-space: nowrap;
+    color: var(--marquee);
+    text-shadow: var(--marqueeshadow) 0 0 0.2em;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.songname {
+    font-size: 32px;
+}
+
+.songartist {
+    font-size: 16px;
+}
+
+.slider_container {
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkentext);
+}
+
+.slider { /*slider element category*/
+    appearance: none;
+    height: 4px;
+    border-radius: 5px;
+    background: var(--highlight);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s; /*ease animation*/
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.seek_slider { /*first slider element only!*/
+    width: 78%;
+}
+
+.volume_slider { /*first slider element only!*/
+    width: 39%;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider_container:has(.slider:hover) { /*lights up text at side alongside the sliders*/
+    color: var(--highlight);
+    transition: color .2s;
+}
+
+.slider::-moz-range-thumb { /*for firefox*/
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: url("/images/cqstyle/stations/extras/smalldot.png");
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb { /*chromium, booooo*/
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: url("/images/cqstyle/stations/extras/smalldot.png");
+    cursor: pointer;
+}
+
+.footer {
+    background-color: var(--background);
+    font-style: italic;
+    text-align: center;
+    font-family: deepsea, helvetica;
+    color: var(--backgroundgreen);
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.footer a {
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    color: rgba(0, 172, 104, 1);
+    opacity: 0.35;
+    mix-blend-mode: saturation;
+}
+
+.footer a:hover {
+    opacity: 0.7;
+}
+
+@media screen and (min-height: 600px) { /*non-minimized styling, determined by screen height being over 600px*/
+    .mainarea {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cover {
+        height: 45vh;
+        margin: 3vh;
+        max-width: 100%;
+    }
+
+}

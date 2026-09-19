@@ -101,6 +101,26 @@ details[open] summary ~ * {
   color: var(--navlinkactive);
 }
 
+.meetingtext {
+  color: var(--stationcolMeeting);
+}
+
+.meetingtext:link {
+  color: var(--stationcolMeeting);
+}
+
+.meetingtext:visited {
+  color: var(--stationcolMeeting);
+}
+
+.meetingtext:link:hover {
+  color: var(--navlinkactive);
+}
+
+.meetingtext:visited:hover {
+  color: var(--navlinkactive);
+}
+
 /*end*/
 
 .navarea {
@@ -205,8 +225,6 @@ section.stationline > section:last-child .navareastation:last-of-type::before { 
   position: relative; /*to make z-index work*/
   align-items: center;
   justify-content: center;
-  user-select: none;
-  pointer-events: none;
   filter: drop-shadow(0 0 0.08vh var(--stationcolour))
           drop-shadow(0 0 0.8vh var(--stationcolour));
   z-index: 1;
@@ -214,15 +232,38 @@ section.stationline > section:last-child .navareastation:last-of-type::before { 
 
 .stationimg img { /*affects image seperately, doesn't lessen the filters*/
   opacity: 0.6;
+  user-select: none;
+  pointer-events: none;
 }
 
-.navareastation a:hover .stationimg img { /*on hover*/
+.navareastation a:hover img { /*on hover*/
   opacity: 1;
+  filter: drop-shadow(0 0 0.1vh var(--stationcolour))
+          drop-shadow(0 0 1vh var(--stationcolour)); /*it looks a lot better here, imo*/
 }
 
-.navareastation a:hover .stationimg { /*on hover*/
-  filter: drop-shadow(0 0 0.1vh var(--stationcolour))
-          drop-shadow(0 0 1vh var(--stationcolour));
+#disclaimers {
+  background-color: var(--background);
+  box-shadow: inset 0 0 2vh var(--backgroundgreen), 0 0 1vh var(--backgroundgreen);
+  border-radius: 1vh;
+  overflow: hidden;
+}
+
+#disclaimers summary {
+  text-align: center;
+  font-family: nindot, helvetica; /*style like the marquee*/
+  background-color: black;
+  color: var(--marquee);
+  text-shadow: var(--marqueeshadow) 0 0 0.2em;
+  font-size: 1.2em;
+}
+
+#disclaimers p {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
 }
 
 #mainarea h1 {
@@ -232,7 +273,7 @@ section.stationline > section:last-child .navareastation:last-of-type::before { 
 #mainnav { /*page nav in main area*/
   padding: 0.5vh;
   width: 100%;
-  margin-bottom: 0.35vh;
+  margin-bottom: 2vh; /*spacing for headers, mainly*/
   margin-top: 0.35vh;
   border-radius: 0.5vh;
   border: 0.1vh solid var(--highlight);
@@ -283,4 +324,40 @@ section.stationline > section:last-child .navareastation:last-of-type::before { 
 .left img {
   object-fit: fill;
   width: 100%;
+}
+
+#ocimg {
+  float: left;
+  display: flex; /*to center images, stop weird bar at bottom*/
+  width: 26%;
+  margin-right: 0.5vh;
+}
+
+#ocimg img {
+  object-fit: fill;
+  width: 100%;
+}
+
+#ocheader a { /*section taken from ocpages*/
+  float: right;
+}
+
+#ocheader a #topbutton { /*theres a way easier way to select this im ngl*/
+  width: 0.9em;
+}
+
+#topbutton {
+  opacity: 0.4;
+  width: 0.8em;
+  display: flex; /*fits the containerrr?? im not sure but it works so i dont question it*/
+}
+
+#topbutton:hover { /*end of section taken from ocpages*/
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details[open] summary ~ * {
+    animation: none;
+  }
 }

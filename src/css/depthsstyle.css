@@ -2,19 +2,28 @@
   scrollbar-color: var(--highlight) var(--background);
 }
 
+footer {
+  position: static;
+
+}
+
 body {
   background-color: rgb(5, 24, 18); /*fallback*/
-  background: linear-gradient(180deg, rgba(0, 25, 25, 1), rgba(0, 12, 14, 1));
+  background: linear-gradient(180deg, rgba(0, 25, 25, 1) 0%, rgba(0, 12, 14, 1) 55%, rgba(0, 6, 7, 1) 100%); /*goes darker sooner, looks like you're underwater!*/
   background-attachment: fixed;
   margin: 0;
   margin-top: 2.5vh;
   font-size: 19px;
   text-shadow: 0.1em 0.1em rgba(0, 113, 151, 0.5), 0 0 0.15em currentColor, -0.1em -0.1em rgba(255, 0, 255, 0.2); /*taken from other styling, tweaked to work well with px*/
 }
+
+p:first-of-type { /*no top spacing on first elements*/
+  margin-top: 0;
+}
   
-p { /*removes the dinky spacing on the <p> tag, just very handy*/
-  margin: 0;
-  padding: 0;
+p { /*reduces the dinky spacing on the <p> tag, just very handy*/
+  margin-top: 0.65em;
+  margin-bottom: 0.65em;
 }
 
 ::selection { /*when you left click drag,, select things,, youknowww*/
@@ -27,6 +36,7 @@ h1 { /*header uses blitzbold font*/
   text-align: center;
   font-style: italic;
   line-height: 0.8; /*space these better*/
+  margin-top: 0.35em;
 }
 
 h3 {
@@ -63,7 +73,7 @@ hr {
   color: var(--highlight);
   background-color: var(--highlight);
   border-width: 0.1vh;
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0px 0px 1vh var(--highlightshadow);
   margin-top: 1.2vh;
   margin-bottom: 1.2vh;
   border-style: solid;
@@ -166,7 +176,9 @@ a:active { /*styles links on click*/
   box-shadow: 0px 0px 2vh var(--highlightshadow); /*the 'glow*/
   overflow: hidden;
   backdrop-filter: blur(5px);
+  margin-bottom: 2.5vh;
 }
+
 
 @media (max-width: 1250px) { /*mobile, quicker scrolling to sell effect better*/
   #background1::before {

@@ -101,6 +101,7 @@
   vertical-align: middle;
   width: 100%;
   user-select: none;
+  background-color: black;
 }
 
 @media (max-width: 1250px) { /*mobile*/

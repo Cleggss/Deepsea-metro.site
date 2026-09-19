@@ -18,9 +18,9 @@
   align-items: center;
   height: 20vh; /*spacing!*/
   width: 100%;
-  border: 0.75vh ridge #aeaeae;
+  border: 0.75vh ridge #747474;
   box-shadow: 0px 0px 2vh rgba(11, 11, 11, 0.25);
-  background-image: url("/images/MRNpattern.png");
+  background-image: url("/images/cqstyle/MRNpattern.png");
   background-size: 15%;
   background-blend-mode: darken;
   background-color: rgba(100, 100, 50, 0.1);
@@ -33,7 +33,7 @@
   display: flex;
   grid-row: 1;
   grid-column: 1 / 3;
-  border-bottom: 0.75vh ridge #aeaeae;
+  border-bottom: 0.75vh ridge #747474;
   align-items: center; 
   background-color: rgba(50, 100, 100, 0.5);
   font-family: nindot;
@@ -82,34 +82,30 @@
   line-height: 100%;
 }
 
+.socialssidebar a {
+  color: var(--navlink);
+}
+
+.socialssidebar a:hover {
+  color: var(--navlinkactive);
+}
+
 .socialsbutton {
   width: 100%;
   height: 35%;
   min-height: 35%; /*flexbox, no flexing!*/
   background-color: rgba(11, 11, 11, 0.2);
   text-align: center;
-  border-top: 0.1vh solid var(--bluealthighlight);
-  box-shadow: 0px 0px 2vh var(--pinkaltshadow);
-}
-
-.socialsbutton a { /*styling link's text*/
-  display: inline-block;
   align-content: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
   font-family: blitzmain;
-  color: var(--navlink);
   text-decoration: none;
   user-select: none;
+  border-top: 0.1vh solid var(--bluealthighlight);
+  box-shadow: 0 0 1.3vh var(--pinkaltshadow);
 }
 
-.socialsbutton a:hover { /*text colour on hover*/
-  color: var(--navlinkactive);
-}
-
-.socialsbutton a:active { /*text colour on click*/
-  color: var(--navlinkactive);
+.socialsbutton:hover {
+  box-shadow: 0 0 2vh var(--pinkaltshadow);
 }
 
 #discbutton:hover { /*fits in with the rest*/
@@ -135,11 +131,11 @@
   .socialscontainer { /*keeps everything spaced nicely, sidebar is readable and clickable*/
     grid-template-columns: 35fr 65fr;
     grid-template-rows: 20fr 80fr;
-    border: 0.75vw ridge #aeaeae;
+    border: 0.75vw ridge #747474;
   }
   
   .socialsheader {
-    border-bottom: 0.75vw ridge #aeaeae;
+    border-bottom: 0.75vw ridge #747474;
   }
   
   .idbutton img {

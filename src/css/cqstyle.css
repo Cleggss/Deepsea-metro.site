@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: rgb(5, 24, 18); /*fallback*/
+  background-color: #020907; /*fallback*/
   background-image: url('/images/cqstyle/sanibgblur.png'); /*image to be used with scrolling background*/
   animation: scrollingBg 160s infinite linear; /*scroll speed, how fast itll translate back to where it started in seconds*/
   overflow: hidden; /*scrollbar dissapears*/
@@ -22,14 +22,13 @@ body {
   } /*set to [width,height] of the image in the background*/
 }
 
-p { /*removes the dinky spacing on the <p> tag, just very handy*/
-  margin: 0;
-  padding: 0;
+p:first-of-type { /*no top spacing on first elements*/
+  margin-top: 0;
 }
-
-::selection { /*when you left click drag,, select things,, youknowww*/
-  color: var(--selectioncol);
-  background-color: var(--selectionbg);
+  
+p { /*reduces the dinky spacing on the <p> tag, just very handy*/
+  margin-top: 0.65em;
+  margin-bottom: 0.65em;
 }
 
 h1 { /*header uses blitzbold font*/
@@ -58,14 +57,14 @@ i { /*this is only ever really gonna be used on the index, but its nice to have*
 ul { /*unordered list*/
   margin-bottom: 0.35em;
   margin-top: 0.35em;
-  padding-left: 2em; /*was 40px before, didn't scale well*/
+  padding-left: 2em; /*was 40 before, didn't scale well*/
 }
 
 hr {
   color: var(--highlight);
   background-color: var(--highlight);
   border-width: 0.1vh;
-  box-shadow: 0px 0px 2vh var(--highlightshadow);
+  box-shadow: 0 0 1vh var(--highlightshadow);
   margin-top: 1.2vh;
   margin-bottom: 1.2vh;
   border-style: solid;
@@ -79,7 +78,7 @@ textarea { /*used enough and should have same styling in the different areas!*/
   margin-left: auto;
   margin-right: auto;
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
   background-color: var(--background);
   color: white;
   max-width: 100%;
@@ -113,7 +112,7 @@ a:visited:active { /*styles visited links on click*/
   color: var(--linkcolactive);
 }
 
-.crt-filter::before { /*crt filter*/
+#crt-filter::before { /*crt filter*/
   content: "";
   position: fixed;
   inset: 0; /*taken in part from deloughry, but added a scrolling effect*/
@@ -124,13 +123,17 @@ a:visited:active { /*styles visited links on click*/
   opacity: 0.85;
 }
 
+.hidden { /*gets put onto elements to hide with javascript*/
+  visibility: hidden;
+}
+
 @keyframes scanlinescroll { /*scanline animation*/
   0% {
     background-position: 0 0;
   }
   to {
-    background-position: 0 2px;
-  } /*linear gradient scroll amount*/
+    background-position: 0 -2px;
+  } /*linear gradient scroll amount -  going backwards*/
 }
 
 .center { /*centers everything on the page*/
@@ -138,6 +141,8 @@ a:visited:active { /*styles visited links on click*/
   justify-content: center;
   align-items: center;
   height: 100vh; /*needs to have a defined height*/
+  height: 100svh; /*only triggers if svh supported, for mobile devices, scales much better*/
+  width: 100vw;
 }
 
 .content { /*the actual BOX, */
@@ -147,12 +152,13 @@ a:visited:active { /*styles visited links on click*/
   "sidebar content";
   grid-template-columns: 20% 80%; /*how much space columns/rows take up, sidebar is 20% of the content element in this case*/
   grid-template-rows: 10% 90%;
-  width: 77%; /*stops it looking bad on non-16:9 res, while still keeping it boxed in that*/
-  height: 88%; /*gets stopped by the height on 16:9*/
-  background-color: rgba(66, 76, 72, 0.3); /*good to start with, neutral colour for the base bg*/
-  border-radius: 5vh; /*everything beneath details the border and styling*/
+  width: 77vw;
+  height: 88vh; /*vh and not % to not conflict with svh*/
+  background-color: rgba(66, 76, 72, 0.3); /*good to start with, darker colour for the base bg*/
+  border-radius: 5vh 7vh 5vh 5vh; /*top right corner is bigger, for the bevel*/
+  corner-top-right-shape: bevel; /*only available on chromium atm.. it's still good though*/
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 2vh var(--highlightshadow); /*the 'glow*/
+  box-shadow: 0 0 2vh var(--highlightshadow); /*the 'glow*/
   background-image: conic-gradient(from 89deg at 50% 104%, rgba(121, 197, 194, 0.5) 0%, rgba(171, 171, 147, 0.5) 50%, rgba(121, 197, 194, 0.5) 60%, rgba(121, 197, 194, 0.5) 70%, rgba(134, 170, 190, 0.5) 80%, rgba(134, 170, 190, 0.5) 93%, rgba(227, 193, 224, 0.5) 98%); /*gradient in css!*/
   background-size: 100% 100%;
   overflow: hidden; /* stops things poking out on curved corners*/
@@ -172,7 +178,7 @@ a:visited:active { /*styles visited links on click*/
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,rgba(11, 11, 11, 0.1) 65%, rgba(0, 0, 0, 0.35) 100%), linear-gradient(180deg,rgba(23, 69, 53, 0.85) 0%, rgba(17, 56, 67, 0.85) 100%);
+  background: linear-gradient(90deg,rgba(11, 11, 11, 0.1) 65%, rgba(0, 0, 0, 0.4) 100%), linear-gradient(180deg,rgba(23, 69, 53, 0.85) 0%, rgba(17, 56, 67, 0.85) 100%); /*shadow at right, green/blue gradient going up*/
   background-blend-mode: overlay;
   overflow: hidden;
 }
@@ -181,10 +187,14 @@ a:visited:active { /*styles visited links on click*/
   width: 1.5%;
 }
 
+.headflexspacer:last-of-type { /*second spacer*/
+  width: 2.5%;
+}
+
 .headflex2 { /*title*/
   display: flex;
   align-items: center;
-  width: 31%;
+  width: 30%;
   height: 100%;
 }
 
@@ -194,7 +204,7 @@ a:visited:active { /*styles visited links on click*/
 }
 
 .headflex3 { /*marquee background styling*/
-  width: 48%;
+  width: 49%;
   background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0.75), rgba(0,0,0,0)); /*'lengthens' gradient, longer area is black*/
   margin: 1vh; /*stops it rubbing against the rest*/
   overflow: hidden;
@@ -206,7 +216,6 @@ a:visited:active { /*styles visited links on click*/
   align-items: center;
   color: var(--marquee);
   text-shadow: var(--marqueeshadow) 0 0 0.2em;
-  font-family: nindot;
   font-size: 3vh;
   width: 100%;
   height: 100%;
@@ -216,64 +225,56 @@ a:visited:active { /*styles visited links on click*/
 }
 
 .headflex4 { /*top right menu doodad things*/
-  margin: auto;
+  margin: 1vh; /*aligns with the marquee*/
   display: flex;
-  width: 20%;
-  height: 88%;
-  opacity: 0.8; /*keep it slightly opaque, looks a bit better at the moment but i should change this laterr,,,*/
-  border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 0.5vh var(--highlightshadow);
-  background-color: var(--background);
-  border-radius: 1vh;
-  overflow: hidden;
+  justify-content: space-around;
+  width: 17%;
 }
 
-.flex4info { /*just styling for button + positioning*/
+.flex4button { /*top right buttons*/
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
-  overflow: hidden;
-}
-
-.flex4info button { /*audio player button*/
-  width: 100%;
+  aspect-ratio: 1/1; /*keep the buttons square*/
+  max-width: 30%;
   height: 100%;
   text-align: center;
   font-family: nindot;
   font-size: 1vw;
   line-height: 0.8;
-  color: black;
-  background-color: var(--backgroundgreen);
-  border: none;
+  background: linear-gradient(58deg,rgba(17, 81, 68, 0.7), rgba(25, 91, 113, 0.7));
+  box-shadow: 0 0 1vh rgba(17, 81, 68, 0.7);
+  border-radius: 100vh; /*always a circle*/
+  border: none; /*exclusively for the button elements*/
+  padding: 0; /*exclusively for the button elements*/
   overflow: hidden;
 }
 
-.flex4info button:hover { /*change text to white on hover*/
-  color: white;
+.flex4button:hover {
+  transition: background 0.15s; /*background takes a little bit of time to change*/
+  z-index: 1; /*on top/above of other ones*/
+  background: #c11ab0cc; /*slightly transparent, so drop shadow shows but still has an effect*/
+  filter: drop-shadow(-0.2vh 0 0.2vh #a52047) drop-shadow(0.2vh 0 0.2vh #421c98) drop-shadow(0 0 1vh #c11ab0cc); /*occlusion, occlusion, glow*/
 }
 
-.flex4info button:active { /*change text to grey on click*/
-  color: grey;
+.flex4button img {
+  height: 75%;
+  width: auto;
+  opacity: 0.4;
+  user-select: none;
 }
 
-.flex4img { /*dedf1sh image, might change later*/
-  width: 25%;
-  height: 100%;
-  background-image: url('/images/cqstyle/banddedf1sh.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-left: 0.1vh solid var(--highlight);
-  border-right: 0.1vh solid var(--highlight); /*all the borders needed*/
-  overflow: hidden;
+.flex4button:hover img {
+  opacity: 0.8;
 }
 
-.flex4wave { /*funky lil wave gif*/
-  width: 50%;
-  background-image: url('/images/cqstyle/wave.gif');
-  background-size: 100% 100%;
-  overflow: hidden;
+.buttonclicked { /*javascript! when the buttons are toggled on*/
+  background: linear-gradient(58deg,rgba(41, 121, 133, 0.9), rgba(78, 152, 124, 0.9));
+  box-shadow: 0 0 1vh rgba(204, 232, 193, 0.7);
+}
+
+.buttonclicked img {
+  opacity: 0.6;
 }
 
 .sidebar { /*the sidebar (mostly just to align)*/
@@ -285,7 +286,7 @@ a:visited:active { /*styles visited links on click*/
   padding: 0.75vh;
   overflow: hidden;
   color: var(--highlight);
-  background-color: rgba(30, 42, 42, 0.3); /*darkens slightly*/
+  background-color: rgba(15, 21, 21, 0.35); /*darkens slightly more*/
 }
 
 .sidebar::before { /*sidebar background*/
@@ -305,7 +306,7 @@ a:visited:active { /*styles visited links on click*/
 
 .navbar { /*navbar background styling*/
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
   background-color: var(--background);
   border-radius: 2vh;
   display: flex;
@@ -321,7 +322,7 @@ a:visited:active { /*styles visited links on click*/
 .navigation { /*navigation pane*/
   border: 0.1vh solid var(--highlight);
   border-top: none; /*stops border doubling*/
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
   background-color: var(--background);
   width: 95%;
   height: 60%;
@@ -388,7 +389,7 @@ a:visited:active { /*styles visited links on click*/
   height: 2.3vh;
   width: 90%;
   border-radius: 0.5vh;
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 0.7vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
   background-color: var(--background);
   border: 0.1vh solid var(--highlight);
   overflow: hidden;
@@ -407,7 +408,7 @@ a:visited:active { /*styles visited links on click*/
   margin: 0 auto;
   width: 90%;
   height: 2.3vh;
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 0.7vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
   background-color: var(--backgroundgreen);
   border: 0.1vh solid var(--highlight);
   border-top: none;
@@ -417,7 +418,7 @@ a:visited:active { /*styles visited links on click*/
 }
 
 .linkbutton:hover {
-  box-shadow: 0px 0px 1.2vh var(--highlightshadowhover);
+  box-shadow: 0 0 1.2vh var(--highlightshadowhover), inset 0 0 0.4vh var(--highlightshadowhover);
 }
 
 .stationimg { /*station icons inside of .linkbutton*/
@@ -459,7 +460,7 @@ a:visited:active { /*styles visited links on click*/
   justify-content: center;
   border-bottom: none; /*stops border doubling*/
   border: 0.1vh solid var(--highlight);
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 0.5vh var(--highlightshadow);
   background-color: var(--background);
   border-radius: 2vh 2vh 0 0;
   width: 95%;
@@ -481,7 +482,7 @@ a:visited:active { /*styles visited links on click*/
   font-family: nindot, helvetica;
   color: var(--highlight);
   font-size: 2vh;
-  box-shadow: 0px 0px 1vh var(--highlightshadow);
+  box-shadow: 0 0 1vh var(--highlightshadow);
   background-color: var(--background);
   border-bottom: 0.1vh solid var(--highlight);
   line-height: 1;
@@ -532,7 +533,7 @@ a:visited:active { /*styles visited links on click*/
 .inner { /*'content'region, this is just styling the background so far*/
   grid-row: 2 / 3;
   grid-column: 2;
-  background-color: rgba(12, 12, 12, 0.4); /*yummy glass effect*/
+  background-color: rgba(12, 12, 12, 0.47); /*yummy glass effect*/
   background-image: url('/images/cqstyle/sanidistortion.png'), linear-gradient(to top left, rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)), url('/images/kam.png');
   background-position: right bottom, left top, left top; /*specify for distort, then for gradient, then kamabo*/
   background-size: cover, cover, 8%; /* doesn't let it clip at the top, always stays pivoted. 8% for kamabo logo*/
@@ -554,12 +555,25 @@ a:visited:active { /*styles visited links on click*/
 @media (max-width: 1250px) { /*mobile, scales it to 100% width*/
   
   .content {
+    grid-template-rows: 6vh auto; /*for the heading to be smaller, content takes more room*/
     width: 100%; /*literally the most bandaid solution ever but it works suprisingly*/
-    border-radius: 3vh; /*cuts off way less*/
+    border-radius: 3vh 4vh 3vh 3vh; /*top right corner is slightly bigger, but to not cut off content*/
   }
   
   .sidebar {
     padding: 1vw;
+  }
+
+  .headflex3 {
+    margin: 1.5vw;
+  }
+
+  .headflex3marquee {
+    font-size: 2vh;
+  }
+
+  .headflex4 {
+    margin: 1.5vw; /*aligns with the marquee*/
   }
   
   .navbar {
@@ -600,4 +614,4 @@ a:visited:active { /*styles visited links on click*/
   }
 }
 
-/*woahhh updating this cause the styling is actually.. really good on mobile now haha go me!! this site scales well on basically everything except if you have a tall screen on basic styling and vice versa, the styling tweaks itself at 1250px of vertical space.*/
+/*woahhh updating this cause the styling is actually.. really good on mobile now haha go me!! this site scales well on basically everything except if you have a tall screen on basic styling and vice versa, the styling tweaks itself at 1250 of vertical space.*/

@@ -1,0 +1,38 @@
+#backheader { /*back button, copied from ocs page, since this should only really be a gallery view for myart now*/
+  margin-bottom: 0.4em;
+}
+
+#backheader a {
+  display: inline-block;
+  margin-right: 0.3em;
+}
+
+#backbutton {
+  opacity: 0.4;
+  width: 0.8em;
+}
+
+#backbutton:hover {
+  opacity: 0.6;
+}
+
+.adoptsarea {
+  display: flex;
+  gap: 0.5vh;
+}
+.adoptsarea a {
+  box-shadow: 0px 0px 0.5vh var(--highlightshadow), inset 0 0 0.2vh var(--highlightshadow);
+  background-color: var(--backgroundgreen);
+  border: 0.1vh solid var(--highlight);
+  display: inline-block;
+}
+
+.adoptsarea a:hover {
+  box-shadow: 0px 0px 1vh var(--highlightshadow), inset 0 0 0.5vh var(--highlightshadow);
+}
+
+.adoptsarea a img {
+  display: block;
+  image-rendering: pixelated;
+  filter: drop-shadow( 0 0 0.1vh black);
+}

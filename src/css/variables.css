@@ -1,6 +1,6 @@
 /*keep this on EVERY page*/
 :root {
-  --highlight: rgb(121, 197, 178, 1); /*minty highlights, borders etc*/
+  --highlight: rgba(121, 197, 178, 1); /*minty highlights, borders etc*/
   --highlightshadow: rgba(96, 157, 142, 0.92); /*border shadows*/
   --highlightshadowhover: rgba(96, 157, 142, 1); /*border shadows on hover*/
 
@@ -8,7 +8,7 @@
   --pinkaltshadow: rgba(180, 121, 197, 0.92); /*alternative highlight shadow, for game buttons*/
   --pinkaltshadowhover: rgba(180, 121, 197, 1); /*alternative highlight shadow on hover*/
   
-  --background: rgba(13, 13, 13, 0.45); /*darkening bg*/
+  --background: rgba(8, 8, 8, 0.45); /*darkening bg*/
   --backgroundgreen: rgba(5, 77, 52, 0.45); /*greenish tint*/
   
   --selectioncol: rgba(196, 200, 218, 1); /*text in selection*/
@@ -17,7 +17,7 @@
   --textcol: rgba(200, 218, 196, 1); /*text colour*/
   
   --navlink: rgba(155, 212, 173, 1); /*secondary text colour (navbar links)*/
-  --navlinkactive: rgba(226, 210, 197, 1); /*teritary text colour (clicked navbar links)*/
+  --navlinkactive: rgba(226, 210, 197, 1); /*teritary text colour (hovered navbar links)*/
   
   --marquee: rgba(209, 141, 56, 1); /*marquee text*/
   --marqueeshadow: rgba(137, 87, 14, 1); /*shadow for marquee text*/
@@ -47,6 +47,7 @@
   --stationcolP: #a4ea73; /*station 'P' colour, for pokemon box*/
   --stationcolDepth: #518481; /*station 'Depth' colour, for the rest, have a seperate for lore?*/
   --stationcolBlank: #242424; /*station colour for outside stuff*/
+  
   --stationcolCorikamabo: #256555; /*inbetween for presani and cori, used in lore*/
   --stationcolMeeting: #846e8b; /*used in lore, lum & cori*/
 }
@@ -90,6 +91,48 @@
 * { /*it's just easier this way.*/
   box-sizing: border-box;
   scrollbar-width: thin;
+}
+
+footer {
+  font-family: nindot, helvetica;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0.7vh;
+  font-size: 12px;
+  color: var(--darkentext);
+  opacity: 0.5;
+}
+
+footer a { /*for the link*/
+  text-decoration: none;
+  color: var(--darkentext);
+}
+
+footer a:visited {
+  color: var(--darkentext);
+}
+
+footer a:hover {
+  color: var(--darkentexthover);
+}
+
+footer a:active {
+  color: var(--darkentextactive);
+}
+
+footer a:visited:hover {
+  color: var(--darkentexthover);
+}
+
+footer a:visited:active {
+  color: var(--darkentextactive);
+}
+
+::selection { /*when you left click drag,, select things,, youknowww*/
+  color: var(--selectioncol);
+  background-color: var(--selectionbg);
 }
 
 /*oc text colours*/

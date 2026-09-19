@@ -1,0 +1,87 @@
+.buttonspane { /*buttons pane, this whole section is for the little popup menu*/
+  position: fixed;
+  bottom: 20px; /*slightly spacing off bottom*/
+  max-height: 25%; /*so it doesn't go too high*/
+  left: -128px;
+  z-index: 1;
+  display: flex;
+  flex-direction: row-reverse; /*puts title on right*/
+  background-color: var(--background);
+  background-image: url('/images/sdodrsprites.gif'); /*cute,,, theyre sitting in bottom left*/
+  image-rendering: pixelated; /*works if you re-define it later*/
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-blend-mode: hue; /*darkens slightly due to background-color*/
+  box-shadow: inset 0 0 1vh var(--backgroundgreen), 0 0 0.5vh var(--backgroundgreen);
+  border: 0.1vh solid var(--darkentextactive);
+  border-radius: 0 1vh 1vh 0;
+  transition: 0.15s; /*eased movement with the hover, it doesn't pop out immediately*/
+}
+
+.buttonspane:hover {
+  left: -0.1vh; /*reduced to the width of the border*/
+}
+
+.buttonstitle {
+  width: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family: nindot, helvetica;
+  color: var(--navlink);
+  border-left: 0.1vh solid var(--darkentextactive);
+  background-color: var(--backgroundgreen);
+  border-radius: 0 1vh 1vh 0;
+  overflow: hidden;
+}
+
+.buttonsarea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  image-rendering: auto; /*undoes previous styling*/
+  width: 128px;
+  padding: 0.5vh;
+  gap: 10px;
+  z-index: 1;
+}
+
+.flex4button { /*top right buttons*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1; /*keep the buttons square*/
+  flex: 33%;
+  margin: auto; /*keeps buttons in 1:1*/
+  background: linear-gradient(58deg,rgba(17, 81, 68, 0.7), rgba(25, 91, 113, 0.7));
+  box-shadow: 0 0 1vh rgba(17, 81, 68, 0.7);
+  border-radius: 100vh; /*always a circle*/
+  border: none; /*exclusively for the button elements*/
+  padding: 0; /*exclusively for the button elements*/
+  overflow: hidden;
+}
+
+.flex4button:hover {
+  transition: background 0.15s; /*background takes a little bit of time to change*/
+  background: #c11ab0cc; /*slightly transparent, so drop shadow shows but still has an effect*/
+  filter: drop-shadow(-0.2vh 0 0.2vh #a52047) drop-shadow(0.2vh 0 0.2vh #421c98) drop-shadow(0 0 1vh #c11ab0cc); /*occlusion, occlusion, glow*/
+}
+
+.flex4button img {
+  height: 75%;
+  width: auto;
+  opacity: 0.4;
+  user-select: none;
+}
+
+.flex4button:hover img {
+  opacity: 0.8;
+}
+
+.buttonclicked { /*javascript! when the buttons are toggled on*/
+  background: linear-gradient(58deg,rgba(41, 121, 133, 0.9), rgba(78, 152, 124, 0.9));
+  box-shadow: 0 0 1vh rgba(204, 232, 193, 0.7);
+}
+
+.buttonclicked img {
+  opacity: 0.6;
+}

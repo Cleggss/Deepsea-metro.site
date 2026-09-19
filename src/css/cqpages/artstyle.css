@@ -12,7 +12,7 @@
     margin-top: 0.5vh;
     border-radius: 0.5vh;
     border: 0.1vh solid var(--highlight);
-    box-shadow: 0px 0px 2vh var(--highlightshadow);
+    box-shadow: 0px 0px 1vh var(--highlightshadow);
     background-color: var(--background); /*for transparent images*/
     overflow: hidden;
 }
@@ -69,16 +69,8 @@
     pointer-events: none;
 }
     
-.ocimgright { /*taken from station img, use when the rightmost icon*/
-    display: flex;
-    width: 2.5vh;
-    min-width: 2.5vh;
-    height: 2.5vh;
+.ocimgright { /*add when rightmost*/
     border-right: 0.1vh solid var(--highlight);
-    overflow: hidden;
-    box-sizing: content-box; /*should fix some of the things that changing to border-box ruined, and improve scaling a lil*/
-    user-select: none;
-    pointer-events: none;
 }
 
 .octext { /*takes up 100% and shifts for min-width!*/
@@ -107,6 +99,6 @@
 
 @media (max-width: 1250px) { /*mobile, scales it to 100% width*/
     .artflexbox p {
-    font-size: 1.5vw; /*this works well enough!!*/
+        font-size: 1.5vw; /*this works well enough!!*/
     }
 }

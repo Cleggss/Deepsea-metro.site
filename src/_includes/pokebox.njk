@@ -12,25 +12,44 @@
     <title>{{ title }}</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link href="/css/variables.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <link href="/css/buttonsstyle.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
     <link href="/css/boxstyle.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
     <link href="{{ style }}{{ nocache }}" rel="stylesheet" type="text/css" media="all">
     <link href="/tooltips/tippy-stylesheet.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
-    <div class="background">
-      <div class="center">
-        <div class="containerbox">
-          <div class="topflex">
-            <a href="/box/pokemon/" class="topbutton"><div class="topbuttoninner">Pokémon</div></a>
-            <a href="/box/about/" class="topbutton"><div class="topbuttoninner">About</div></a>
-            <a href="/" class="topbutton"><div class="topbuttoninner">Return to the metro...</div></a>
-          </div>
-          <div class="inner">
-            {{ content | safe }}
-          </div>
+    <audio id="navhoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/whrkau.wav" type="audio/mpeg" /></audio>
+    <audio id="navclicksfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/eaja0e.wav" type="audio/mpeg" /></audio>
+    <audio id="tophoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/myqxje.wav" type="audio/mpeg" /></audio>
+    <audio id="hoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/836idv.wav" type="audio/mpeg" /></audio>
+    <audio id="clicksfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/mb1tvm.wav" type="audio/mpeg" /></audio>
+    <div class="background"></div>
+    <div class="buttonspane">
+      <div class="buttonstitle"><br>B<br>u<br>t<br>t<br>o<br>n<br>s</div>
+      <div class="buttonsarea">
+        <a href="/musicplayer/" class="flex4button tippy" data-tippy-content="Music player" onclick="window.open(this.href,'popup','width=600,height=250,menubar=no,location=no,scrollbars=no,resizable=yes,toolbar=no'); return false;"><img src='/images/cqstyle/musicicon.png' alt="Music button"></a>
+        <button id="sfxtogglebutton" class="flex4button tippy" data-tippy-content="Toggle SFX"><img id="sfxtogglebuttonimg" src='/images/cqstyle/sfxplaybutton.png' alt="SFX button"></button>
+        <button id="scanlinetogglebutton" class="flex4button tippy" data-tippy-content="Toggle scanlines (CQ)"><img src='/images/cqstyle/tagbutton.png' alt="Scanline toggle button"></button>
+      </div>
+    </div>
+    <div class="center">
+      <div class="containerbox">
+        <div class="topflex">
+          <a href="/box/pokemon/" class="topbutton"><div class="topbuttoninner">Pokémon</div></a>
+          <a href="/box/about/" class="topbutton"><div class="topbuttoninner">About</div></a>
+          <a href="/" class="topbutton"><div class="topbuttoninner">Return to the metro...</div></a>
+        </div>
+        <div class="inner">
+          {{ content | safe }}
         </div>
       </div>
     </div>
+  <footer>
+    Made within the Entralink | <a href="https://neocities.org/site/cleggs">Profile</a>
+  </footer>
+  <script src="/js/boxsfx.js{{ nocache }}"></script>
+  <script src="/js/toggle.js{{ nocache }}"></script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="/tooltips/tippy-deco.js"></script>

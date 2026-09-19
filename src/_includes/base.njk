@@ -1,3 +1,4 @@
+<!--heyoo!! you can get a much better look with my code comments in the debugger!!-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,11 +16,21 @@
     <link href="/css/cqstyle.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
     <link href="{{ style }}{{ nocache }}" rel="stylesheet" type="text/css" media="all">
     <link href="/tooltips/tippy-stylesheet.css{{ nocache }}" rel="stylesheet" type="text/css" media="all">
-    <script src="/js/musicplayer.js{{ nocache }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>{{ randomscript | safe }}</script>
+    <style>
+      .navcontent section:nth-of-type({{ sectionnum }}) .linkbutton:nth-of-type({{ linknum }}) { /*selects current page's linkbutton and colours it*/
+        color: #EBDFD6; /*only works due to eleventy, yayy!*/
+      }
+    </style>
   </head>
   <body>
-    <div class="crt-filter"></div>
+    <div id="crt-filter"></div>
+    <audio id="navhoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/whrkau.wav" type="audio/mpeg" /></audio>
+    <audio id="navclicksfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/eaja0e.wav" type="audio/mpeg" /></audio>
+    <audio id="tophoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/myqxje.wav" type="audio/mpeg" /></audio>
+    <audio id="hoversfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/56nbgl.wav" type="audio/mpeg" /></audio>
+    <audio id="clicksfx" style="display: none" preload="auto"><source src="https://files.catbox.moe/0j6dok.wav" type="audio/mpeg" /></audio>
     <div class="center">
       <div class="content">
         <div class="heading">
@@ -31,16 +42,15 @@
             </div>
           </div>
           <div class="headflex4">
-            <div class="flex4info"><button onclick="musictoggle()">Play<br>-----<br>Pause</button></div>
-            <audio id ="audio" src="https://files.catbox.moe/syubx9.mp3"></audio>
-            <div class="flex4img"></div>
-            <div class="flex4wave"></div>
+            <a href="/musicplayer/" class="flex4button tippy" data-tippy-content="Music player" onclick="window.open(this.href,'popup','width=600,height=250,menubar=no,location=no,scrollbars=no,resizable=yes,toolbar=no'); return false;"><img src='/images/cqstyle/musicicon.png' alt="Music button"></a>
+            <button id="sfxtogglebutton" class="flex4button tippy" data-tippy-content="Toggle SFX"><img id="sfxtogglebuttonimg" src='/images/cqstyle/sfxplaybutton.png' alt="SFX button"></button>
+            <button id="scanlinetogglebutton" class="flex4button tippy" data-tippy-content="Toggle scanlines"><img src='/images/cqstyle/tagbutton.png' alt="Scanline toggle button"></button>
           </div>
           <div class="headflexspacer"></div>
         </div>
         <div class="sidebar">
           <div class="navbar">
-            <div class="chattitle"><div class="bgdarken"><p>navbar</p></div></div>
+            <div class="chattitle"><div class="bgdarken">navbar</div></div>
             <div class="navigation">
               <div class="navcontent">
                 <section class="navbarA">
@@ -120,7 +130,7 @@
               </div>
             </div>
             <div class="chatbox">
-              <div class="chattitle" id="chatheader"><div class="titlespacer"></div><p>♪chatroom♪</p><a href="https://www5.cbox.ws/box/?boxid=963315&boxtag=zd1hEu" onclick="window.open(this.href,'popup','width=350,height=350,scrollbars=yes,resizable=yes,toolbar=no'); return false;" class="titlespacer">▶</a></div>
+              <div class="chattitle" id="chatheader"><div class="titlespacer"></div>♪chatroom♪<a href="https://www5.cbox.ws/box/?boxid=963315&boxtag=zd1hEu" class="titlespacer tippy" data-tippy-content="Pop out" onclick="window.open(this.href,'popup','width=350,height=350,scrollbars=yes,resizable=yes,toolbar=no'); return false;">▶</a></div>
               <div class="chat"><iframe src="https://www5.cbox.ws/box/?boxid=963315&boxtag=zd1hEu" width="100%" height="100%" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe></div>
             </div>
           </div>
@@ -130,6 +140,11 @@
         </div>
       </div>
     </div>
+  <footer>
+    Made with blended ink | <a href="https://neocities.org/site/cleggs">Profile</a>
+  </footer>
+  <script src="/js/sfx.js{{ nocache }}"></script>
+  <script src="/js/toggle.js{{ nocache }}"></script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="/tooltips/tippy-deco.js"></script>
