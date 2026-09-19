@@ -201,6 +201,16 @@ body {
     cursor: pointer;
 }
 
+.mobilewarning {
+    visibility: hidden;
+    font-style: italic;
+    text-align: center;
+    font-size: 13px;
+    color: var(--darkentextactive);
+    padding-left: 8vw;
+    padding-right: 8vw;
+}
+
 .footer {
     background-color: var(--background);
     font-style: italic;
@@ -234,6 +244,10 @@ body {
         height: 45vh;
         margin: 3vh;
         max-width: 100%;
+    }
+
+    .mobilewarning {
+        visibility: visible;
     }
 
 }
