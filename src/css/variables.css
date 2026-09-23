@@ -105,7 +105,7 @@ footer {
   opacity: 0.5;
 }
 
-footer a { /*for the link*/
+footer a:link { /*for the link*/
   text-decoration: none;
   color: var(--darkentext);
 }

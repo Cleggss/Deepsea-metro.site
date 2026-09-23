@@ -5,3 +5,8 @@ node_modules
 # build artefacts
 
 public
+
+# unfinished pages
+
+/src/depths/cori.html
+/src/depths/lumine.html

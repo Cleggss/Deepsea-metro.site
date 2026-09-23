@@ -33,7 +33,7 @@ randomscript:
 <h1>Blogs</h1>
 <div class="containerflex">
     <span class="containerwrap"><a href="/blogs/blog1/" class="container"><div class="pokemoncontainerblur"></div>
-        <div class="containermarker"><img src='/images/cqstyle/blogandevlog/h01.png' loading="lazy" alt="H01"></div>
+        <div class="containermarker"><img src='/images/cqstyle/blogandevlog/H01.png' loading="lazy" alt="H01"></div>
         <div class="containertext">Making sites</div>
     </a></span>
 </div>
@@ -41,3 +41,13 @@ randomscript:
 <div class="containerflex">
     
 </div>
+
+
+<!---
+
+{% for status in collections.status reversed %}
+    <div class="statuspost"><div><div class="coritext">{{ status.data.chartitle }}</div>{{ status.date | niceDate }}</div> {{ status.templateContent | raw }}</div>
+{% endfor %}
+
+something like this maybe? im not sure how i'd generate it all...
+---

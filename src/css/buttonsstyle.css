@@ -14,7 +14,7 @@
   background-blend-mode: hue; /*darkens slightly due to background-color*/
   box-shadow: inset 0 0 1vh var(--backgroundgreen), 0 0 0.5vh var(--backgroundgreen);
   border: 0.1vh solid var(--darkentextactive);
-  border-radius: 0 1vh 1vh 0;
+  border-radius: 0 15px 15px 0;
   transition: 0.15s; /*eased movement with the hover, it doesn't pop out immediately*/
 }
 
@@ -30,7 +30,7 @@
   color: var(--navlink);
   border-left: 0.1vh solid var(--darkentextactive);
   background-color: var(--backgroundgreen);
-  border-radius: 0 1vh 1vh 0;
+  border-radius: 0 15px 15px 0;
   overflow: hidden;
 }
 
